@@ -10,7 +10,9 @@ Petit fichier CSS qui assure la cohérence entre les navigateurs dans le style p
 Manière alternative de faire cela :
 
 ```css
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
