@@ -1,13 +1,13 @@
-# CSS Default Starter / Global Styles
+# CSS Default Starter / Styles Globaux
 
-- Save time on project setup.
-- Less lines of CSS.
+- Gagne du temps sur la configuration du projet
+- Moins de lignes de CSS
 
 ## Normalize
 
-Small CSS file that provides cross-browser consistency in the default styling of HTML elements.
+Petit fichier CSS qui assure la cohérence entre les navigateurs dans le style par défaut des éléments HTML.
 
-Alternative/Fancier way of doing this
+Manière alternative de faire cela :
 
 ```css
 * {
@@ -17,34 +17,50 @@ Alternative/Fancier way of doing this
 }
 ```
 
-- Go to [Docs ](https://necolas.github.io/normalize.css/)
-- Select the latest version
-- Create normalize.css
-- Setup the link in the html
+- Aller sur [Docs ](https://necolas.github.io/normalize.css/)
+- Sélectionner la dernière version
+- Créer normalize.css
+- Configurer le lien dans le HTML
 
 ```html
 <link rel="stylesheet" href="./normalize.css" />
 ```
 
-## Fonts
+## Main
 
-#### Select Fonts
+Créer un fichier main.css
+
+### Les Polices
+
+#### Sélectionner Des Polices
 
 - [fontpair](https://www.fontpair.co/)
 - [pagecloud](https://www.pagecloud.com/blog/best-google-fonts-pairings)
 
-#### Grab the CSS
+#### Prendre le CSS
 
 - [typescale](https://type-scale.com/)
+- [fluid-typescale](https://www.fluid-type-scale.com/)
 
-Make some adjustments
+Faire quelques ajustements :
 
-## Colors
+```css
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+```
+
+- Définir `margin-bottom: 1.5rem` et `max-width: 40em` pour les `p`
+- Définir `margin: 0`, `margin-bottom: 1.38rem` et `text-transform: capitalize` pour les `h1,h2,h3,h4,h5`
+
+## Les Couleurs
 
 ```css
 :root {
-  /* primary */
-  /* grey */
+  /* primaire */
+  /* gris */
   --black: #222;
   --white: #fff;
   --red-light: #f8d7da;
@@ -54,27 +70,23 @@ Make some adjustments
 }
 ```
 
-#### Select Primary
+#### Sélectionner La Couleur Primaire
 
-Manual Approach
+Approche manuelle :
 
 - [coolors](https://coolors.co/)
 - [happyhues](https://www.happyhues.co/)
-- select your own color
-- get shades [shadowlord](https://noeldelgado.github.io/shadowlord/#73fdad)
+- Sélectionenr sa propre couleur
+- récupérer les nuances sur [shadowlord](https://noeldelgado.github.io/shadowlord/#73fdad)
 
-Library/Faster Approach
+Approche plus rapide avec les librairies :
 
 - [bootstrap](https://getbootstrap.com/docs/5.0/customize/color/#color-sass-maps)
 - [tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 
-#### Select Grey
+#### Sélectionenr Les Gris
 
 - [tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
-
-#### Just go with happyhues
-
-- [happyheus](https://www.happyhues.co/)
 
 #### Box Shadow
 

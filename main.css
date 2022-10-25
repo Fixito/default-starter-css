@@ -47,6 +47,13 @@ html {
   --headingFont: 'Spectral', serif;
   --bodyFont: 'Karla', sans-serif;
   --smallText: 0.7em;
+  --font-size-sm: clamp(0.8rem, 0.165vw + 0.759rem, 0.891rem);
+  --font-size-base: clamp(1rem, 0.341vw + 0.915rem, 1.188rem);
+  --font-size-md: clamp(1.25rem, 0.605vw + 1.099rem, 1.583rem);
+  --font-size-lg: clamp(1.563rem, 0.996vw + 1.314rem, 2.11rem);
+  --font-size-xl: clamp(1.953rem, 1.563vw + 1.562rem, 2.813rem);
+  --font-size-xxl: clamp(2.441rem, 2.378vw + 1.847rem, 3.749rem);
+  --font-size-xxxl: clamp(3.052rem, 3.538vw + 2.167rem, 4.998rem);
 
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
@@ -76,6 +83,7 @@ body {
 p {
   margin-bottom: 1.5rem;
   max-width: 40em;
+  font-size: var(--font-size-base);
 }
 
 h1,
@@ -93,27 +101,27 @@ h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 3.052rem;
+  font-size: var(--font-size-xxxl);
 }
 
 h2 {
-  font-size: 2.441rem;
+  font-size: var(--font-size-xxl);
 }
 
 h3 {
-  font-size: 1.953rem;
+  font-size: var(--font-size-xl);
 }
 
 h4 {
-  font-size: 1.563rem;
+  font-size: var(--font-size-lg);
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: var(--font-size-md);
 }
 
 small,
-.text_small {
+.text-small {
   font-size: var(--smallText);
 }
 
