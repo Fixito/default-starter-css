@@ -207,20 +207,18 @@ ul {
 .alert {
   padding: 0.375rem 0.75rem;
   margin-bottom: 1rem;
-  border-left: 0.25rem solid transparent;
+  border: transparent;
   border-radius: var(--border-radius);
 }
 
 .alert-danger {
   color: var(--red-950);
   background: var(--red-200);
-  border-left-color: var(--red-800);
 }
 
 .alert-success {
   color: var(--teal-950);
   background: var(--teal-200);
-  border-left-color: var(--teal-800);
 }
 
 /** form */
