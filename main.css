@@ -11,48 +11,87 @@ html {
 :root {
   /* colors */
   /* primary */
-  --primary-100: hsl(217, 90%, 92%);
-  --primary-200: hsl(217, 90%, 84%);
-  --primary-300: hsl(217, 92%, 76%);
-  --primary-400: hsl(217, 91%, 68%);
-  --primary-500: hsl(217, 91%, 60%);
-  --primary-600: hsl(217, 61%, 48%);
-  --primary-700: hsl(217, 62%, 36%);
-  --primary-800: hsl(217, 61%, 24%);
-  --primary-900: hsl(217, 61%, 12%);
+  --primary-50: #f2f8fd;
+  --primary-100: #e4effa;
+  --primary-200: #c2ddf5;
+  --primary-300: #8cc3ed;
+  --primary-400: #4fa4e1;
+  --primary-500: #2680c2;
+  --primary-600: #1a6baf;
+  --primary-700: #16558e;
+  --primary-800: #164976;
+  --primary-900: #183f62;
+  --primary-950: #102741;
+
   /* grey */
-  --grey-50: hsl(210, 40%, 98%);
-  --grey-100: hsl(210, 40%, 96%);
-  --grey-200: hsl(214, 32%, 91%);
-  --grey-300: hsl(213, 27%, 84%);
-  --grey-400: hsl(215, 20%, 65%);
-  --grey-500: hsl(215, 16%, 47%);
-  --grey-600: hsl(215, 19%, 35%);
-  --grey-700: hsl(215, 25%, 27%);
-  --grey-800: hsl(217, 33%, 17%);
-  --grey-900: hsl(222, 47%, 11%);
+  --grey-50: hsl(204, 26%, 96%);
+  --grey-100: hsl(207, 22%, 90%);
+  --grey-200: hsl(211, 23%, 82%);
+  --grey-300: hsl(208, 23%, 69%);
+  --grey-400: hsl(210, 22%, 49%);
+  --grey-500: hsl(211, 24%, 43%);
+  --grey-600: hsl(213, 23%, 36%);
+  --grey-700: hsl(216, 20%, 31%);
+  --grey-800: hsl(217, 17%, 27%);
+  --grey-900: hsl(218, 16%, 24%);
+  --grey-950: hsl(221, 21%, 15%);
+
+  /* supporting */
+  /* teal */
+  --teal-50: hsl(164, 73%, 97%);
+  --teal-100: hsl(163, 82%, 89%);
+  --teal-200: hsl(163, 80%, 78%);
+  --teal-300: hsl(165, 75%, 64%);
+  --teal-400: hsl(167, 64%, 50%);
+  --teal-500: hsl(168, 78%, 41%);
+  --teal-600: hsl(169, 81%, 32%);
+  --teal-700: hsl(170, 74%, 26%);
+  --teal-800: hsl(170, 68%, 22%);
+  --teal-900: hsl(171, 59%, 19%);
+  --teal-950: hsl(173, 80%, 10%);
+
+  /* red */
+  --red-50: hsl(0, 71%, 97%);
+  --red-100: hsl(0, 87%, 94%);
+  --red-200: hsl(0, 89%, 89%);
+  --red-300: hsl(0, 85%, 82%);
+  --red-400: hsl(0, 83%, 71%);
+  --red-500: hsl(0, 76%, 60%);
+  --red-600: hsl(0, 65%, 51%);
+  --red-700: hsl(0, 67%, 44%);
+  --red-800: hsl(0, 63%, 35%);
+  --red-900: hsl(0, 56%, 31%);
+  --red-950: hsl(0, 67%, 15%);
+
+  /* yellow */
+  --yellow-50: hsl(45, 100%, 96%);
+  --yellow-100: hsl(46, 77%, 88%);
+  --yellow-200: hsl(44, 78%, 77%);
+  --yellow-300: hsl(42, 78%, 60%);
+  --yellow-400: hsl(39, 77%, 53%);
+  --yellow-500: hsl(37, 75%, 47%);
+  --yellow-600: hsl(32, 77%, 40%);
+  --yellow-700: hsl(27, 74%, 33%);
+  --yellow-800: hsl(23, 65%, 29%);
+  --yellow-900: hsl(19, 59%, 26%);
+  --yellow-950: hsl(18, 67%, 14%);
 
   /* rest of the colors */
   --black: #222;
   --white: #fff;
-  --red-light: #f8d7da;
-  --red-dark: #842029;
-  --green-light: #d1e7dd;
-  --green-dark: #0f5132;
 
   /* fonts */
-  --headingFont: 'Lora', serif;
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
 
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
+  --textColor: var(--grey-950);
   --border-radius: 0.25rem;
   --letter-spacing: 0.05em;
   ---transition: all 0.3s ease-in-out;
-  --fluid-width: 90vw;
-  --max-width: 1200px;
+  --view-width: 90vw;
+  --max-width: 1120px;
   --fixed-width: 600px;
 
   /* box shadow */
@@ -74,7 +113,7 @@ body {
 
 p {
   margin-bottom: 1.5rem;
-  max-width: 35em;
+  max-width: 40em;
 }
 
 h1,
@@ -84,7 +123,6 @@ h4,
 h5 {
   margin: 0;
   margin-bottom: 1.38rem;
-  font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1;
 }
@@ -109,10 +147,10 @@ h5 {
   font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
 }
 
-/* .text {
+.text {
   margin-bottom: 1.5rem;
-  max-width: 35em;
-} */
+  max-width: 40em;
+}
 
 small,
 .text-small {
@@ -152,11 +190,11 @@ ul {
 }
 
 .btn-hipster {
-  color: var(--primary-500);
+  color: var(--primary-700);
   background: var(--primary-200);
 }
 
-.btn-hover:hover {
+.btn-hipster:hover {
   color: var(--primary-200);
   background: var(--primary-700);
 }
@@ -169,23 +207,25 @@ ul {
 .alert {
   padding: 0.375rem 0.75rem;
   margin-bottom: 1rem;
-  border-color: transparent;
+  border-left: 0.25rem solid transparent;
   border-radius: var(--border-radius);
 }
 
 .alert-danger {
-  color: var(--red-dark);
-  background: var(--red-light);
+  color: var(--red-950);
+  background: var(--red-200);
+  border-left-color: var(--red-800);
 }
 
 .alert-success {
-  color: var(--green-dark);
-  background: var(--green-light);
+  color: var(--teal-950);
+  background: var(--teal-200);
+  border-left-color: var(--teal-800);
 }
 
 /** form */
 .form {
-  width: var(--fluid-width);
+  width: var(--view-width);
   max-width: var(--fixed-width);
   background: var(--white);
   border-radius: var(--border-radius);
@@ -224,11 +264,12 @@ ul {
 
 .form-alert {
   color: var(--red-dark);
+  color: var(--red-900);
   letter-spacing: var(--letter-spacing);
 }
 
 /** spinner */
-@keyframes spinner {
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
@@ -236,21 +277,17 @@ ul {
 
 .loading {
   margin: 0 auto;
-  width: 6rem;
-  height: 6rem;
-  border: 5px solid var(--grey-400);
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid var(--grey-300);
   border-radius: 50%;
   border-top-color: var(--primary-500);
-  animation: spinner 0.6s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 /** title */
 .title {
   text-align: center;
-}
-
-.title h2 {
-  margin-bottom: 0.25rem;
 }
 
 .title-underline {

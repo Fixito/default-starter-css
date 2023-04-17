@@ -40,7 +40,7 @@
     <ul>
       <li>Premier item</li>
       <li>Second item</li>
-      <li>troisième item</li>
+      <li>Troisième item</li>
     </ul>
 
     <!-- img -->
@@ -54,12 +54,13 @@
     <br />
 
     <!-- alerts -->
-    <div class="alert alert-danger">Salut depuis danger</div>
-    <div class="alert alert-success">Salut depuis succès</div>
+    <div role="alert" class="alert alert-danger">Salut depuis danger</div>
+    <div role="alert" class="alert alert-success">Salut depuis succès</div>
 
     <!-- form -->
     <form class="form">
       <h4>Formulaire de contact</h4>
+      <!-- name -->
       <div class="form-row">
         <label for="name" class="form-label">Nom</label>
         <input
@@ -70,21 +71,25 @@
           class="form-input"
         />
       </div>
+      <!-- number -->
       <div class="form-row">
         <label for="number" class="form-label">Numéro</label>
         <input type="number" name="number" id="number" class="form-input" />
       </div>
+      <!-- email -->
       <div class="form-row">
         <label for="email" class="form-label">Email</label>
         <input type="email" name="email" id="email" class="form-input" />
-        <small class="form-alert">Veulliez forunir une valeur</small>
+        <small class="form-alert">Veulliez fournir une valeur</small>
       </div>
+      <!-- textarea -->
       <div class="form-row">
         <label for="textarea" class="form-label">Zone de texte</label>
         <textarea id="textarea" class="form-textarea">
 Valeur par défaut
         </textarea>
       </div>
+      <!-- submit -->
       <button class="btn btn-block">Envoyer</button>
     </form>
 
