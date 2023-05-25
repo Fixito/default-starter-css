@@ -89,7 +89,7 @@ html {
   --textColor: var(--grey-950);
   --border-radius: 0.25rem;
   --letter-spacing: 0.05em;
-  ---transition: all 0.3s ease-in-out;
+  --transition: all 0.3s ease-in-out;
   --view-width: 90vw;
   --max-width: 1120px;
   --fixed-width: 600px;
