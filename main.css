@@ -1,70 +1,70 @@
 :root {
   /* colors */
   /* primary */
-  --primary-50: #f2f8fd;
-  --primary-100: #e4effa;
-  --primary-200: #c2ddf5;
-  --primary-300: #8cc3ed;
-  --primary-400: #4fa4e1;
-  --primary-500: #2680c2;
-  --primary-600: #1a6baf;
-  --primary-700: #16558e;
-  --primary-800: #164976;
-  --primary-900: #183f62;
-  --primary-950: #102741;
+  --primary-50: hsl(226, 100%, 97%);
+  --primary-100: hsl(226, 100%, 94%);
+  --primary-200: hsl(228, 96%, 89%);
+  --primary-300: hsl(230, 94%, 82%);
+  --primary-400: hsl(234, 89%, 74%);
+  --primary-500: hsl(239, 85%, 67%);
+  --primary-600: hsl(243, 75%, 59%);
+  --primary-700: hsl(245, 58%, 51%);
+  --primary-800: hsl(244, 55%, 41%);
+  --primary-900: hsl(242, 47%, 34%);
+  --primary-950: hsl(244, 47%, 20%);
 
   /* grey */
-  --grey-50: hsl(204, 26%, 96%);
-  --grey-100: hsl(207, 22%, 90%);
-  --grey-200: hsl(211, 23%, 82%);
-  --grey-300: hsl(208, 23%, 69%);
-  --grey-400: hsl(210, 22%, 49%);
-  --grey-500: hsl(211, 24%, 43%);
-  --grey-600: hsl(213, 23%, 36%);
-  --grey-700: hsl(216, 20%, 31%);
-  --grey-800: hsl(217, 17%, 27%);
-  --grey-900: hsl(218, 16%, 24%);
-  --grey-950: hsl(221, 21%, 15%);
+  --grey-50: hsl(210, 20%, 98%);
+  --grey-100: hsl(220, 14%, 96%);
+  --grey-200: hsl(220, 13%, 91%);
+  --grey-300: hsl(216, 12%, 84%);
+  --grey-400: hsl(218, 11%, 65%);
+  --grey-500: hsl(220, 9%, 46%);
+  --grey-600: hsl(215, 14%, 34%);
+  --grey-700: hsl(217, 19%, 27%);
+  --grey-800: hsl(215, 28%, 17%);
+  --grey-900: hsl(221, 39%, 11%);
+  --grey-950: hsl(224, 71%, 4%);
 
   /* supporting */
-  /* teal */
-  --teal-50: hsl(164, 73%, 97%);
-  --teal-100: hsl(163, 82%, 89%);
-  --teal-200: hsl(163, 80%, 78%);
-  --teal-300: hsl(165, 75%, 64%);
-  --teal-400: hsl(167, 64%, 50%);
-  --teal-500: hsl(168, 78%, 41%);
-  --teal-600: hsl(169, 81%, 32%);
-  --teal-700: hsl(170, 74%, 26%);
-  --teal-800: hsl(170, 68%, 22%);
-  --teal-900: hsl(171, 59%, 19%);
-  --teal-950: hsl(173, 80%, 10%);
+  /* green */
+  --green-50: hsl(138, 76%, 97%);
+  --green-100: hsl(141, 84%, 93%);
+  --green-200: hsl(141, 79%, 85%);
+  --green-300: hsl(142, 77%, 73%);
+  --green-400: hsl(142, 69%, 58%);
+  --green-500: hsl(142, 71%, 45%);
+  --green-600: hsl(142, 76%, 36%);
+  --green-700: hsl(142, 72%, 29%);
+  --green-800: hsl(143, 64%, 24%);
+  --green-900: hsl(144, 61%, 20%);
+  --green-950: hsl(145, 80%, 10%);
 
   /* red */
-  --red-50: hsl(0, 71%, 97%);
-  --red-100: hsl(0, 87%, 94%);
-  --red-200: hsl(0, 89%, 89%);
-  --red-300: hsl(0, 85%, 82%);
-  --red-400: hsl(0, 83%, 71%);
-  --red-500: hsl(0, 76%, 60%);
-  --red-600: hsl(0, 65%, 51%);
-  --red-700: hsl(0, 67%, 44%);
-  --red-800: hsl(0, 63%, 35%);
-  --red-900: hsl(0, 56%, 31%);
-  --red-950: hsl(0, 67%, 15%);
+  --red-50: hsl(0, 86%, 97%);
+  --red-100: hsl(0, 93%, 94%);
+  --red-200: hsl(0, 96%, 89%);
+  --red-300: hsl(0, 94%, 82%);
+  --red-400: hsl(0, 91%, 71%);
+  --red-500: hsl(0, 84%, 60%);
+  --red-600: hsl(0, 72%, 51%);
+  --red-700: hsl(0, 74%, 42%);
+  --red-800: hsl(0, 70%, 35%);
+  --red-900: hsl(0, 63%, 31%);
+  --red-950: hsl(0, 75%, 15%);
 
   /* yellow */
-  --yellow-50: hsl(45, 100%, 96%);
-  --yellow-100: hsl(46, 77%, 88%);
-  --yellow-200: hsl(44, 78%, 77%);
-  --yellow-300: hsl(42, 78%, 60%);
-  --yellow-400: hsl(39, 77%, 53%);
-  --yellow-500: hsl(37, 75%, 47%);
-  --yellow-600: hsl(32, 77%, 40%);
-  --yellow-700: hsl(27, 74%, 33%);
-  --yellow-800: hsl(23, 65%, 29%);
-  --yellow-900: hsl(19, 59%, 26%);
-  --yellow-950: hsl(18, 67%, 14%);
+  --yellow-50: hsl(55, 92%, 95%);
+  --yellow-100: hsl(55, 97%, 88%);
+  --yellow-200: hsl(53, 98%, 77%);
+  --yellow-300: hsl(50, 98%, 64%);
+  --yellow-400: hsl(48, 96%, 53%);
+  --yellow-500: hsl(45, 93%, 47%);
+  --yellow-600: hsl(41, 96%, 40%);
+  --yellow-700: hsl(35, 92%, 33%);
+  --yellow-800: hsl(32, 81%, 29%);
+  --yellow-900: hsl(28, 73%, 26%);
+  --yellow-950: hsl(26, 83%, 14%);
 
   /* rest of the colors */
   --black: #222;
@@ -77,18 +77,23 @@
   /* rest of the vars */
   --background-color: var(--grey-50);
   --text-color: var(--grey-950);
-  --border-radius: 0.25rem;
+  --rounded: 0.25rem;
+  --rounded-md: 0.375rem;
+  --rounded-lg: 0.5rem;
+  --rounded-xl: 0.75rem;
   --letter-spacing: 0.05em;
   --transition: all 0.3s ease-in-out;
   --view-width: 90vw;
-  --max-width: 1120px;
+  --max-width: 1280px;
   --fixed-width: 600px;
 
   /* box shadow */
-  --shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-2: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-3: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-4: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* Type scale https://utopia.fyi/type/calculator?c=320,16,1.125,1200,20,1.381,7,1,&s=,1.5%7C2%7C3%7C4%7C6,l-3xl */
@@ -125,6 +130,8 @@
 *,
 *::after,
 *::before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -139,6 +146,7 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  min-height: 100vh;
   font-size: var(--step-0);
 }
 
@@ -148,9 +156,10 @@ h3,
 h4,
 h5 {
   margin: 0;
+  font-weight: 500;
+  line-height: 1.1;
+  text-wrap: balance;
   margin-bottom: 1.38rem;
-  font-weight: 400;
-  line-height: 1;
 }
 
 h1 {
@@ -190,13 +199,15 @@ small,
 
 a {
   text-decoration: none;
+  color: var(--primary-600);
 }
 
 button {
   cursor: pointer;
 }
 
-[role='list'] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
   padding: 0;
 }
@@ -226,6 +237,7 @@ button {
   width: 7rem;
   height: 0.25rem;
   margin: 0 auto;
+  margin-top: 1em;
 }
 
 /** Compositions **/
@@ -251,7 +263,7 @@ button {
   margin-top: var(--flow-space, 1em);
 }
 
-.visually-hidden {
+.sr-only {
   border: 0;
   clip: rect(0 0 0 0);
   height: 0;
@@ -272,12 +284,16 @@ button {
 
 /** buttons */
 .btn {
+  display: inline-block;
+  font-size: var(--small-text);
+  line-height: 1.25rem;
+  font-weight: 600;
   color: var(--white);
-  background: var(--primary-500);
+  background: var(--primary-600);
   border: transparent;
-  border-radius: var(--border-radius);
+  border-radius: var(--rounded-md);
   padding: 0.375rem 0.75rem;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 
@@ -287,13 +303,13 @@ button {
 }
 
 .btn-hipster {
-  color: var(--primary-700);
-  background: var(--primary-200);
+  color: var(--primary-600);
+  background: var(--primary-100);
 }
 
 .btn-hipster:hover {
-  color: var(--primary-200);
-  background: var(--primary-700);
+  color: var(--primary-100);
+  background: var(--primary-600);
 }
 
 .btn-block {
@@ -302,20 +318,22 @@ button {
 
 /** alerts */
 .alert {
-  padding: 0.375rem 0.75rem;
+  font-size: var(--step--1);
+  font-weight: 500;
+  padding: 1rem;
   margin-bottom: var(--space-s);
   border: transparent;
-  border-radius: var(--border-radius);
+  border-radius: var(--rounded-md);
 }
 
 .alert-danger {
-  color: var(--red-950);
-  background: var(--red-200);
+  color: var(--red-800);
+  background: var(--red-50);
 }
 
 .alert-success {
-  color: var(--teal-950);
-  background: var(--teal-200);
+  color: var(--green-800);
+  background: var(--green-50);
 }
 
 /** form */
@@ -323,15 +341,17 @@ button {
   width: var(--view-width);
   max-width: var(--fixed-width);
   background: var(--white);
-  border-radius: var(--border-radius);
+  border-radius: var(--rounded-lg);
   box-shadow: var(--shadow-2);
-  padding: 2rem 2.5rem;
+  padding: 2rem;
   margin: var(--space-xl) auto;
 }
 
 .form-label {
   display: block;
   font-size: var(--small-text);
+  line-height: 1.25;
+  font-weight: 500;
   margin-bottom: var(--space-xs);
 }
 
@@ -341,15 +361,17 @@ button {
   padding: 0.375rem 0.75rem;
   background: var(--background-color);
   border: 1px solid var(--grey-200);
-  border-radius: var(--border-radius);
+  border-radius: var(--rounded-md);
+  font-size: var(--small-text);
+  line-height: 1.25;
 }
 
 .form-row {
   margin-bottom: var(--space-s);
 }
 
-.form-textarea {
-  height: 7rem;
+textarea:not([rows]) {
+  min-height: 10em;
 }
 
 ::placeholder {
@@ -358,7 +380,7 @@ button {
 }
 
 .form-alert {
-  color: var(--red-900);
+  color: var(--red-800);
   letter-spacing: var(--letter-spacing);
 }
 
@@ -370,11 +392,11 @@ button {
 }
 
 .loading {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   margin: 0 auto;
-  border: 5px solid var(--grey-300);
+  border: 5px solid var(--grey-400);
   border-radius: 50%;
   border-top-color: var(--primary-500);
-  animation: spin 1s linear infinite;
+  animation: spin 0.6s linear infinite;
 }
