@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="./main.css" />
     <style>
       body {
-        padding: 2rem;
+        padding: 1rem;
       }
       .img {
-        max-width: 400px;
+        max-inline-size: 400px;
       }
     </style>
   </head>
@@ -25,6 +25,7 @@
     <h3>Hello world</h3>
     <h4>Hello world</h4>
     <h5>Hello world</h5>
+    <h6>Hello world</h6>
 
     <!-- paragraphe -->
     <p>
@@ -37,7 +38,7 @@
     <a href="#">Exemple de lien</a>
 
     <!-- liste -->
-    <ul role="list">
+    <ul>
       <li>Premier item</li>
       <li>Second item</li>
       <li>Troisième item</li>
@@ -58,8 +59,8 @@
     <div role="alert" class="alert alert-success">Salut depuis succès</div>
 
     <!-- formulaire -->
-    <form class="form flow">
-      <h4>Formulaire de contact</h4>
+    <form class="form">
+      <h3 class="form-title">Formulaire de contact</h3>
 
       <!-- nom -->
       <div class="form-row">
@@ -90,8 +91,17 @@
       <div class="form-row">
         <label for="textarea" class="form-label">Message</label>
         <textarea id="textarea" class="form-textarea">
-Valeur par défaut</textarea
-        >
+          Valeur par défaut
+        </textarea>
+      </div>
+
+      <!-- vie privée -->
+      <div class="form-row">
+        <input type="checkbox" name="privacy" id="privacy" class="fine-print" />
+        <label for="privacy" class="form-label"
+          >J'accepte que mes données personnelles soient traitées conformément à
+          la <a href="#">politique de confidentialité</a>
+        </label>
       </div>
 
       <!-- soumettre -->
