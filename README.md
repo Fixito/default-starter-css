@@ -1,4 +1,4 @@
-# CSS Default Starter / Styles Globaux
+# Styles CSS par défaut
 
 - Gagne du temps sur la configuration du projet
 - Moins de lignes de CSS
@@ -19,10 +19,10 @@ Manière alternative de faire cela :
 }
 ```
 
-- Aller sur [Docs ](https://necolas.github.io/normalize.css/)
-- Sélectionner la dernière version
-- Créer normalize.css
-- Configurer le lien dans le HTML
+- Aller sur [Docs](https://necolas.github.io/normalize.css/)
+- Télécharger la dernière version
+- Créer un fichier `normalize.css` et coller le contenu
+- Configurer le lien dans le HTML :
 
 ```html
 <link rel="stylesheet" href="./normalize.css" />
@@ -30,7 +30,7 @@ Manière alternative de faire cela :
 
 ## Main
 
-Créer un fichier main.css
+Créer un fichier `main.css`
 
 ### Les Polices
 
@@ -54,21 +54,19 @@ Faire quelques ajustements :
 }
 ```
 
-- Définir `margin-bottom: 1.5rem` et `max-width: 40em` pour les `p`
-- Définir `margin: 0`, `margin-bottom: 1.38rem` et `text-transform: capitalize` pour les `h1,h2,h3,h4,h5`
+- Définir `margin-bottom: 1em` et `max-width: 65ch` pour les `p`
+- Définir `margin: 0`, `margin-bottom: 1.38rem` pour les `h1,h2,h3,h4,h5`
 
 ## Les Couleurs
 
 ```css
 :root {
-  /* primaire */
-  /* gris */
-  --black: #222;
-  --white: #fff;
-  --red-light: #f8d7da;
-  --red-dark: #842029;
-  --green-light: #d1e7dd;
-  --green-dark: #0f5132;
+  --black: oklch(14.077% 0.0044 285.776);
+  --white: oklch(100% 0 0);
+  --green-light: oklch(98.2% 0.018 155.826);
+  --green-dark: oklch(44.8% 0.119 151.328);
+  --red-light: oklch(97.1% 0.013 17.38);
+  --red-dark: oklch(44.4% 0.177 26.899);
 }
 ```
 
@@ -78,13 +76,13 @@ Approche manuelle :
 
 - [coolors](https://coolors.co/)
 - [happyhues](https://www.happyhues.co/)
-- Sélectionenr sa propre couleur
-- récupérer les nuances sur [shadowlord](https://noeldelgado.github.io/shadowlord/#73fdad)
+- Sélectionner sa propre couleur
+- Récupérer les nuances sur [shadowlord](https://noeldelgado.github.io/shadowlord/#73fdad)
 
 Approche plus rapide avec les librairies :
 
-- [bootstrap](https://getbootstrap.com/docs/5.0/customize/color/#color-sass-maps)
-- [tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/customize/color/#color-sass-maps)
+- [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 
 #### Sélectionenr Les Gris
 

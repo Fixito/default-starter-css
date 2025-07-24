@@ -2,122 +2,122 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Valeurs par défaut</title>
-    <!-- normalize -->
+    <title>Style CSS par défaut</title>
+    <!-- Normalize -->
     <link rel="stylesheet" href="./normalize.css" />
-    <!-- main css -->
+    <!-- Main css -->
     <link rel="stylesheet" href="./main.css" />
-    <style>
-      body {
-        padding: 1rem;
-      }
-      .img {
-        max-inline-size: 400px;
-      }
-    </style>
   </head>
   <body>
-    <!-- titres -->
-    <h1>Hello world</h1>
-    <h2>Hello world</h2>
-    <h3>Hello world</h3>
-    <h4>Hello world</h4>
-    <h5>Hello world</h5>
-    <h6>Hello world</h6>
+    <main class="container">
+      <!-- Titres -->
+      <h1>Hello world</h1>
+      <h2>Hello world</h2>
+      <h3>Hello world</h3>
+      <h4>Hello world</h4>
+      <h5>Hello world</h5>
+      <h6>Hello world</h6>
 
-    <!-- paragraphe -->
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque laborum
-      veritatis perferendis delectus nobis eum sapiente quo reiciendis, tempore
-      officiis.
-    </p>
+      <!-- Paragraphe -->
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque laborum
+        veritatis perferendis delectus nobis eum sapiente quo reiciendis,
+        tempore officiis.
+      </p>
 
-    <!-- lien -->
-    <a href="#">Exemple de lien</a>
+      <!-- Lien -->
+      <a href="#">Exemple de lien</a>
 
-    <!-- liste -->
-    <ul>
-      <li>Premier item</li>
-      <li>Second item</li>
-      <li>Troisième item</li>
-    </ul>
+      <!-- Liste -->
+      <ul>
+        <li>Premier item</li>
+        <li>Second item</li>
+        <li>Troisième item</li>
+      </ul>
 
-    <!-- img -->
-    <img src="./computer.jpeg" alt="computer" class="img" />
-    <br />
+      <!-- Img -->
+      <img src="./computer.jpeg" alt="computer" class="img" />
+      <br />
 
-    <!-- boutons -->
-    <button class="btn" type="button">Bouton régulier</button>
-    <button class="btn btn-hipster" type="button">Bouton hipster</button>
-    <br />
-    <br />
+      <!-- Boutons -->
+      <button type="button" class="btn">Bouton régulier</button>
+      <button type="button" class="btn btn-soft">Bouton soft</button>
+      <br />
+      <br />
 
-    <!-- alertes -->
-    <div role="alert" class="alert alert-danger">Salut depuis danger</div>
-    <div role="alert" class="alert alert-success">Salut depuis succès</div>
+      <!-- Alertes -->
+      <div role="alert" class="alert alert-danger">Alerte danger</div>
+      <div role="alert" class="alert alert-success">Alerte succès</div>
+      <br />
+      <br />
 
-    <!-- formulaire -->
-    <form class="form">
-      <h3 class="form-title">Formulaire de contact</h3>
+      <!-- Formulaire -->
+      <form class="form">
+        <h2 class="form-title">Formulaire de contact</h2>
 
-      <!-- nom -->
-      <div class="form-row">
-        <label for="name" class="form-label">Nom</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="John"
-          class="form-input"
-        />
+        <!-- Nom -->
+        <div class="form-row">
+          <label for="name" class="form-label">Nom</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="John"
+            class="form-input"
+          />
+        </div>
+
+        <!-- Nombre -->
+        <div class="form-row">
+          <label for="number" class="form-label">Numéro</label>
+          <input type="number" name="number" id="number" class="form-input" />
+        </div>
+
+        <!-- Email -->
+        <div class="form-row">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email" class="form-input" />
+          <p class="form-alert">Veuillez fournir une valeur</p>
+        </div>
+
+        <!-- Zone de texte -->
+        <div class="form-row">
+          <label for="textarea" class="form-label">Message</label>
+          <textarea id="textarea" class="form-textarea">
+Valeur par défaut
+          </textarea>
+        </div>
+
+        <!-- Vie privée -->
+        <div class="form-row">
+          <input
+            type="checkbox"
+            name="privacy"
+            id="privacy"
+            class="fine-print"
+          />
+          <label for="privacy" class="form-label form-label-privacy">
+            J'accepte que mes données personnelles soient traitées conformément
+            à la <a href="#" target="_blank">politique de confidentialité</a>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-block">Envoyer</button>
+      </form>
+
+      <br />
+
+      <!-- Chargement -->
+      <div class="loading"></div>
+
+      <!-- Section -->
+      <div class="section">
+        <div class="title">
+          <h2>Titre de la section</h2>
+          <div class="title-underline"></div>
+        </div>
       </div>
-
-      <!-- nombre -->
-      <div class="form-row">
-        <label for="number" class="form-label">Numéro</label>
-        <input type="number" name="number" id="number" class="form-input" />
-      </div>
-
-      <!-- email -->
-      <div class="form-row">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" name="email" id="email" class="form-input" />
-        <small class="form-alert">Veuillez fournir une valeur</small>
-      </div>
-
-      <!-- zone de texte -->
-      <div class="form-row">
-        <label for="textarea" class="form-label">Message</label>
-        <textarea id="textarea" class="form-textarea">
-          Valeur par défaut
-        </textarea>
-      </div>
-
-      <!-- vie privée -->
-      <div class="form-row">
-        <input type="checkbox" name="privacy" id="privacy" class="fine-print" />
-        <label for="privacy" class="form-label"
-          >J'accepte que mes données personnelles soient traitées conformément à
-          la <a href="#">politique de confidentialité</a>
-        </label>
-      </div>
-
-      <!-- soumettre -->
-      <button class="btn btn-block">Envoyer</button>
-    </form>
-
-    <!-- chargement -->
-    <div class="loading"></div>
-
-    <!-- section -->
-    <div class="section">
-      <!-- titre -->
-      <div class="title">
-        <h2>Titre de la section</h2>
-        <div class="title-underline"></div>
-      </div>
-    </div>
+    </main>
   </body>
 </html>
