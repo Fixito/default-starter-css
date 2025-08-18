@@ -1,93 +1,150 @@
-# Styles CSS par défaut
+# 🎨 CSS Starter par Défaut
 
-- Gagne du temps sur la configuration du projet
-- Moins de lignes de CSS
+> Un système de design moderne et sémantique pour démarrer vos projets web rapidement.
 
-## Normalize
+## ✨ Caractéristiques
 
-Petit fichier CSS qui assure la cohérence entre les navigateurs dans le style par défaut des éléments HTML.
+- 🚀 **Performance** : Variables CSS optimisées et mode sombre automatique
+- ♿ **Accessibilité** : HTML sémantique et focus visible par défaut
+- 📱 **Responsive** : Typographie fluide avec `clamp()` et breakpoints logiques
+- 🌙 **Mode sombre** : Détection automatique avec `prefers-color-scheme`
+- 🎯 **Moderne** : Utilise OKLCH, propriétés logiques
+- 🧩 **Modulaire** : Approche HTML-first avec data-attributes
 
-Manière alternative de faire cela :
+## 🚀 Démarrage rapide
 
-```css
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-```
-
-- Aller sur [Docs](https://necolas.github.io/normalize.css/)
-- Télécharger la dernière version
-- Créer un fichier `normalize.css` et coller le contenu
-- Configurer le lien dans le HTML :
+1. **Téléchargez** les fichiers CSS
+2. **Incluez** dans votre HTML :
 
 ```html
-<link rel="stylesheet" href="./normalize.css" />
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Normalize pour la cohérence cross-browser -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <!-- Notre système de design -->
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+</html>
 ```
 
-## Main
+3. **Utilisez** le HTML sémantique :
 
-Créer un fichier `main.css`
+```html
+<!-- Boutons -->
+<button>Bouton par défaut</button>
+<button data-variant="soft">Bouton doux</button>
+<button data-variant="block">Bouton pleine largeur</button>
 
-### Les Polices
+<!-- Sections -->
+<section>
+  <header>
+    <h2>Titre avec soulignement automatique</h2>
+  </header>
+</section>
 
-#### Sélectionner Des Polices
+<!-- Formulaires -->
+<form>
+  <label for="email">Email</label>
+  <input type="email" id="email" />
+</form>
+```
 
-- [fontpair](https://www.fontpair.co/)
-- [pagecloud](https://www.pagecloud.com/blog/best-google-fonts-pairings)
+## 🏗️ Architecture
 
-#### Prendre le CSS
-
-- [typescale](https://type-scale.com/)
-- [fluid-typescale](https://www.fluid-type-scale.com/)
-
-Faire quelques ajustements :
+### Variables sémantiques
 
 ```css
-*,
-::after,
-::before {
-  box-sizing: border-box;
+/* Couleurs de base */
+--color-bg: var(--primary-50);
+--color-text: var(--primary-950);
+--color-link: var(--primary-600);
+
+/* Composants */
+--color-btn-bg: var(--primary-600);
+--color-alert-danger-bg: var(--red-50);
+```
+
+### Typographie fluide
+
+Basée sur [Fluid Type Scale](https://www.fluid-type-scale.com/) pour une mise à l'échelle parfaite :
+
+```css
+/* Échelle fluide responsive : 320px → 1280px */
+--fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+--fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+--fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+--fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+--fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+--fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+--fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+```
+
+## 🎨 Palette de couleurs
+
+- **Primary** : Système complet 50→950 en OKLCH
+- **Neutral** : Gris harmonieux pour les textes et arrière-plans
+- **Success/Error** : Couleurs sémantiques pour les états
+
+## 🌙 Mode sombre
+
+Basculement automatique selon les préférences système :
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--neutral-900);
+    --color-text: var(--white);
+  }
 }
 ```
 
-- Définir `margin-bottom: 1em` et `max-width: 65ch` pour les `p`
-- Définir `margin: 0`, `margin-bottom: 1.38rem` pour les `h1,h2,h3,h4,h5`
+## 📦 Composants inclus
 
-## Les Couleurs
+- ✅ **Boutons** : Variants via `data-variant`
+- ✅ **Formulaires** : Labels, Inputs et textarea stylés
+- ✅ **Alertes** : Succès et erreur
+- ✅ **Sections** : En-tête de section
+- ✅ **Utilitaires** : Container, flow, sr-only
+- ✅ **Compositions** : Auto-grid et cluster
 
-```css
-:root {
-  --black: oklch(14.077% 0.0044 285.776);
-  --white: oklch(100% 0 0);
-  --green-light: oklch(98.2% 0.018 155.826);
-  --green-dark: oklch(44.8% 0.119 151.328);
-  --red-light: oklch(97.1% 0.013 17.38);
-  --red-dark: oklch(44.4% 0.177 26.899);
-}
-```
+## 🛠️ Personnalisation
 
-#### Sélectionner La Couleur Primaire
+### Changer la couleur primaire
 
-Approche manuelle :
+1. Générez votre palette sur [Tailwind Colors](https://tailwindcss.com/docs/customizing-colors)
+2. Remplacez les variables `--primary-*` dans `:root`
 
-- [coolors](https://coolors.co/)
-- [happyhues](https://www.happyhues.co/)
-- Sélectionner sa propre couleur
-- Récupérer les nuances sur [shadowlord](https://noeldelgado.github.io/shadowlord/#73fdad)
+### Ajuster la typographie
 
-Approche plus rapide avec les librairies :
+1. Utilisez [Fluid Type Scale Calculator](https://www.fluid-type-scale.com/)
+2. Remplacez les variables `--fs-*`
 
-- [Bootstrap](https://getbootstrap.com/docs/5.0/customize/color/#color-sass-maps)
-- [Tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
+## 📚 Ressources
 
-#### Sélectionenr Les Gris
+### Typographie fluide
 
-- [tailwind](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
+- [Fluid Type Scale](https://www.fluid-type-scale.com/) - Générateur d'échelles fluides
 
-#### Box Shadow
+### Couleurs
 
-- [tailwind](https://tailwindcss.com/docs/box-shadow)
+- [Coolors](https://coolors.co/) - Générateur de palettes
+- [Happy Hues](https://www.happyhues.co/) - Palettes avec exemples
+- [OKLCH Color Picker](https://oklch.com/) - Espace colorimétrique moderne
+
+### Inspiration
+
+- [Fonts In Use](https://fontsinuse.com/) - Typographie en situation
+- [Modern Font Stacks](https://modernfontstacks.com/) - Polices système
+
+## 🏆 Bonnes pratiques
+
+- **HTML sémantique** : Privilégiez `<section>`, `<button>`, `<small>`
+- **Data attributes** : Utilisez `data-variant` au lieu de classes
+- **Variables CSS** : Système cohérent et maintenable
+- **Responsive-first** : Mobile d'abord avec `clamp()`
+- **Accessibilité** : Focus visible et contrastes respectés
+
+## 📄 Licence
+
+MIT License - Utilisez librement dans vos projets !

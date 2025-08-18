@@ -1,6 +1,8 @@
 :root {
-  /* Colors */
-  /* Primary */
+  /* Couleurs */
+  color-scheme: light dark;
+
+  /* Primaire */
   --primary-50: oklch(97% 0.014 254.604);
   --primary-100: oklch(93.2% 0.032 255.585);
   --primary-200: oklch(88.2% 0.059 254.128);
@@ -13,7 +15,7 @@
   --primary-900: oklch(37.9% 0.146 265.522);
   --primary-950: oklch(28.2% 0.091 267.935);
 
-  /* Neutral */
+  /* Neutre */
   --neutral-50: oklch(98.5% 0 0);
   --neutral-100: oklch(98.5% 0 0);
   --neutral-200: oklch(92.2% 0 0);
@@ -26,21 +28,57 @@
   --neutral-900: oklch(20.5% 0 0);
   --neutral-950: oklch(14.5% 0 0);
 
-  /* Rest of the colors */
+  /* Autres couleurs */
   --black: oklch(14.077% 0.0044 285.776);
   --white: oklch(100% 0 0);
   --green-50: oklch(98.2% 0.018 155.826);
+  --green-200: oklch(92.5% 0.084 155.995);
+  --green-500: oklch(72.3% 0.219 149.579);
   --green-800: oklch(44.8% 0.119 151.328);
   --red-50: oklch(97.1% 0.013 17.38);
+  --red-200: oklch(88.5% 0.062 18.334);
+  --red-400: oklch(70.4% 0.191 22.216);
+  --red-500: oklch(63.7% 0.237 25.331);
   --red-800: oklch(44.4% 0.177 26.899);
 
-  /* fonts */
-  --small-text: 0.875rem;
-  --extra-small-text: 0.7em;
+  /* Polices */
+  --fs-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
+  --fs-sm: clamp(0.8rem, 0.15vi + 0.77rem, 0.89rem);
+  --fs-base: clamp(1rem, 0.31vi + 0.94rem, 1.19rem);
+  --fs-md: clamp(1.25rem, 0.55vi + 1.14rem, 1.58rem);
+  --fs-lg: clamp(1.56rem, 0.91vi + 1.38rem, 2.11rem);
+  --fs-xl: clamp(1.95rem, 1.43vi + 1.67rem, 2.81rem);
+  --fs-xxl: clamp(2.44rem, 2.18vi + 2.01rem, 3.75rem);
+  --fs-xxxl: clamp(3.05rem, 3.24vi + 2.4rem, 5rem);
 
-  /* rest of the vars */
-  --background-color: var(--primary-50);
-  --text-color: var(--primary-950);
+  /* Variables sémantiques - Thème clair par défaut */
+  --color-bg: var(--primary-50);
+  --color-text: var(--primary-950);
+  --color-link: var(--primary-600);
+  --color-link-hover: var(--primary-700);
+  --color-outline: var(--primary-600);
+  --color-placeholder: var(--neutral-400);
+
+  /* Variables sémantiques des composants */
+  --color-btn-bg: var(--primary-600);
+  --color-btn-bg-hover: var(--primary-700);
+  --color-btn-text: var(--white);
+
+  --color-btn-soft-bg: var(--primary-100);
+  --color-btn-soft-bg-hover: var(--primary-200);
+  --color-btn-soft-text: var(--primary-700);
+
+  --color-alert-danger-bg: var(--red-50);
+  --color-alert-danger-text: var(--red-800);
+  --color-alert-success-bg: var(--green-50);
+  --color-alert-success-text: var(--green-800);
+
+  --color-form-bg: var(--white);
+  --color-form-input-bg: var(--primary-50);
+  --color-form-input-border: var(--neutral-200);
+  --color-form-alert-text: var(--red-800);
+
+  --color-title-underline: var(--primary-200);
 
   --radius: 0.375rem;
   --rounded-sm: calc(var(--radius) - 4px);
@@ -53,10 +91,10 @@
   --transition: 150ms ease;
 
   --fixed-width: 600px;
-  --view-width: 90vw;
   --max-width: 1280px;
+  --view-width: 90vw;
 
-  /* Box shadow */
+  /* Ombres */
   --shadow-xs: 0 1px rgb(0 0 0 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -65,17 +103,44 @@
     0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
 
-  /* Type scale https://utopia.fyi/type/calculator?c=320,16,1.125,1200,20,1.381,7,1,&s=,1.5%7C2%7C3%7C4%7C6,l-3xl */
-  --step--1: clamp(0.91rem, calc(0.88rem + 0.03vw), 0.89rem);
-  --step-0: clamp(1rem, calc(0.91rem + 0.45vw), 1.25rem);
-  --step-1: clamp(1.13rem, calc(0.91rem + 1.09vw), 1.73rem);
-  --step-2: clamp(1.27rem, calc(0.86rem + 2.03vw), 2.38rem);
-  --step-3: clamp(1.42rem, calc(0.74rem + 3.4vw), 3.29rem);
-  --step-4: clamp(1.6rem, calc(0.53rem + 5.35vw), 4.55rem);
-  --step-5: clamp(1.8rem, calc(0.17rem + 8.14vw), 6.28rem);
-  --step-6: clamp(2.03rem, calc(-0.39rem + 12.08vw), 8.67rem);
-  --step-7: clamp(2.28rem, calc(-1.24rem + 17.63vw), 11.98rem);
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Thème sombre - Surcharge des variables sémantiques uniquement */
+    --color-bg: var(--neutral-900);
+    --color-text: var(--white);
+    --color-link: var(--primary-400);
+    --color-link-hover: var(--primary-300);
+    --color-outline: var(--primary-500);
+    --color-placeholder: var(--neutral-500);
+
+    /* Surcharges des boutons */
+    --color-btn-bg: var(--primary-500);
+    --color-btn-bg-hover: var(--primary-400);
+    --color-btn-soft-bg: oklch(from var(--primary-500) l c h / 0.2);
+    --color-btn-soft-bg-hover: oklch(from var(--primary-500) l c h / 0.3);
+    --color-btn-soft-text: var(--primary-400);
+
+    /* Surcharges des alertes */
+    --color-alert-danger-bg: oklch(from var(--red-500) l c h / 0.15);
+    --color-alert-danger-text: var(--red-200);
+    --color-alert-success-bg: oklch(from var(--green-500) l c h / 0.15);
+    --color-alert-success-text: var(--green-200);
+
+    /* Surcharges des formulaires */
+    --color-form-bg: oklch(from var(--neutral-800) l c h / 0.5);
+    --color-form-input-bg: oklch(from var(--white) l c h / 0.05);
+    --color-form-input-border: oklch(from var(--white) l c h / 0.1);
+    --color-form-alert-text: var(--red-400);
+
+    /* Autres surcharges */
+    --color-title-underline: var(--primary-500);
+  }
+
+  form {
+    outline: 1px solid oklch(from var(--white) l c h / 0.1);
+  }
 }
 
 *,
@@ -87,7 +152,7 @@
 }
 
 *:focus-visible {
-  outline-color: var(--primary-600);
+  outline-color: var(--color-outline);
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 2px;
@@ -98,11 +163,11 @@ html {
 } /* 16px */
 
 body {
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--color-bg);
+  color: var(--color-text);
   font-family: system-ui, sans-serif;
   font-weight: 400;
-  font-size: var(--step-0);
+  font-size: var(--fs-base);
   line-height: 1.5;
   min-block-size: 100dvh;
 }
@@ -122,23 +187,23 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
+  font-size: var(--fs-xxxl);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
+  font-size: var(--fs-xxl);
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+  font-size: var(--fs-xl);
 }
 
 h4 {
-  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
+  font-size: var(--fs-lg);
 }
 
 h5 {
-  font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
+  font-size: var(--fs-md);
 }
 
 p {
@@ -147,25 +212,23 @@ p {
   text-wrap: pretty;
 }
 
-small,
-.text-small {
-  font-size: var(--small-text);
+small {
+  font-size: var(--fs-sm);
 }
 
 a {
-  color: var(--primary-600);
+  color: var(--color-link);
   font-weight: 600;
   text-decoration: none;
 
   &:hover {
-    color: var(--primary-500);
+    color: var(--color-link-hover);
     text-decoration: underline;
     text-underline-offset: 0.25rem;
   }
 }
 
-ul,
-ol {
+ul {
   list-style: none;
 }
 
@@ -188,7 +251,7 @@ textarea:not([rows]) {
 
 ::placeholder {
   font-family: inherit;
-  color: var(--neutral-400);
+  color: var(--color-placeholder);
 }
 
 .img {
@@ -197,25 +260,64 @@ textarea:not([rows]) {
   object-fit: cover;
 }
 
-/** BLOCKS **/
-.section {
+/** SECTION **/
+section {
   padding-block: 3rem;
 }
 
-.title {
+section header {
   text-align: center;
 }
 
-.title > h2 {
+section header h2 {
+  font-size: var(--fs-lg);
   margin-inline: auto;
 }
 
-.title-underline {
-  background: var(--primary-200);
+section header h2::after {
+  content: '';
+  display: block;
+  background: var(--color-title-underline);
   block-size: 2px;
   inline-size: 8rem;
   margin-block-start: 1.25rem;
   margin-inline: auto;
+}
+
+/** BOUTONS */
+button {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-btn-text);
+  background: var(--color-btn-bg);
+  border: transparent;
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-xs);
+  padding: 0.375rem 0.75rem;
+  transition: var(--transition);
+  transition-property: background-color;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-btn-bg-hover);
+  }
+}
+
+button[data-variant='soft'] {
+  color: var(--color-btn-soft-text);
+  background: var(--color-btn-soft-bg);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-btn-soft-bg-hover);
+  }
+}
+
+button[data-variant='block'] {
+  inline-size: 100%;
 }
 
 /** COMPOSITIONS **/
@@ -236,7 +338,7 @@ textarea:not([rows]) {
   align-items: var(--cluster-vertical-alignment, center);
 }
 
-/** UTILITIES **/
+/** UTILITAIRES **/
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
 }
@@ -271,65 +373,29 @@ textarea:not([rows]) {
   }
 }
 
-/** BUTTONS */
-.btn {
-  display: inline-block;
-  font-size: var(--small-text);
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--white);
-  background: var(--primary-600);
-  border: transparent;
-  border-radius: var(--rounded-lg);
-  box-shadow: var(--shadow-xs);
-  padding: 0.375rem 0.75rem;
-  transition: var(--transition);
-  transition-property: background-color;
-
-  &:hover,
-  &:focus-visible {
-    background: var(--primary-500);
-  }
-}
-
-.btn-soft {
-  color: var(--primary-700);
-  background: var(--primary-100);
-
-  &:hover,
-  &:focus-visible {
-    background: var(--primary-200);
-  }
-}
-
-.btn-block {
-  inline-size: 100%;
-}
-
-/** ALERTS */
+/** ALERTES */
 .alert {
   border: transparent;
   border-radius: var(--rounded-md);
-  font-size: var(--small-text);
+  font-size: var(--fs-sm);
   font-weight: 500;
-  margin-block-end: var(--space-s);
   padding: 1rem;
 }
 
 .alert-danger {
-  color: var(--red-800);
-  background: var(--red-50);
+  color: var(--color-alert-danger-text);
+  background: var(--color-alert-danger-bg);
 }
 
 .alert-success {
-  color: var(--green-800);
-  background: var(--green-50);
+  color: var(--color-alert-success-text);
+  background: var(--color-alert-success-bg);
 }
 
-/** FORM */
-.form {
+/** FORMULAIRE */
+form {
   max-inline-size: var(--fixed-width);
-  background: var(--white);
+  background-color: var(--color-form-bg);
   border-radius: var(--rounded-lg);
   box-shadow: var(--shadow-sm);
   padding-block: 3rem;
@@ -338,12 +404,19 @@ textarea:not([rows]) {
 }
 
 @media screen and (min-width: 40rem) {
-  .form {
+  form {
     padding-inline: 3rem;
   }
 }
 
+label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
 .form-title {
+  font-size: var(--fs-md);
   margin-inline: auto;
   text-align: center;
   margin-block-end: 2.5rem;
@@ -356,23 +429,17 @@ textarea:not([rows]) {
 .form-row:has(.fine-print) {
   display: flex;
   align-items: baseline;
-  gap: 0.5ch;
-}
-
-.form-label {
-  display: block;
-  font-size: var(--small-text);
-  font-weight: 500;
+  gap: 0.75ch;
 }
 
 .form-label-privacy {
   font-weight: 400;
 }
 
-.form-input,
-.form-textarea {
-  background: var(--background-color);
-  border: 1px solid var(--neutral-200);
+input:not(.fine-print),
+textarea {
+  background: var(--color-form-input-bg);
+  border: 1px solid var(--color-form-input-border);
   border-radius: var(--rounded-lg);
   inline-size: 100%;
   line-height: 1.5;
@@ -381,20 +448,20 @@ textarea:not([rows]) {
 }
 
 @media screen and (min-width: 40rem) {
-  .form-input,
-  .form-textarea {
-    font-size: var(--small-text);
+  input,
+  textarea {
+    font-size: var(--fs-sm);
   }
 }
 
 .form-alert {
-  color: var(--red-800);
-  font-size: var(--small-text);
+  color: var(--color-form-alert-text);
+  font-size: var(--fs-sm);
   font-weight: 500;
-  margin-block-start: 0.75rem;
+  margin-block-start: 0.5rem;
 }
 
-/** SPINNER */
+/** CHARGEMENT **/
 @keyframes spin {
   to {
     transform: rotate(360deg);

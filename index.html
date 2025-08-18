@@ -23,6 +23,8 @@
       <h5>Hello world</h5>
       <h6>Hello world</h6>
 
+      <br />
+
       <!-- Paragraphe -->
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque laborum
@@ -30,8 +32,13 @@
         tempore officiis.
       </p>
 
+      <br />
+
       <!-- Lien -->
       <a href="#">Exemple de lien</a>
+
+      <br />
+      <br />
 
       <!-- Liste -->
       <ul>
@@ -40,53 +47,44 @@
         <li>Troisième item</li>
       </ul>
 
+      <br />
+
       <!-- Img -->
       <img src="./computer.webp" alt="computer" class="img" />
       <br />
 
       <!-- Boutons -->
-      <button type="button" class="btn">Bouton régulier</button>
-      <button type="button" class="btn btn-soft">Bouton soft</button>
+      <button type="button">Bouton par défaut</button>
+      <button type="button" data-variant="soft">Bouton doux</button>
       <br />
       <br />
 
       <!-- Alertes -->
       <div role="alert" class="alert alert-danger">Alerte danger</div>
+      <br />
       <div role="alert" class="alert alert-success">Alerte succès</div>
 
       <!-- Formulaire -->
-      <form class="form">
+      <form>
         <h2 class="form-title">Formulaire de contact</h2>
 
         <!-- Nom -->
         <div class="form-row">
-          <label for="name" class="form-label">Nom</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="John"
-            class="form-input"
-          />
-        </div>
-
-        <!-- Nombre -->
-        <div class="form-row">
-          <label for="number" class="form-label">Numéro</label>
-          <input type="number" name="number" id="number" class="form-input" />
+          <label for="name">Nom</label>
+          <input type="text" name="name" id="name" placeholder="John" />
         </div>
 
         <!-- Email -->
         <div class="form-row">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" name="email" id="email" class="form-input" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
           <p class="form-alert">Veuillez fournir une valeur</p>
         </div>
 
         <!-- Zone de texte -->
         <div class="form-row">
-          <label for="textarea" class="form-label">Message</label>
-          <textarea id="textarea" class="form-textarea">
+          <label for="message">Message</label>
+          <textarea id="message">
 Valeur par défaut
           </textarea>
         </div>
@@ -99,25 +97,24 @@ Valeur par défaut
             id="privacy"
             class="fine-print"
           />
-          <label for="privacy" class="form-label form-label-privacy">
+          <label for="privacy" class="form-label-privacy">
             J'accepte que mes données personnelles soient traitées conformément
             à la <a href="#" target="_blank">politique de confidentialité</a>
           </label>
         </div>
 
-        <button type="submit" class="btn btn-block">Envoyer</button>
+        <button type="submit" data-variant="block">Envoyer</button>
       </form>
 
       <!-- Chargement -->
       <div class="loading"></div>
 
       <!-- Section -->
-      <div class="section">
-        <div class="title">
+      <section>
+        <header>
           <h2>Titre de la section</h2>
-          <div class="title-underline"></div>
-        </div>
-      </div>
+        </header>
+      </section>
     </main>
   </body>
 </html>
