@@ -64,6 +64,11 @@
   --color-btn-bg-hover: var(--primary-700);
   --color-btn-text: var(--white);
 
+  --color-btn-secondary-border: var(--neutral-300);
+  --color-btn-secondary-bg: var(--white);
+  --color-btn-secondary-bg-hover: var(--neutral-50);
+  --color-btn-secondary-text: var(--primary-950);
+
   --color-btn-soft-bg: var(--primary-100);
   --color-btn-soft-bg-hover: var(--primary-200);
   --color-btn-soft-text: var(--primary-700);
@@ -75,6 +80,7 @@
 
   --color-form-bg: var(--white);
   --color-form-input-bg: var(--primary-50);
+  --color-form-select-bg: var(--primary-50);
   --color-form-input-border: var(--neutral-200);
   --color-form-alert-text: var(--red-800);
 
@@ -118,6 +124,12 @@
     /* Surcharges des boutons */
     --color-btn-bg: var(--primary-500);
     --color-btn-bg-hover: var(--primary-400);
+
+    --color-btn-secondary-border: oklch(from var(--white) l c h / 0.05);
+    --color-btn-secondary-bg: oklch(from var(--white) l c h / 0.1);
+    --color-btn-secondary-bg-hover: oklch(from var(--white) l c h / 0.2);
+    --color-btn-secondary-text: var(--white);
+
     --color-btn-soft-bg: oklch(from var(--primary-500) l c h / 0.2);
     --color-btn-soft-bg-hover: oklch(from var(--primary-500) l c h / 0.3);
     --color-btn-soft-text: var(--primary-400);
@@ -131,6 +143,7 @@
     /* Surcharges des formulaires */
     --color-form-bg: oklch(from var(--neutral-800) l c h / 0.5);
     --color-form-input-bg: oklch(from var(--white) l c h / 0.05);
+    --color-form-select-bg: oklch(from var(--neutral-800) l c h / 0.95);
     --color-form-input-border: oklch(from var(--white) l c h / 0.1);
     --color-form-alert-text: var(--red-400);
 
@@ -241,7 +254,8 @@ input {
 }
 
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible {
   outline-offset: -1px;
 }
 
@@ -298,11 +312,21 @@ button {
   padding: 0.375rem 0.75rem;
   transition: var(--transition);
   transition-property: background-color;
-  cursor: pointer;
 
   &:hover,
   &:focus-visible {
     background: var(--color-btn-bg-hover);
+  }
+}
+
+button[data-variant='secondary'] {
+  background: var(--color-btn-secondary-bg);
+  color: var(--color-btn-secondary-text);
+  border: 1px solid var(--color-btn-secondary-border);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-btn-secondary-bg-hover);
   }
 }
 
@@ -398,9 +422,8 @@ form {
   background-color: var(--color-form-bg);
   border-radius: var(--rounded-lg);
   box-shadow: var(--shadow-sm);
-  padding-block: 3rem;
-  padding-inline: 1.5rem;
   margin: 2.5rem auto;
+  padding: 3rem 1.5rem;
 }
 
 @media screen and (min-width: 40rem) {
@@ -436,9 +459,15 @@ label {
   font-weight: 400;
 }
 
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
 input:not(.fine-print),
+select,
 textarea {
-  background: var(--color-form-input-bg);
+  background-color: var(--color-form-input-bg);
   border: 1px solid var(--color-form-input-border);
   border-radius: var(--rounded-lg);
   inline-size: 100%;
@@ -447,8 +476,37 @@ textarea {
   margin-block-start: 0.5rem;
 }
 
+select {
+  background-color: var(--color-form-select-bg);
+
+  &::picker(select) {
+    background-color: var(--color-form-select-bg);
+    border: 1px solid var(--color-form-input-border);
+    border-radius: var(--rounded-md);
+    padding: 0.375rem 0.75rem;
+    top: calc(anchor(bottom) + 0.25rem);
+  }
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--rounded-md);
+
+  &:checked {
+    font-weight: 500;
+  }
+
+  &::checkmark {
+    order: 1;
+    margin-left: auto;
+  }
+}
+
 @media screen and (min-width: 40rem) {
   input,
+  select,
   textarea {
     font-size: var(--fs-sm);
   }

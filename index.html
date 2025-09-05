@@ -55,6 +55,7 @@
 
       <!-- Boutons -->
       <button type="button">Bouton par défaut</button>
+      <button type="button" data-variant="secondary">Bouton secondaire</button>
       <button type="button" data-variant="soft">Bouton doux</button>
       <br />
       <br />
@@ -79,6 +80,18 @@
           <label for="email">Email</label>
           <input type="email" name="email" id="email" />
           <p class="form-alert">Veuillez fournir une valeur</p>
+        </div>
+
+        <div class="form-row">
+          <label for="training">Formation</label>
+          <select name="training" id="training">
+            <option value="" disabled selected>
+              -- Sélectionner une formation --
+            </option>
+            <option value="cda">CDA</option>
+            <option value="dwwm">DWWM</option>
+            <option value="ia">IA</option>
+          </select>
         </div>
 
         <!-- Zone de texte -->
