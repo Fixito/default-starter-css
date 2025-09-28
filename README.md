@@ -1,6 +1,6 @@
 # 🎨 CSS Starter par Défaut
 
-> Un système de design moderne et sémantique pour démarrer vos projets web rapidement.
+> Un système de design moderne avec CSS Layers pour démarrer vos projets web rapidement.
 
 ## ✨ Caractéristiques
 
@@ -8,8 +8,9 @@
 - ♿ **Accessibilité** : HTML sémantique et focus visible par défaut
 - 📱 **Responsive** : Typographie fluide avec `clamp()` et breakpoints logiques
 - 🌙 **Mode sombre** : Détection automatique avec `prefers-color-scheme`
-- 🎯 **Moderne** : Utilise OKLCH, propriétés logiques
-- 🧩 **Modulaire** : Approche HTML-first avec data-attributes
+- 🎯 **Moderne** : Utilise OKLCH, propriétés logiques CSS, et CSS Layers
+- 🧩 **Modulaire** : Architecture en couches avec priorité contrôlée
+- 🎛️ **Maintenable** : CSS Layers pour une hiérarchie claire
 
 ## 🚀 Démarrage rapide
 
@@ -20,9 +21,6 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Normalize pour la cohérence cross-browser -->
-    <link rel="stylesheet" href="./normalize.css" />
-    <!-- Notre système de design -->
     <link rel="stylesheet" href="./main.css" />
   </head>
 </html>
@@ -50,19 +48,48 @@
 </form>
 ```
 
-## 🏗️ Architecture
+## 🏗️ Architecture CSS Layers
 
-### Variables sémantiques
+### Hiérarchie des couches (priorité croissante)
 
 ```css
-/* Couleurs de base */
---color-bg: var(--primary-50);
---color-text: var(--primary-950);
---color-link: var(--primary-600);
+@layer normalize, reset, base, theme, buttons, section, compositions, utilities, alerts, form;
+```
 
-/* Composants */
---color-btn-bg: var(--primary-600);
---color-alert-danger-bg: var(--red-50);
+1. **`normalize`** - Normalisation cross-browser
+2. **`reset`** - Reset minimal (box-sizing, margins)
+3. **`base`** - Styles de base (body, headings, links)
+4. **`theme`** - Variables sémantiques et thèmes
+5. **`buttons`** - Styles des boutons
+6. **`section`** - Styles des sections
+7. **`compositions`** - Layouts (auto-grid, cluster)
+8. **`utilities`** - Classes utilitaires
+9. **`alerts`** - Composants d'alerte
+10. **`form`** - Styles de formulaires
+
+### Variables sémantiques dans le layer `theme`
+
+```css
+@layer theme {
+  :root {
+    /* Semantic variables - Light theme */
+    --color-bg: var(--primary-50);
+    --color-text: var(--primary-950);
+    --color-link: var(--primary-600);
+
+    /* Component semantic variables */
+    --color-btn-bg: var(--primary-600);
+    --color-alert-danger-bg: var(--red-50);
+  }
+
+  /* Dark theme overrides */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: var(--neutral-900);
+      --color-text: var(--white);
+    }
+  }
+}
 ```
 
 ### Typographie fluide
@@ -88,13 +115,23 @@ Basée sur [Fluid Type Scale](https://www.fluid-type-scale.com/) pour une mise �
 
 ## 🌙 Mode sombre
 
-Basculement automatique selon les préférences système :
+Thème sombre organisé dans le layer `theme` avec basculement automatique :
 
 ```css
-@media (prefers-color-scheme: dark) {
+@layer theme {
+  /* Light theme par défaut */
   :root {
-    --color-bg: var(--neutral-900);
-    --color-text: var(--white);
+    /* variables claires */
+  }
+
+  /* Dark theme override */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: var(--neutral-900);
+      --color-text: var(--white);
+      --color-link: var(--primary-400);
+      /* + toutes les surcharges composants */
+    }
   }
 }
 ```
@@ -113,12 +150,25 @@ Basculement automatique selon les préférences système :
 ### Changer la couleur primaire
 
 1. Générez votre palette sur [Tailwind Colors](https://tailwindcss.com/docs/customizing-colors)
-2. Remplacez les variables `--primary-*` dans `:root`
+2. Remplacez les variables `--primary-*` dans `:root` (design tokens)
+3. Les variables sémantiques dans `@layer theme` s'adaptent automatiquement
 
 ### Ajuster la typographie
 
 1. Utilisez [Fluid Type Scale Calculator](https://www.fluid-type-scale.com/)
-2. Remplacez les variables `--fs-*`
+2. Remplacez les variables `--fs-*` dans `:root`
+
+### Ajouter un thème personnalisé
+
+```css
+@layer theme {
+  [data-theme='custom'] {
+    --color-bg: #your-color;
+    --color-text: #your-text;
+    /* Surcharge des variables sémantiques */
+  }
+}
+```
 
 ## 📚 Ressources
 
@@ -141,9 +191,19 @@ Basculement automatique selon les préférences système :
 
 - **HTML sémantique** : Privilégiez `<section>`, `<button>`, `<small>`
 - **Data attributes** : Utilisez `data-variant` au lieu de classes
-- **Variables CSS** : Système cohérent et maintenable
+- **CSS Layers** : Architecture en couches pour une priorité prévisible
+- **Variables CSS** : Design tokens séparés des variables sémantiques
 - **Responsive-first** : Mobile d'abord avec `clamp()`
 - **Accessibilité** : Focus visible et contrastes respectés
+- **Thèmes** : Centralisés dans le layer `theme` pour faciliter la maintenance
+
+## 🔧 Avantages des CSS Layers
+
+- ✅ **Priorité prévisible** : Plus de conflit de spécificité
+- ✅ **Architecture claire** : Séparation logique des responsabilités
+- ✅ **Maintenance facile** : Modifications ciblées par couche
+- ✅ **Évolutivité** : Ajout de nouveaux thèmes simplifié
+- ✅ **Performance** : Contrôle fin du cascade CSS
 
 ## 📄 Licence
 
