@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import url('./normalize.css') layer(normalize);
 
-@layer normalize, reset, base, theme, buttons, section, compostions, utilities, alerts, form;
+@layer normalize, reset, theme, base, compositions, section, buttons, alerts, form, utilities;
 
 @view-transition {
   navigation: auto;
@@ -39,10 +41,12 @@
   /* Other colors */
   --black: oklch(14.077% 0.0044 285.776);
   --white: oklch(100% 0 0);
+
   --green-50: oklch(98.2% 0.018 155.826);
   --green-200: oklch(92.5% 0.084 155.995);
   --green-500: oklch(72.3% 0.219 149.579);
   --green-800: oklch(44.8% 0.119 151.328);
+
   --red-50: oklch(97.1% 0.013 17.38);
   --red-200: oklch(88.5% 0.062 18.334);
   --red-400: oklch(70.4% 0.191 22.216);
@@ -50,6 +54,8 @@
   --red-800: oklch(44.4% 0.177 26.899);
 
   /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
   --fs-xs: clamp(0.64rem, 0.05vi + 0.63rem, 0.67rem);
   --fs-sm: clamp(0.8rem, 0.15vi + 0.77rem, 0.89rem);
   --fs-base: clamp(1rem, 0.31vi + 0.94rem, 1.19rem);
@@ -70,102 +76,110 @@
 
   --transition: 150ms ease;
 
-  --fixed-width: 600px;
-  --max-width: 1280px;
-  --view-width: 90vw;
+  --fixed-width: 37.5rem;
+  --max-width: 80rem;
 
   /* Shadows */
   --shadow-xs: 0 1px rgb(0 0 0 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 @layer theme {
   :root {
-    /* Semantic variables - Light theme */
-    --color-bg: var(--primary-50);
-    --color-text: var(--primary-950);
-    --color-link: var(--primary-600);
-    --color-link-hover: var(--primary-700);
-    --color-outline: var(--primary-600);
-    --color-placeholder: var(--neutral-400);
+    /* semantic tokens - Light theme */
 
-    /* Component semantic variables */
-    --color-btn-bg: var(--primary-600);
-    --color-btn-bg-hover: var(--primary-700);
-    --color-btn-text: var(--white);
+    /* Base */
+    --background: var(--primary-50);
+    --foreground: var(--primary-950);
 
-    --color-btn-secondary-border: var(--neutral-300);
-    --color-btn-secondary-bg: var(--white);
-    --color-btn-secondary-bg-hover: var(--neutral-50);
-    --color-btn-secondary-text: var(--primary-950);
+    /* Primary */
+    --primary: var(--primary-600);
+    --primary-hover: var(--primary-700);
+    --primary-foreground: var(--white);
 
-    --color-btn-soft-bg: var(--primary-100);
-    --color-btn-soft-bg-hover: var(--primary-200);
-    --color-btn-soft-text: var(--primary-700);
+    /* Secondary */
+    --secondary: var(--white);
+    --secondary-hover: var(--neutral-50);
+    --secondary-foreground: var(--primary-950);
 
-    --color-alert-danger-bg: var(--red-50);
-    --color-alert-danger-text: var(--red-800);
-    --color-alert-success-bg: var(--green-50);
-    --color-alert-success-text: var(--green-800);
+    /* Muted */
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-500);
 
-    --color-form-bg: var(--white);
-    --color-form-input-bg: var(--primary-50);
-    --color-form-select-bg: var(--primary-50);
-    --color-form-input-border: var(--neutral-200);
-    --color-form-alert-text: var(--red-800);
+    /* Accent */
+    --accent: var(--primary-100);
+    --accent-hover: var(--primary-200);
+    --accent-foreground: var(--primary-700);
 
-    --color-title-underline: var(--primary-200);
+    /* Destructive */
+    --destructive: var(--red-50);
+    --destructive-foreground: var(--red-800);
+
+    /* Success */
+    --success: var(--green-50);
+    --success-foreground: var(--green-800);
+
+    /* Interface */
+    --border: var(--neutral-200);
+    --input: var(--primary-50);
+    --select: var(--primary-50);
+    --ring: var(--primary-600);
+
+    /* Card */
+    --card: var(--white);
+    --card-foreground: var(--primary-950);
   }
 
   /* Dark theme */
   @media (prefers-color-scheme: dark) {
     :root {
-      /* Dark theme - Override semantic variables only */
-      --color-bg: var(--neutral-900);
-      --color-text: var(--white);
-      --color-link: var(--primary-400);
-      --color-link-hover: var(--primary-300);
-      --color-outline: var(--primary-500);
-      --color-placeholder: var(--neutral-500);
+      /* Base */
+      --background: var(--neutral-900);
+      --foreground: var(--white);
 
-      /* Button overrides */
-      --color-btn-bg: var(--primary-500);
-      --color-btn-bg-hover: var(--primary-400);
+      /* Primary */
+      --primary: var(--primary-500);
+      --primary-hover: var(--primary-400);
 
-      --color-btn-secondary-border: oklch(from var(--white) l c h / 0.05);
-      --color-btn-secondary-bg: oklch(from var(--white) l c h / 0.1);
-      --color-btn-secondary-bg-hover: oklch(from var(--white) l c h / 0.2);
-      --color-btn-secondary-text: var(--white);
+      /* Secondary */
+      --secondary: oklch(from var(--white) l c h / 0.1);
+      --secondary-hover: oklch(from var(--white) l c h / 0.2);
+      --secondary-foreground: var(--white);
 
-      --color-btn-soft-bg: oklch(from var(--primary-500) l c h / 0.2);
-      --color-btn-soft-bg-hover: oklch(from var(--primary-500) l c h / 0.3);
-      --color-btn-soft-text: var(--primary-400);
+      /* Muted */
+      --muted: var(--neutral-800);
+      --muted-foreground: var(--neutral-400);
 
-      /* Alert overrides */
-      --color-alert-danger-bg: oklch(from var(--red-500) l c h / 0.15);
-      --color-alert-danger-text: var(--red-200);
-      --color-alert-success-bg: oklch(from var(--green-500) l c h / 0.15);
-      --color-alert-success-text: var(--green-200);
+      /* Accent */
+      --accent: oklch(from var(--primary-500) l c h / 0.2);
+      --accent-hover: oklch(from var(--primary-500) l c h / 0.3);
+      --accent-foreground: var(--primary-400);
 
-      /* Form overrides */
-      --color-form-bg: oklch(from var(--neutral-800) l c h / 0.5);
-      --color-form-input-bg: oklch(from var(--white) l c h / 0.05);
-      --color-form-select-bg: oklch(from var(--neutral-800) l c h / 0.95);
-      --color-form-input-border: oklch(from var(--white) l c h / 0.1);
-      --color-form-alert-text: var(--red-400);
+      /* Destructive */
+      --destructive: oklch(from var(--red-500) l c h / 0.15);
+      --destructive-foreground: var(--red-200);
 
-      /* Other overrides */
-      --color-title-underline: var(--primary-500);
+      /* Success */
+      --success: oklch(from var(--green-500) l c h / 0.15);
+      --success-foreground: var(--green-200);
+
+      /* Interface */
+      --border: oklch(from var(--white) l c h / 0.1);
+      --input: oklch(from var(--white) l c h / 0.05);
+      --select: var(--neutral-800);
+      --ring: var(--primary-500);
+
+      /* Card */
+      --card: oklch(from var(--neutral-800) l c h / 0.5);
+      --card-foreground: var(--white);
     }
 
     form {
-      outline: 1px solid oklch(from var(--white) l c h / 0.1);
+      outline: 1px solid var(--border);
     }
   }
 }
@@ -182,7 +196,7 @@
 
 @layer base {
   *:focus-visible {
-    outline-color: var(--color-outline);
+    outline-color: var(--ring);
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px;
@@ -193,9 +207,9 @@
   } /* 16px */
 
   body {
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: system-ui, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
     font-weight: 400;
     font-size: var(--fs-base);
     line-height: 1.5;
@@ -247,12 +261,12 @@
   }
 
   a {
-    color: var(--color-link);
+    color: var(--primary);
     font-weight: 600;
     text-decoration: none;
 
     &:hover {
-      color: var(--color-link-hover);
+      color: var(--primary-hover);
       text-decoration: underline;
       text-underline-offset: 0.25rem;
     }
@@ -282,7 +296,7 @@
 
   ::placeholder {
     font-family: inherit;
-    color: var(--color-placeholder);
+    color: var(--muted-foreground);
   }
 
   .img {
@@ -309,7 +323,7 @@
   section header h2::after {
     content: '';
     display: block;
-    background: var(--color-title-underline);
+    background: var(--accent);
     block-size: 2px;
     inline-size: 8rem;
     margin-block-start: 1.25rem;
@@ -323,8 +337,8 @@
     font-size: var(--fs-sm);
     font-weight: 600;
     line-height: 1.5;
-    color: var(--color-btn-text);
-    background: var(--color-btn-bg);
+    color: var(--primary-foreground);
+    background: var(--primary);
     border: transparent;
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow-xs);
@@ -334,28 +348,28 @@
 
     &:hover,
     &:focus-visible {
-      background: var(--color-btn-bg-hover);
+      background: var(--primary-hover);
     }
   }
 
   button[data-variant='secondary'] {
-    background: var(--color-btn-secondary-bg);
-    color: var(--color-btn-secondary-text);
-    border: 1px solid var(--color-btn-secondary-border);
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
 
     &:hover,
     &:focus-visible {
-      background: var(--color-btn-secondary-bg-hover);
+      background: var(--secondary-hover);
     }
   }
 
   button[data-variant='soft'] {
-    color: var(--color-btn-soft-text);
-    background: var(--color-btn-soft-bg);
+    color: var(--accent-foreground);
+    background: var(--accent);
 
     &:hover,
     &:focus-visible {
-      background: var(--color-btn-soft-bg-hover);
+      background: var(--accent-hover);
     }
   }
 
@@ -405,13 +419,13 @@
     margin-inline: auto;
     padding-inline: 1rem;
 
-    @media (min-width: 40rem) {
+    @media (width >= 40rem) {
       & {
         padding-inline: 1.5rem;
       }
     }
 
-    @media (min-width: 64rem) {
+    @media (width >= 64rem) {
       & {
         padding-inline: 2rem;
       }
@@ -429,26 +443,27 @@
   }
 
   .alert-danger {
-    color: var(--color-alert-danger-text);
-    background: var(--color-alert-danger-bg);
+    color: var(--destructive-foreground);
+    background: var(--destructive);
   }
 
   .alert-success {
-    color: var(--color-alert-success-text);
-    background: var(--color-alert-success-bg);
+    color: var(--success-foreground);
+    background: var(--success);
   }
 }
 
 @layer form {
   form {
+    inline-size: 100%;
     max-inline-size: var(--fixed-width);
-    background-color: var(--color-form-bg);
+    background-color: var(--card);
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow-sm);
     margin: 2.5rem auto;
     padding: 3rem 1.5rem;
 
-    @media (min-width: 40rem) {
+    @media (width >= 40rem) {
       & {
         padding-inline: 3rem;
       }
@@ -490,8 +505,8 @@
   input:not(.fine-print),
   select,
   textarea {
-    background-color: var(--color-form-input-bg);
-    border: 1px solid var(--color-form-input-border);
+    background-color: var(--input);
+    border: 1px solid var(--border);
     border-radius: var(--rounded-lg);
     field-sizing: content;
     inline-size: 100%;
@@ -501,11 +516,11 @@
   }
 
   select {
-    background-color: var(--color-form-select-bg);
+    background-color: var(--input);
 
     &::picker(select) {
-      background-color: var(--color-form-select-bg);
-      border: 1px solid var(--color-form-input-border);
+      background-color: var(--select);
+      border: 1px solid var(--border);
       border-radius: var(--rounded-md);
       padding: 0.375rem 0.75rem;
       top: calc(anchor(bottom) + 0.25rem);
@@ -528,7 +543,7 @@
     }
   }
 
-  @media screen and (min-width: 40rem) {
+  @media screen and (width >= 40rem) {
     input,
     select,
     textarea {
@@ -537,7 +552,7 @@
   }
 
   .form-alert {
-    color: var(--color-form-alert-text);
+    color: var(--destructive-foreground);
     font-size: var(--fs-sm);
     font-weight: 500;
     margin-block-start: 0.5rem;
