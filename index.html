@@ -10,6 +10,8 @@
     <title>Style CSS par défaut</title>
     <!-- Main css -->
     <link rel="stylesheet" href="./main.css" />
+    <!-- JS -->
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
     <main class="container">
@@ -25,9 +27,9 @@
 
       <!-- Paragraphe -->
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque laborum
-        veritatis perferendis delectus nobis eum sapiente quo reiciendis,
-        tempore officiis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora totam hic maiores ipsam
+        suscipit temporibus corporis, laudantium, ea debitis, nemo quasi doloribus sit ex natus nisi
+        aliquam? Possimus, dolor dolorem.
       </p>
 
       <br />
@@ -83,9 +85,7 @@
         <div class="form-row">
           <label for="training">Formation</label>
           <select name="training" id="training">
-            <option value="" disabled selected>
-              -- Sélectionner une formation --
-            </option>
+            <option value="" disabled selected>-- Sélectionner une formation --</option>
             <option value="cda">CDA</option>
             <option value="dwwm">DWWM</option>
             <option value="ia">IA</option>
@@ -102,15 +102,10 @@ Valeur par défaut
 
         <!-- Vie privée -->
         <div class="form-row">
-          <input
-            type="checkbox"
-            name="privacy"
-            id="privacy"
-            class="fine-print"
-          />
+          <input type="checkbox" name="privacy" id="privacy" class="fine-print" />
           <label for="privacy" class="form-label-privacy">
-            J'accepte que mes données personnelles soient traitées conformément
-            à la <a href="#" target="_blank">politique de confidentialité</a>
+            J'accepte que mes données personnelles soient traitées conformément à la
+            <a href="#" target="_blank">politique de confidentialité</a>
           </label>
         </div>
 
@@ -118,7 +113,7 @@ Valeur par défaut
       </form>
 
       <!-- Chargement -->
-      <div class="loading"></div>
+      <div class="loader"></div>
 
       <!-- Section -->
       <section>
@@ -127,5 +122,12 @@ Valeur par défaut
         </header>
       </section>
     </main>
+
+    <!-- Pied de page -->
+    <footer>
+      <div class="footer-container">
+        <p>&copy; <span class="year"></span> Mon Site Web. Tous droits réservés.</p>
+      </div>
+    </footer>
   </body>
 </html>

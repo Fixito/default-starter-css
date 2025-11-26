@@ -2,7 +2,7 @@
 
 @import url('./normalize.css') layer(normalize);
 
-@layer normalize, reset, theme, base, compositions, section, buttons, alerts, form, utilities;
+@layer normalize, reset, theme, base, compositions, components, utilities;
 
 @view-transition {
   navigation: auto;
@@ -306,7 +306,27 @@
   }
 }
 
-@layer section {
+@layer compositions {
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      var(--grid-placement, auto-fill),
+      minmax(var(--grid-min-item-size, 16rem), 1fr)
+    );
+    gap: var(--gutter, 1rem);
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter, 1rem);
+    justify-content: var(--cluster-horizontal-alignment, flex-start);
+    align-items: var(--cluster-vertical-alignment, center);
+  }
+}
+
+@layer components {
+  /* Section */
   section {
     padding-block: 3rem;
   }
@@ -329,9 +349,8 @@
     margin-block-start: 1.25rem;
     margin-inline: auto;
   }
-}
 
-@layer buttons {
+  /* Buttons */
   button {
     display: inline-block;
     font-size: var(--fs-sm);
@@ -376,64 +395,8 @@
   button[data-variant='block'] {
     inline-size: 100%;
   }
-}
 
-@layer compositions {
-  .auto-grid {
-    display: grid;
-    grid-template-columns: repeat(
-      var(--grid-placement, auto-fill),
-      minmax(var(--grid-min-item-size, 16rem), 1fr)
-    );
-    gap: var(--gutter, 1rem);
-  }
-
-  .cluster {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gutter, 1rem);
-    justify-content: var(--cluster-horizontal-alignment, flex-start);
-    align-items: var(--cluster-vertical-alignment, center);
-  }
-}
-
-@layer utilities {
-  .flow > * + * {
-    margin-block-start: var(--flow-space, 1em);
-  }
-
-  .sr-only {
-    border: 0;
-    clip: rect(0 0 0 0);
-    block-size: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    inline-size: 1px;
-  }
-
-  .container {
-    max-inline-size: var(--max-width);
-    margin-inline: auto;
-    padding-inline: 1rem;
-
-    @media (width >= 40rem) {
-      & {
-        padding-inline: 1.5rem;
-      }
-    }
-
-    @media (width >= 64rem) {
-      & {
-        padding-inline: 2rem;
-      }
-    }
-  }
-}
-
-@layer alerts {
+  /* Alerts */
   .alert {
     border: transparent;
     border-radius: var(--rounded-md);
@@ -451,9 +414,8 @@
     color: var(--success-foreground);
     background: var(--success);
   }
-}
 
-@layer form {
+  /* Form */
   form {
     inline-size: 100%;
     max-inline-size: var(--fixed-width);
@@ -557,16 +519,72 @@
     font-weight: 500;
     margin-block-start: 0.5rem;
   }
+
+  /* Footer */
+  .footer-container {
+    padding: 3rem 1.5rem;
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
+
+    p {
+      color: var(--muted-foreground);
+      font-size: var(--fs-sm);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @media (width >= 64rem) {
+      & {
+        padding-inline: 2rem;
+      }
+    }
+  }
 }
 
-/** Loading **/
+@layer utilities {
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+  }
+
+  .sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    block-size: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    inline-size: 1px;
+  }
+
+  .container {
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    @media (width >= 40rem) {
+      & {
+        padding-inline: 1.5rem;
+      }
+    }
+
+    @media (width >= 64rem) {
+      & {
+        padding-inline: 2rem;
+      }
+    }
+  }
+}
+
+/* Loader **/
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-.loading {
+.loader {
   inline-size: 5rem;
   block-size: 5rem;
   margin-inline: auto;
