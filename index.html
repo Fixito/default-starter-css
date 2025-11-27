@@ -14,6 +14,90 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <!-- Navbar-->
+    <nav class="navbar" aria-label="Navigation principale">
+      <div class="container">
+        <div class="nav-wrapper">
+          <!-- Bouton menu mobile -->
+          <div class="nav-mobile-menu">
+            <button
+              type="button"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              class="mobile-menu-btn"
+            >
+              <span class="menu-btn-overlay"></span>
+              <span class="sr-only">Ouvrir le menu principal</span>
+              <!-- Icône hamburger -->
+              <svg
+                class="icon-hamburger"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 5h16" />
+                <path d="M4 12h16" />
+                <path d="M4 19h16" />
+              </svg>
+
+              <!-- Icône fermeture -->
+              <svg
+                class="icon-close"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Contenu de la navigation -->
+          <div class="nav-content">
+            <!-- Logo / Marque -->
+            <div class="nav-brand">
+              <span>
+                <a href="./index.html" class="brand-link">Mon Site Web</a>
+              </span>
+            </div>
+
+            <!-- Menu de navigation -->
+            <div class="nav-menu">
+              <div class="nav-links">
+                <a href="./index.html" aria-current="page" class="nav-link active">Accueil</a>
+                <a href="#" class="nav-link">Tableau de bord</a>
+                <a href="#" class="nav-link">Projets</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu de navigation mobile -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="./index.html" aria-current="page" class="mobile-menu-link active">Accueil</a>
+          <a href="#" class="mobile-menu-link">Tableau de bord</a>
+          <a href="#" class="mobile-menu-link">Projets</a>
+        </div>
+      </div>
+    </nav>
+
     <main class="container">
       <!-- Titres -->
       <h1>Hello world</h1>
@@ -51,12 +135,14 @@
 
       <!-- Img -->
       <img src="./computer.webp" alt="computer" class="img" />
+
       <br />
 
       <!-- Boutons -->
       <button type="button">Bouton par défaut</button>
       <button type="button" data-variant="secondary">Bouton secondaire</button>
       <button type="button" data-variant="soft">Bouton doux</button>
+
       <br />
       <br />
 
@@ -72,14 +158,23 @@
         <!-- Nom -->
         <div class="form-row">
           <label for="name">Nom</label>
-          <input type="text" name="name" id="name" placeholder="John" />
+          <input type="text" name="name" id="name" autocomplete="name" placeholder="John" />
         </div>
 
         <!-- Email -->
         <div class="form-row">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-          <p class="form-alert">Veuillez fournir une valeur</p>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            aria-errormessage="email-error"
+            aria-invalid="true"
+          />
+          <div aria-live="polite">
+            <p class="form-alert" id="email-error">Veuillez entrer un email valide</p>
+          </div>
         </div>
 
         <div class="form-row">

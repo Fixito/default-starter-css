@@ -45,12 +45,14 @@
   --green-50: oklch(98.2% 0.018 155.826);
   --green-200: oklch(92.5% 0.084 155.995);
   --green-500: oklch(72.3% 0.219 149.579);
+  --green-600: oklch(62.7% 0.194 149.214);
   --green-800: oklch(44.8% 0.119 151.328);
 
   --red-50: oklch(97.1% 0.013 17.38);
   --red-200: oklch(88.5% 0.062 18.334);
   --red-400: oklch(70.4% 0.191 22.216);
   --red-500: oklch(63.7% 0.237 25.331);
+  --red-600: oklch(57.7% 0.245 27.325);
   --red-800: oklch(44.4% 0.177 26.899);
 
   /* Fonts */
@@ -88,50 +90,73 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: oklch(98.511% 0.00011 271.152);
+  }
+}
+
 @layer theme {
   :root {
-    /* semantic tokens - Light theme */
-
     /* Base */
-    --background: var(--primary-50);
-    --foreground: var(--primary-950);
+    --background: var(--neutral-50);
+    --foreground: var(--neutral-950);
 
     /* Primary */
     --primary: var(--primary-600);
     --primary-hover: var(--primary-700);
     --primary-foreground: var(--white);
 
+    /* Button */
+    --button-primary: var(--primary);
+    --button-primary-hover: var(--primary-hover);
+    --button-primary-foreground: var(--primary-foreground);
+
+    /* Soft Button */
+    --soft: var(--primary-100);
+    --soft-hover: var(--primary-200);
+    --soft-foreground: var(--primary-700);
+
     /* Secondary */
-    --secondary: var(--white);
-    --secondary-hover: var(--neutral-50);
-    --secondary-foreground: var(--primary-950);
+    --secondary: var(--neutral-50);
+    --secondary-foreground: var(--neutral-800);
 
     /* Muted */
-    --muted: var(--neutral-100);
+    --muted: var(--neutral-50);
     --muted-foreground: var(--neutral-500);
 
     /* Accent */
-    --accent: var(--primary-100);
-    --accent-hover: var(--primary-200);
-    --accent-foreground: var(--primary-700);
+    --accent: var(--white);
+    --accent-hover: var(--neutral-100);
+    --accent-foreground: var(--neutral-950);
 
     /* Destructive */
-    --destructive: var(--red-50);
-    --destructive-foreground: var(--red-800);
-
-    /* Success */
-    --success: var(--green-50);
-    --success-foreground: var(--green-800);
+    --destructive: var(--red-800);
 
     /* Interface */
+    --alert-destructive: var(--red-50);
+    --alert-destructive-foreground: var(--red-800);
+
+    --alert-success: var(--green-50);
+    --alert-success-foreground: var(--green-800);
+
     --border: var(--neutral-200);
-    --input: var(--primary-50);
-    --select: var(--primary-50);
+    --input: var(--background);
+    --select: var(--background);
+    --select-option-hover: var(--neutral-200);
     --ring: var(--primary-600);
 
     /* Card */
     --card: var(--white);
     --card-foreground: var(--primary-950);
+
+    /* Navbar */
+    --navbar: var(--white);
+    --navbar-foreground: var(--secondary-foreground);
+    --navbar-primary: var(--primary-600);
+    --navbar-accent-hover: var(--neutral-200);
+    --navbar-accent-foreground: var(--primary-950);
+    --navbar-border: var(--border);
   }
 
   /* Dark theme */
@@ -145,6 +170,15 @@
       --primary: var(--primary-500);
       --primary-hover: var(--primary-400);
 
+      /* Button */
+      --button-primary: var(--primary-600);
+      --button-primary-hover: var(--primary-500);
+
+      /* Soft Button */
+      --soft: oklch(from var(--primary-500) l c h / 0.2);
+      --soft-hover: oklch(from var(--primary-500) l c h / 0.3);
+      --soft-foreground: var(--primary-400);
+
       /* Secondary */
       --secondary: oklch(from var(--white) l c h / 0.1);
       --secondary-hover: oklch(from var(--white) l c h / 0.2);
@@ -155,27 +189,37 @@
       --muted-foreground: var(--neutral-400);
 
       /* Accent */
-      --accent: oklch(from var(--primary-500) l c h / 0.2);
-      --accent-hover: oklch(from var(--primary-500) l c h / 0.3);
-      --accent-foreground: var(--primary-400);
+      --accent: oklch(from var(--white) l c h / 0.1);
+      --accent-hover: oklch(from var(--white) l c h / 0.2);
+      --accent-foreground: var(--white);
 
       /* Destructive */
-      --destructive: oklch(from var(--red-500) l c h / 0.15);
-      --destructive-foreground: var(--red-200);
-
-      /* Success */
-      --success: oklch(from var(--green-500) l c h / 0.15);
-      --success-foreground: var(--green-200);
+      --destructive: var(--red-400);
 
       /* Interface */
+      --alert-destructive: oklch(from var(--red-500) l c h / 0.15);
+      --alert-destructive-foreground: var(--red-200);
+
+      --alert-success: oklch(from var(--green-500) l c h / 0.15);
+      --alert-success-foreground: var(--green-200);
+
       --border: oklch(from var(--white) l c h / 0.1);
       --input: oklch(from var(--white) l c h / 0.05);
       --select: var(--neutral-800);
-      --ring: var(--primary-500);
+      --select-option-hover: var(--accent-hover);
+      --ring: var(--primary-600);
 
       /* Card */
-      --card: oklch(from var(--neutral-800) l c h / 0.5);
+      --card: oklch(from var(--neutral-800) l c h / 0.15);
       --card-foreground: var(--white);
+
+      /* Navbar */
+      --navbar: var(--neutral-900);
+      --navbar-foreground: var(--neutral-300);
+      --navbar-primary: var(--primary);
+      --navbar-accent-hover: var(--accent-hover);
+      --navbar-accent-foreground: var(--white);
+      --navbar-border: var(--border);
     }
 
     form {
@@ -210,8 +254,8 @@
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
-    font-weight: 400;
     font-size: var(--fs-base);
+    font-weight: 400;
     line-height: 1.5;
     min-block-size: 100dvh;
   }
@@ -251,7 +295,7 @@
   }
 
   p {
-    margin-block-start: 1em;
+    margin-block-start: 1rem;
     max-inline-size: 65ch;
     text-wrap: pretty;
   }
@@ -262,7 +306,7 @@
 
   a {
     color: var(--primary);
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
 
     &:hover {
@@ -326,6 +370,171 @@
 }
 
 @layer components {
+  /* Navbar */
+  .navbar {
+    background-color: var(--navbar);
+    position: relative;
+  }
+
+  .navbar::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    block-size: 1px;
+    background-color: var(--navbar-border);
+  }
+
+  .nav-wrapper {
+    block-size: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .nav-mobile-menu {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    display: flex;
+    align-items: center;
+
+    @media (width >= 40rem) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  .mobile-menu-btn {
+    background-color: transparent;
+    border-radius: var(--rounded-md);
+    color: var(--muted-foreground);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    position: relative;
+
+    &:hover {
+      background-color: var(--navbar-accent-hover);
+      color: var(--navbar-accent-foreground);
+    }
+  }
+
+  .menu-btn-overlay {
+    position: absolute;
+    inset: -0.125rem;
+  }
+
+  .mobile-menu-btn[aria-expanded='true'] .icon-hamburger {
+    display: none;
+  }
+
+  .icon-close {
+    display: none;
+  }
+
+  .mobile-menu-btn[aria-expanded='true'] .icon-close {
+    display: block;
+  }
+
+  .nav-content {
+    display: flex;
+    column-gap: 1.5rem;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    @media (width >= 40rem) {
+      & {
+        justify-content: start;
+      }
+    }
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    a {
+      color: var(--navbar-primary);
+      font-size: var(--fs-md);
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+
+  .nav-menu {
+    display: none;
+
+    @media (width >= 40rem) {
+      & {
+        display: block;
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    column-gap: 1rem;
+  }
+
+  .nav-link {
+    border-radius: var(--rounded-md);
+    color: var(--navbar-foreground);
+    font-size: var(--fs-sm);
+    padding: 0.375rem 0.75rem;
+    text-decoration: none;
+    transition: var(--transition);
+    transition-property: background-color, color;
+
+    &:hover,
+    &.active {
+      color: var(--navbar-accent-foreground);
+      background-color: var(--navbar-accent-hover);
+    }
+  }
+
+  /* Mobile menu */
+  @media (width >= 40rem) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  .navbar:has(.mobile-menu-btn[aria-expanded='false']) .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu-links {
+    padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+  }
+
+  .mobile-menu-links > * + * {
+    margin-block-start: 0.25rem;
+  }
+
+  .mobile-menu-link {
+    border-radius: var(--rounded-md);
+    color: var(--navbar-foreground);
+    display: block;
+    font-size: var(--fs-base);
+    padding: 0.375rem 0.75rem;
+    text-decoration: none;
+    transition: var(--transition);
+    transition-property: background-color, color;
+
+    &:hover,
+    &.active {
+      color: var(--navbar-accent-foreground);
+      background-color: var(--navbar-accent-hover);
+    }
+  }
+
   /* Section */
   section {
     padding-block: 3rem;
@@ -343,7 +552,7 @@
   section header h2::after {
     content: '';
     display: block;
-    background: var(--accent);
+    background: var(--primary-600);
     block-size: 2px;
     inline-size: 8rem;
     margin-block-start: 1.25rem;
@@ -356,8 +565,8 @@
     font-size: var(--fs-sm);
     font-weight: 600;
     line-height: 1.5;
-    color: var(--primary-foreground);
-    background: var(--primary);
+    color: var(--button-primary-foreground);
+    background-color: var(--button-primary);
     border: transparent;
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow-xs);
@@ -367,28 +576,28 @@
 
     &:hover,
     &:focus-visible {
-      background: var(--primary-hover);
+      background-color: var(--button-primary-hover);
     }
   }
 
   button[data-variant='secondary'] {
-    background: var(--secondary);
-    color: var(--secondary-foreground);
+    background: var(--accent);
+    color: var(--accent-foreground);
     border: 1px solid var(--border);
 
     &:hover,
     &:focus-visible {
-      background: var(--secondary-hover);
+      background: var(--accent-hover);
     }
   }
 
   button[data-variant='soft'] {
-    color: var(--accent-foreground);
-    background: var(--accent);
+    color: var(--soft-foreground);
+    background-color: var(--soft);
 
     &:hover,
     &:focus-visible {
-      background: var(--accent-hover);
+      background-color: var(--soft-hover);
     }
   }
 
@@ -406,13 +615,13 @@
   }
 
   .alert-danger {
-    color: var(--destructive-foreground);
-    background: var(--destructive);
+    background: var(--alert-destructive);
+    color: var(--alert-destructive-foreground);
   }
 
   .alert-success {
-    color: var(--success-foreground);
-    background: var(--success);
+    background: var(--alert-success);
+    color: var(--alert-success-foreground);
   }
 
   /* Form */
@@ -440,9 +649,9 @@
 
   .form-title {
     font-size: var(--fs-md);
+    margin-block-end: 2.5rem;
     margin-inline: auto;
     text-align: center;
-    margin-block-end: 2.5rem;
   }
 
   .form-row {
@@ -477,13 +686,26 @@
     margin-block-start: 0.5rem;
   }
 
+  label:has(+ input[aria-invalid='true']),
+  label:has(+ textarea[aria-invalid='true']),
+  label:has(+ select[aria-invalid='true']),
+  input[aria-invalid='true'] + label {
+    color: var(--destructive);
+  }
+
+  input[aria-invalid='true'],
+  textarea[aria-invalid='true'],
+  select[aria-invalid='true'] {
+    border-color: var(--destructive);
+  }
+
   select {
     background-color: var(--input);
 
     &::picker(select) {
       background-color: var(--select);
       border: 1px solid var(--border);
-      border-radius: var(--rounded-md);
+      border-radius: var(--rounded-lg);
       padding: 0.375rem 0.75rem;
       top: calc(anchor(bottom) + 0.25rem);
     }
@@ -493,7 +715,13 @@
     display: flex;
     justify-content: flex-start;
     padding: 0.375rem 0.75rem;
-    border-radius: var(--rounded-md);
+    border-radius: var(--rounded-lg);
+    margin-block-start: 0.5rem;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--select-option-hover);
+    }
 
     &:checked {
       font-weight: 500;
@@ -505,7 +733,7 @@
     }
   }
 
-  @media screen and (width >= 40rem) {
+  @media (width >= 40rem) {
     input,
     select,
     textarea {
@@ -514,7 +742,7 @@
   }
 
   .form-alert {
-    color: var(--destructive-foreground);
+    color: var(--destructive);
     font-size: var(--fs-sm);
     font-weight: 500;
     margin-block-start: 0.5rem;
@@ -585,11 +813,11 @@
 }
 
 .loader {
-  inline-size: 5rem;
-  block-size: 5rem;
-  margin-inline: auto;
-  border: 5px solid var(--neutral-400);
-  border-radius: 50%;
-  border-block-start-color: var(--primary-500);
   animation: spin 1s linear infinite;
+  block-size: 5rem;
+  border: 5px solid var(--border);
+  border-block-start-color: var(--primary-600);
+  border-radius: 50%;
+  inline-size: 5rem;
+  margin-inline: auto;
 }
