@@ -43,12 +43,15 @@
   --white: oklch(100% 0 0);
 
   --green-50: oklch(98.2% 0.018 155.826);
+  --green-100: oklch(96.2% 0.044 156.743);
   --green-200: oklch(92.5% 0.084 155.995);
+  --green-400: oklch(79.2% 0.209 151.711);
   --green-500: oklch(72.3% 0.219 149.579);
   --green-600: oklch(62.7% 0.194 149.214);
   --green-800: oklch(44.8% 0.119 151.328);
 
   --red-50: oklch(97.1% 0.013 17.38);
+  --red-100: oklch(93.6% 0.032 17.717);
   --red-200: oklch(88.5% 0.062 18.334);
   --red-400: oklch(70.4% 0.191 22.216);
   --red-500: oklch(63.7% 0.237 25.331);
@@ -78,6 +81,7 @@
 
   --transition: 150ms ease;
 
+  --card-width: 24rem;
   --fixed-width: 37.5rem;
   --max-width: 80rem;
 
@@ -134,10 +138,10 @@
     --destructive: var(--red-800);
 
     /* Interface */
-    --alert-destructive: var(--red-50);
+    --alert-destructive: var(--red-100);
     --alert-destructive-foreground: var(--red-800);
 
-    --alert-success: var(--green-50);
+    --alert-success: var(--green-100);
     --alert-success-foreground: var(--green-800);
 
     --border: var(--neutral-200);
@@ -210,7 +214,7 @@
       --ring: var(--primary-600);
 
       /* Card */
-      --card: oklch(from var(--neutral-800) l c h / 0.15);
+      --card: oklch(from var(--neutral-800) l c h / 0.4);
       --card-foreground: var(--white);
 
       /* Navbar */
@@ -220,10 +224,6 @@
       --navbar-accent-hover: var(--accent-hover);
       --navbar-accent-foreground: var(--white);
       --navbar-border: var(--border);
-    }
-
-    form {
-      outline: 1px solid var(--border);
     }
   }
 }
@@ -348,6 +348,10 @@
     max-inline-size: 100%;
     object-fit: cover;
   }
+
+  main {
+    padding-block-start: clamp(1.5rem, 3vw, 3rem);
+  }
 }
 
 @layer compositions {
@@ -366,6 +370,11 @@
     gap: var(--gutter, 1rem);
     justify-content: var(--cluster-horizontal-alignment, flex-start);
     align-items: var(--cluster-vertical-alignment, center);
+  }
+
+  .page {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
   }
 }
 
@@ -410,7 +419,7 @@
 
   .mobile-menu-btn {
     background-color: transparent;
-    border-radius: var(--rounded-md);
+    border-radius: var(--rounded-lg);
     color: var(--muted-foreground);
     display: inline-flex;
     justify-content: center;
@@ -484,7 +493,7 @@
   }
 
   .nav-link {
-    border-radius: var(--rounded-md);
+    border-radius: var(--rounded-lg);
     color: var(--navbar-foreground);
     font-size: var(--fs-sm);
     padding: 0.375rem 0.75rem;
@@ -519,7 +528,7 @@
   }
 
   .mobile-menu-link {
-    border-radius: var(--rounded-md);
+    border-radius: var(--rounded-lg);
     color: var(--navbar-foreground);
     display: block;
     font-size: var(--fs-base);
@@ -607,11 +616,25 @@
 
   /* Alerts */
   .alert {
-    border: transparent;
-    border-radius: var(--rounded-md);
+    border-radius: var(--rounded-lg);
     font-size: var(--fs-sm);
     font-weight: 500;
     padding: 1rem;
+  }
+
+  .alert-content {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .alert-icon-wrapper {
+    flex-shrink: 0;
+  }
+
+  .alert-icon {
+    display: block;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
   }
 
   .alert-danger {
@@ -624,23 +647,37 @@
     color: var(--alert-success-foreground);
   }
 
-  /* Form */
-  form {
+  /* Card */
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     inline-size: 100%;
-    max-inline-size: var(--fixed-width);
+    max-inline-size: var(--card-width);
     background-color: var(--card);
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow-sm);
-    margin: 2.5rem auto;
-    padding: 3rem 1.5rem;
+    color: var(--card-foreground);
+    padding: 1.5rem 1rem;
 
     @media (width >= 40rem) {
       & {
-        padding-inline: 3rem;
+        padding: 2rem;
       }
     }
   }
 
+  .card-title {
+    font-size: var(--fs-md);
+  }
+
+  .card-description {
+    color: var(--muted-foreground);
+    font-size: var(--fs-sm);
+    margin-block-start: 0.5rem;
+  }
+
+  /* Form */
   label {
     display: block;
     font-size: var(--fs-sm);
@@ -650,8 +687,6 @@
   .form-title {
     font-size: var(--fs-md);
     margin-block-end: 2.5rem;
-    margin-inline: auto;
-    text-align: center;
   }
 
   .form-row {
@@ -787,6 +822,7 @@
   }
 
   .container {
+    inline-size: 100%;
     max-inline-size: var(--max-width);
     margin-inline: auto;
     padding-inline: 1rem;

@@ -9,11 +9,11 @@
     />
     <title>Style CSS par défaut</title>
     <!-- Main css -->
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <!-- JS -->
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </head>
-  <body>
+  <body class="page">
     <!-- Navbar-->
     <nav class="navbar" aria-label="Navigation principale">
       <div class="container">
@@ -80,8 +80,7 @@
             <div class="nav-menu">
               <div class="nav-links">
                 <a href="./index.html" aria-current="page" class="nav-link active">Accueil</a>
-                <a href="#" class="nav-link">Tableau de bord</a>
-                <a href="#" class="nav-link">Projets</a>
+                <a href="./cards.html" class="nav-link">Cartes</a>
               </div>
             </div>
           </div>
@@ -92,8 +91,7 @@
       <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
           <a href="./index.html" aria-current="page" class="mobile-menu-link active">Accueil</a>
-          <a href="#" class="mobile-menu-link">Tableau de bord</a>
-          <a href="#" class="mobile-menu-link">Projets</a>
+          <a href="./cards.html" class="mobile-menu-link">Cartes</a>
         </div>
       </div>
     </nav>
@@ -147,65 +145,111 @@
       <br />
 
       <!-- Alertes -->
-      <div role="alert" class="alert alert-danger">Alerte danger</div>
-      <br />
-      <div role="alert" class="alert alert-success">Alerte succès</div>
-
-      <!-- Formulaire -->
-      <form>
-        <h2 class="form-title">Formulaire de contact</h2>
-
-        <!-- Nom -->
-        <div class="form-row">
-          <label for="name">Nom</label>
-          <input type="text" name="name" id="name" autocomplete="name" placeholder="John" />
-        </div>
-
-        <!-- Email -->
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            autocomplete="email"
-            aria-errormessage="email-error"
-            aria-invalid="true"
-          />
-          <div aria-live="polite">
-            <p class="form-alert" id="email-error">Veuillez entrer un email valide</p>
+      <div role="alert" class="alert alert-danger">
+        <div class="alert-content">
+          <div class="alert-icon-wrapper">
+            <svg
+              class="alert-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m15 9-6 6" />
+              <path d="m9 9 6 6" />
+            </svg>
           </div>
-        </div>
 
-        <div class="form-row">
-          <label for="training">Formation</label>
-          <select name="training" id="training">
-            <option value="" disabled selected>-- Sélectionner une formation --</option>
-            <option value="cda">CDA</option>
-            <option value="dwwm">DWWM</option>
-            <option value="ia">IA</option>
-          </select>
+          <span class="alert-text">Alerte danger</span>
         </div>
+      </div>
 
-        <!-- Zone de texte -->
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message">
-Valeur par défaut
-          </textarea>
+      <br />
+
+      <div role="alert" class="alert alert-success">
+        <div class="alert-content">
+          <div class="alert-icon-wrapper">
+            <svg
+              class="alert-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+
+          <span class="alert-text">Alerte succès</span>
         </div>
+      </div>
 
-        <!-- Vie privée -->
-        <div class="form-row">
-          <input type="checkbox" name="privacy" id="privacy" class="fine-print" />
-          <label for="privacy" class="form-label-privacy">
-            J'accepte que mes données personnelles soient traitées conformément à la
-            <a href="#" target="_blank">politique de confidentialité</a>
-          </label>
-        </div>
-
-        <button type="submit" data-variant="block">Envoyer</button>
-      </form>
+      <!-- Carte -->
+      <div class="card" style="margin: 2.5rem auto">
+        <!-- Formulaire -->
+        <form>
+          <h2 class="form-title">Formulaire de contact</h2>
+          <!-- Nom -->
+          <div class="form-row">
+            <label for="name">Nom</label>
+            <input type="text" name="name" id="name" autocomplete="name" placeholder="John" />
+          </div>
+          <!-- Email -->
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              aria-errormessage="email-error"
+              aria-invalid="true"
+            />
+            <div aria-live="polite">
+              <p class="form-alert" id="email-error">Veuillez entrer un email valide.</p>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="training">Formation</label>
+            <select name="training" id="training">
+              <option value="" disabled selected>-- Sélectionner une formation --</option>
+              <option value="cda">CDA</option>
+              <option value="dwwm">DWWM</option>
+              <option value="ia">IA</option>
+            </select>
+          </div>
+          <!-- Zone de texte -->
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message">
+        Valeur par défaut
+            </textarea>
+          </div>
+          <!-- Vie privée -->
+          <div class="form-row">
+            <input type="checkbox" name="privacy" id="privacy" class="fine-print" />
+            <label for="privacy" class="form-label-privacy">
+              J'accepte que mes données personnelles soient traitées conformément à la
+              <a href="#" target="_blank">politique de confidentialité</a>
+            </label>
+          </div>
+          <button type="submit" data-variant="block">Envoyer</button>
+        </form>
+      </div>
 
       <!-- Chargement -->
       <div class="loader"></div>

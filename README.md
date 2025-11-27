@@ -64,10 +64,23 @@ Les tokens sont automatiquement adaptés en mode sombre via `@media (prefers-col
 
 - ✅ **Navbar** : Responsive avec menu mobile accessible
 - ✅ **Boutons** : `default`, `secondary`, `soft`, `block`
+- ✅ **Card** : `.card`, `.card-title`, `.card-description`
 - ✅ **Formulaires** : Inputs, select, textarea, validation `aria-invalid`
 - ✅ **Alertes** : `alert-danger`, `alert-success`
 - ✅ **Layouts** : Container, auto-grid, cluster, flow
 - ✅ **Loader** : Animation de chargement
+
+## 📁 Structure du projet
+
+```
+css/
+├── main.css          # Styles principaux
+└── normalize.css     # Normalisation cross-browser
+js/
+├── main.js           # Script principal (ES Module)
+└── utils/
+    └── dom.js        # Utilitaires DOM (selectElement)
+```
 
 ## 🛠️ Personnalisation
 

@@ -1,6 +1,7 @@
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const yearElement = document.querySelector('.year');
+import { selectElement as get } from './utils/dom.js';
+
+const mobileMenuBtn = get('.mobile-menu-btn');
+const yearElement = get('.year');
 
 const currentYear = new Date().getFullYear();
 
