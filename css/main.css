@@ -820,6 +820,28 @@
     }
   }
 
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--rounded-lg);
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    padding: 0.25rem 0.5rem;
+    font-size: var(--fs-xs);
+    font-weight: 500;
+  }
+
+  .badge-danger {
+    background-color: var(--alert-destructive);
+    color: var(--alert-destructive-foreground);
+  }
+
+  .badge-success {
+    background-color: var(--alert-success);
+    color: var(--alert-success-foreground);
+  }
+
   /* Table */
   @media (width >=40rem) {
     .table-header {

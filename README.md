@@ -17,15 +17,15 @@
 @layer normalize, reset, theme, base, compositions, components, utilities;
 ```
 
-| Layer          | Description                            |
-| -------------- | -------------------------------------- |
-| `normalize`    | Normalisation cross-browser            |
-| `reset`        | Reset minimal (box-sizing, margins)    |
-| `theme`        | Tokens sémantiques light/dark          |
-| `base`         | Styles de base (body, headings, links) |
-| `compositions` | Layouts (auto-grid, cluster, page)     |
-| `components`   | Navbar, boutons, formulaires, alertes  |
-| `utilities`    | Container, flow, sr-only               |
+| Layer          | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| `normalize`    | Normalisation cross-browser                          |
+| `reset`        | Reset minimal (box-sizing, margins)                  |
+| `theme`        | Tokens sémantiques light/dark                        |
+| `base`         | Styles de base (body, headings, links)               |
+| `compositions` | Layouts (auto-grid, cluster, page)                   |
+| `components`   | Navbar, boutons, formulaires, alertes, badges, table |
+| `utilities`    | Container, flow, sr-only                             |
 
 ## 🎨 Tokens sémantiques
 
@@ -33,13 +33,14 @@ Variables CSS sémantiques pour couleurs, composants et UI. Adaptées automatiqu
 
 ## 📦 Composants inclus
 
-- ✅ **Navbar** : Responsive avec menu mobile accessible
+- ✅ **Alertes** : alert-danger, alert-success
+- ✅ **Badges** : default, badge-success, badge-danger
 - ✅ **Boutons** : default, secondary, soft, block
 - ✅ **Card** : .card, .card-title, .card-description
 - ✅ **Formulaires** : Inputs, select, textarea, validation aria-invalid
-- ✅ **Alertes** : alert-danger, alert-success
 - ✅ **Layouts** : Container, auto-grid, cluster, flow
 - ✅ **Loader** : Animation de chargement
+- ✅ **Navbar** : Responsive avec menu mobile accessible
 - ✅ **Table** : Tableau stylisé
 
 ## 📁 Structure du projet
