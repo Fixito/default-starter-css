@@ -23,52 +23,24 @@
 | `reset`        | Reset minimal (box-sizing, margins)    |
 | `theme`        | Tokens sémantiques light/dark          |
 | `base`         | Styles de base (body, headings, links) |
-| `compositions` | Layouts (auto-grid, cluster)           |
+| `compositions` | Layouts (auto-grid, cluster, page)     |
 | `components`   | Navbar, boutons, formulaires, alertes  |
 | `utilities`    | Container, flow, sr-only               |
 
 ## 🎨 Tokens sémantiques
 
-```css
-:root {
-  /* Base */
-  --background: var(--neutral-50);
-  --foreground: var(--neutral-950);
-
-  /* Primary & Buttons */
-  --primary: var(--primary-600);
-  --button-primary: var(--primary);
-  --soft: var(--primary-100);
-
-  /* UI */
-  --accent: var(--white);
-  --muted: var(--neutral-50);
-  --border: var(--neutral-200);
-  --card: var(--white);
-  --destructive: var(--red-800);
-
-  /* Navbar */
-  --navbar: var(--white);
-  --navbar-foreground: var(--secondary-foreground);
-  --navbar-primary: var(--primary-600);
-
-  /* Alerts */
-  --alert-destructive: var(--red-50);
-  --alert-success: var(--green-50);
-}
-```
-
-Les tokens sont automatiquement adaptés en mode sombre via `@media (prefers-color-scheme: dark)`.
+Variables CSS sémantiques pour couleurs, composants et UI. Adaptées automatiquement en mode sombre via `prefers-color-scheme`. Consultez `@layer theme` dans `main.css` pour la liste complète.
 
 ## 📦 Composants inclus
 
 - ✅ **Navbar** : Responsive avec menu mobile accessible
-- ✅ **Boutons** : `default`, `secondary`, `soft`, `block`
-- ✅ **Card** : `.card`, `.card-title`, `.card-description`
-- ✅ **Formulaires** : Inputs, select, textarea, validation `aria-invalid`
-- ✅ **Alertes** : `alert-danger`, `alert-success`
+- ✅ **Boutons** : default, secondary, soft, block
+- ✅ **Card** : .card, .card-title, .card-description
+- ✅ **Formulaires** : Inputs, select, textarea, validation aria-invalid
+- ✅ **Alertes** : alert-danger, alert-success
 - ✅ **Layouts** : Container, auto-grid, cluster, flow
 - ✅ **Loader** : Animation de chargement
+- ✅ **Table** : Tableau stylisé
 
 ## 📁 Structure du projet
 

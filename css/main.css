@@ -154,6 +154,9 @@
     --card: var(--white);
     --card-foreground: var(--primary-950);
 
+    /* Table */
+    --table-row-striped: var(--neutral-100);
+
     /* Navbar */
     --navbar: var(--white);
     --navbar-foreground: var(--secondary-foreground);
@@ -216,6 +219,9 @@
       /* Card */
       --card: oklch(from var(--neutral-800) l c h / 0.4);
       --card-foreground: var(--white);
+
+      /* Table */
+      --table-row-striped: oklch(from var(--white) l c h / 0.02);
 
       /* Navbar */
       --navbar: var(--neutral-900);
@@ -411,9 +417,7 @@
     align-items: center;
 
     @media (width >= 40rem) {
-      & {
-        display: none;
-      }
+      display: none;
     }
   }
 
@@ -458,9 +462,7 @@
     align-items: center;
 
     @media (width >= 40rem) {
-      & {
-        justify-content: start;
-      }
+      justify-content: start;
     }
   }
 
@@ -481,9 +483,7 @@
     display: none;
 
     @media (width >= 40rem) {
-      & {
-        display: block;
-      }
+      display: block;
     }
   }
 
@@ -502,7 +502,8 @@
     transition-property: background-color, color;
 
     &:hover,
-    &.active {
+    &.active,
+    &[aria-current='page'] {
       color: var(--navbar-accent-foreground);
       background-color: var(--navbar-accent-hover);
     }
@@ -658,9 +659,7 @@
     padding: 1.5rem 1rem;
 
     @media (width >= 40rem) {
-      & {
-        padding: 2rem;
-      }
+      padding: 2rem;
     }
   }
 
@@ -817,9 +816,140 @@
     }
 
     @media (width >= 64rem) {
-      & {
-        padding-inline: 2rem;
-      }
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Table */
+  @media (width >=40rem) {
+    .table-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .table-header-text {
+      flex: auto;
+    }
+  }
+
+  .table-title {
+    font-size: var(--fs-base);
+    line-height: 1.5;
+  }
+
+  .table-description {
+    color: var(--secondary-foreground);
+    font-size: var(--fs-sm);
+    line-height: 1.3333;
+    margin-block-start: 0.5rem;
+  }
+
+  .table-header-actions {
+    margin-block-start: 1rem;
+
+    @media (width >= 40rem) {
+      margin-block-start: 0rem;
+      margin-inline-start: 4rem;
+      flex: none;
+    }
+  }
+
+  .table-container {
+    display: flow-root;
+    margin-block-start: 2rem;
+  }
+
+  .table-wrapper {
+    margin-block: -0.5rem;
+    margin-inline: -1rem;
+    overflow-x: auto;
+
+    @media (width >= 40rem) {
+      margin-inline: -1.5rem;
+    }
+
+    @media (width >= 64rem) {
+      margin-inline: -2rem;
+    }
+  }
+
+  .table-scroll {
+    display: inline-block;
+    min-inline-size: 100%;
+    padding-block: 0.5rem;
+    vertical-align: middle;
+
+    @media (width >= 40rem) {
+      padding-inline: 1.5rem;
+    }
+
+    @media (width >= 64rem) {
+      padding-inline: 2rem;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    position: relative;
+    min-inline-size: 100%;
+  }
+
+  thead {
+    border-block-end: 1px solid var(--border);
+  }
+
+  thead th:first-child {
+    padding-inline-start: 1rem;
+
+    @media (width >= 40rem) {
+      padding-inline-start: 0.75rem;
+    }
+  }
+
+  th {
+    padding-block: 0.875rem;
+    padding-inline-end: 0.75rem;
+    padding-inline-start: 1rem;
+    text-align: start;
+    font-size: var(--fs-sm);
+    line-height: 1.3333;
+    font-weight: 600;
+  }
+
+  thead th:last-child {
+    padding-inline-end: 1rem;
+
+    @media (width >= 40rem) {
+      padding-inline-end: 0.75rem;
+    }
+  }
+
+  tbody tr:nth-of-type(2n) {
+    background-color: var(--table-row-striped);
+  }
+
+  tbody td:first-child {
+    color: var(--foreground);
+    padding-inline-start: 1rem;
+
+    @media (width >= 40rem) {
+      padding-inline-start: 0.75rem;
+    }
+  }
+
+  tbody td {
+    color: var(--muted-foreground);
+    padding: 1rem 0.75rem;
+    font-size: var(--fs-sm);
+    line-height: 1.3333;
+    white-space: nowrap;
+  }
+
+  tbody td:last-child {
+    padding-inline-end: 1rem;
+
+    @media (width >= 40rem) {
+      padding-inline-end: 0.75rem;
     }
   }
 }
@@ -848,15 +978,11 @@
     padding-inline: 1rem;
 
     @media (width >= 40rem) {
-      & {
-        padding-inline: 1.5rem;
-      }
+      padding-inline: 1.5rem;
     }
 
     @media (width >= 64rem) {
-      & {
-        padding-inline: 2rem;
-      }
+      padding-inline: 2rem;
     }
   }
 }

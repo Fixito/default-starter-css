@@ -80,8 +80,8 @@
             <div class="nav-menu">
               <div class="nav-links">
                 <a href="./index.html" class="nav-link">Accueil</a>
-                <a href="./cards.html" aria-current="page" class="nav-link active">Cartes</a>
-                <a href="./tables.html" class="nav-link">Tables</a>
+                <a href="./cards.html" class="nav-link">Cartes</a>
+                <a href="./tables.html" aria-current="page" class="nav-link active">Tables</a>
               </div>
             </div>
           </div>
@@ -92,19 +92,97 @@
       <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
           <a href="./index.html" class="mobile-menu-link">Accueil</a>
-          <a href="./cards.html" aria-current="page" class="mobile-menu-link active">Cartes</a>
-          <a href="./tables.html" class="mobile-menu-link">Tables</a>
+          <a href="./cards.html" class="mobile-menu-link">Cartes</a>
+          <a href="./tables.html" aria-current="page" class="mobile-menu-link active">Tables</a>
         </div>
       </div>
     </nav>
 
     <main class="container">
-      <article class="card">
-        <header>
-          <h3 class="card-title">Carte</h3>
-          <p class="card-description">Carte description</p>
-        </header>
-      </article>
+      <header class="table-header">
+        <div class="table-header-text">
+          <h1 id="table-title" class="table-title">Utilisateurs</h1>
+
+          <p class="table-description">
+            Une liste de tous les utilisateurs de votre compte, comprenant leur nom, leur titre,
+            leur statut et leur rôle.
+          </p>
+        </div>
+
+        <div class="table-header-actions">
+          <button type="button">Ajouter un utilisateur</button>
+        </div>
+      </header>
+
+      <div class="table-container">
+        <div class="table-wrapper">
+          <div role="region" aria-labelledby="table-title" tabindex="0" class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Titre</th>
+                  <th scope="col">Statut</th>
+                  <th scope="col">Rôle</th>
+                  <th scope="col">
+                    <span class="sr-only">Actions</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>Développeur Front-end</td>
+                  <td>
+                    <span
+                      class="status-badge status-active"
+                      role="status"
+                      aria-label="Statut : Actif"
+                      >Actif</span
+                    >
+                  </td>
+                  <td>Membre</td>
+                  <td>
+                    <a href="#" class="table-action-link">Éditer</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jane Doe</td>
+                  <td>Designer</td>
+                  <td>
+                    <span
+                      class="status-badge status-active"
+                      role="status"
+                      aria-label="Statut : Actif"
+                      >Actif</span
+                    >
+                  </td>
+                  <td>Admin</td>
+                  <td>
+                    <a href="#" class="table-action-link">Éditer</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Peter Smith</td>
+                  <td>Copywriter</td>
+                  <td>
+                    <span
+                      class="status-badge status-inactive"
+                      role="status"
+                      aria-label="Statut : Inactif"
+                      >Inactif</span
+                    >
+                  </td>
+                  <td>Membre</td>
+                  <td>
+                    <a href="#" class="table-action-link">Éditer</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Pied de page -->
