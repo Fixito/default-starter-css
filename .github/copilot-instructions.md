@@ -8,7 +8,7 @@ This is a modern CSS design system (in French) inspired by Shadcn, featuring CSS
 
 ### CSS Layers (Cascade Order)
 
-The project uses a strict cascade order defined in [css/main.css](../css/main.css#L5):
+The project uses a strict cascade order defined in [css/main.css](../css/main.css):
 
 ```css
 @layer normalize, reset, theme, base, compositions, components, utilities;

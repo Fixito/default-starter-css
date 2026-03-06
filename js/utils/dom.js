@@ -11,8 +11,13 @@
  *
  * @throws {Error} If no element is found
  */
-export function selectElement(selector, { all = false, parent = document } = {}) {
-  const result = all ? parent.querySelectorAll(selector) : parent.querySelector(selector);
+export function selectElement(
+  selector,
+  { all = false, parent = document } = {},
+) {
+  const result = all
+    ? parent.querySelectorAll(selector)
+    : parent.querySelector(selector);
 
   if (!result || (all && result.length === 0)) {
     throw new Error(`Element(s) not found for selector: "${selector}"`);

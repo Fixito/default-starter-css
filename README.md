@@ -64,18 +64,18 @@ js/
 
 ### Typographie fluide
 
-Basée sur [Fluid Type Scale](https://www.fluid-type-scale.com/) :
+Basée sur [Utopia](https://utopia.fyi/type/calculator/?c=320,16,1.2,1280,18,1.25,5,2,&s=0.75) :
 
 ```css
---fs-sm: clamp(0.8rem, 0.15vi + 0.77rem, 0.89rem);
---fs-base: clamp(1rem, 0.31vi + 0.94rem, 1.19rem);
---fs-md: clamp(1.25rem, 0.55vi + 1.14rem, 1.58rem);
+--fs-sm: clamp(0.8333rem, 0.8111rem + 0.1111vw, 0.9rem);
+--fs-base: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
+--fs-md: clamp(1.2rem, 1.1313rem + 0.3438vw, 1.4063rem);
 /* ... */
 ```
 
 ## 📚 Ressources
 
-- [Fluid Type Scale](https://www.fluid-type-scale.com/) - Générateur d'échelles fluides
+- [Utopia](https://utopia.fyi/) - Générateur d'échelles fluides
 - [OKLCH Color Picker](https://oklch.com/) - Espace colorimétrique moderne
 - [Shadcn UI](https://ui.shadcn.com/) - Inspiration pour les tokens
 
