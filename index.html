@@ -8,12 +8,19 @@
       content="Page de démonstration présentant les styles CSS par défaut avec des exemples d'éléments HTML : titres, paragraphes, liens, listes, boutons, formulaires et alertes."
     />
     <title>Style CSS par défaut</title>
-    <!-- Main css -->
+    <script>
+      const theme =
+        localStorage.getItem('theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+    </script>
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css" />
     <!-- JS -->
     <script type="module" src="./js/main.js"></script>
   </head>
   <body class="page">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <!-- Navbar-->
     <nav class="navbar" aria-label="Navigation principale">
       <div class="container">
@@ -71,44 +78,103 @@
           <div class="nav-content">
             <!-- Logo / Marque -->
             <div class="nav-brand">
-              <span>
-                <a href="./index.html" class="brand-link">Mon Site Web</a>
-              </span>
+              <a href="./index.html" class="brand-link">Mon Site Web</a>
             </div>
 
             <!-- Menu de navigation -->
             <div class="nav-menu">
-              <div class="nav-links">
-                <a
-                  href="./index.html"
-                  aria-current="page"
-                  class="nav-link active"
-                  >Accueil</a
-                >
-                <a href="./cards.html" class="nav-link">Cartes</a>
-                <a href="./tables.html" class="nav-link">Tables</a>
-              </div>
+              <ul class="nav-links" role="list">
+                <li>
+                  <a
+                    href="./index.html"
+                    aria-current="page"
+                    class="nav-link active"
+                    >Accueil</a
+                  >
+                </li>
+                <li><a href="./cards.html" class="nav-link">Cartes</a></li>
+                <li><a href="./tables.html" class="nav-link">Tables</a></li>
+              </ul>
             </div>
+          </div>
+
+          <div class="nav-actions">
+            <!-- Bouton toggle dark/light mode -->
+            <button
+              type="button"
+              class="theme-toggle"
+              aria-label="Basculer le thème"
+            >
+              <span class="menu-btn-overlay"></span>
+              <!-- Icône lune (mode clair actif) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                class="moon-icon"
+              >
+                <path
+                  d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+                />
+              </svg>
+              <!-- Icône soleil (mode sombre actif) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                class="sun-icon"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
 
       <!-- Menu de navigation mobile -->
-      <div class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-links">
-          <a
-            href="./index.html"
-            aria-current="page"
-            class="mobile-menu-link active"
-            >Accueil</a
-          >
-          <a href="./cards.html" class="mobile-menu-link">Cartes</a>
-          <a href="./tables.html" class="mobile-menu-link">Tables</a>
-        </div>
+      <div
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Menu de navigation mobile"
+      >
+        <ul class="mobile-menu-links" role="list">
+          <li>
+            <a
+              href="./index.html"
+              aria-current="page"
+              class="mobile-menu-link active"
+              >Accueil</a
+            >
+          </li>
+          <li><a href="./cards.html" class="mobile-menu-link">Cartes</a></li>
+          <li><a href="./tables.html" class="mobile-menu-link">Tables</a></li>
+        </ul>
       </div>
     </nav>
 
-    <main class="container">
+    <main class="container" id="main-content">
       <!-- Titres -->
       <h1>Hello world</h1>
       <h2>Hello world</h2>
@@ -215,7 +281,7 @@
       </div>
 
       <!-- Carte -->
-      <div class="card" style="margin: 2.5rem auto">
+      <div class="card mx-auto" style="margin-block: 2.5rem">
         <!-- Formulaire -->
         <form>
           <h2 class="form-title">Formulaire de contact</h2>
@@ -261,9 +327,7 @@
           <!-- Zone de texte -->
           <div class="form-row">
             <label for="message">Message</label>
-            <textarea id="message">
-Valeur par défaut
-            </textarea>
+            <textarea id="message">Valeur par défaut</textarea>
           </div>
           <!-- Vie privée -->
           <div class="form-row">
@@ -276,7 +340,9 @@ Valeur par défaut
             <label for="privacy" class="form-label-privacy">
               J'accepte que mes données personnelles soient traitées
               conformément à la
-              <a href="#" target="_blank">politique de confidentialité</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                >politique de confidentialité</a
+              >
             </label>
           </div>
 
@@ -284,7 +350,7 @@ Valeur par défaut
         </form>
       </div>
 
-      <div style="margin-inline: auto; max-inline-size: 24rem">
+      <div class="mx-auto max-w-sm">
         <label for="task">Tâche</label>
 
         <div class="input-group">
