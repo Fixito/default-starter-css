@@ -43,7 +43,6 @@ Deux niveaux de tokens coexistent :
 
 ## 📦 Composants inclus
 
-- ✅ **Alertes** : `alert-danger`, `alert-success`
 - ✅ **Badges** : default, `badge-success`, `badge-danger`
 - ✅ **Boutons** : default, `secondary`, `soft`, `block`
 - ✅ **Card** : `.card`, `.card-title`, `.card-description`
