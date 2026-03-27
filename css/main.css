@@ -4,8 +4,10 @@
 
 @layer normalize, reset, theme, base, compositions, components, utilities;
 
-@view-transition {
-  navigation: auto;
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 
 :root {
@@ -360,11 +362,11 @@
     font-size: 100%; /* 16px */
     -webkit-font-smoothing: antialiased;
     hanging-punctuation: first allow-end last;
-    scroll-behavior: smooth;
     scrollbar-gutter: stable;
 
     @media (prefers-reduced-motion: no-preference) {
       interpolate-size: allow-keywords;
+      scroll-behavior: smooth;
     }
   }
 
