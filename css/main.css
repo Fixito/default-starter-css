@@ -114,6 +114,8 @@
   --tracking-tight: -0.025em;
 
   --transition: 150ms ease;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 
   --card-width: 42rem;
   --fixed-width: 37.5rem;
@@ -639,9 +641,11 @@
     transition: var(--transition);
     transition-property: background-color, color;
 
-    &:hover {
-      background-color: var(--navbar-accent-hover);
-      color: var(--navbar-accent-foreground);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--navbar-accent-hover);
+        color: var(--navbar-accent-foreground);
+      }
     }
 
     &[aria-current='page'],
@@ -736,9 +740,11 @@
     transition: var(--transition);
     transition-property: background-color, color;
 
-    &:hover {
-      background-color: var(--navbar-accent-hover);
-      color: var(--navbar-accent-foreground);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--navbar-accent-hover);
+        color: var(--navbar-accent-foreground);
+      }
     }
 
     &[aria-current='page'],
@@ -782,10 +788,18 @@
     border-radius: var(--rounded-md);
     padding: var(--space-1_5) var(--space-3);
     transition: var(--transition);
-    transition-property: background-color;
+    transition-property: background-color, transform;
 
-    &:hover {
-      background-color: var(--button-primary-hover);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--button-primary-hover);
+      }
+    }
+
+    &:active {
+      transform: scale(0.97);
+      transition-duration: 100ms;
+      transition-timing-function: var(--ease-out);
     }
   }
 
@@ -1270,7 +1284,7 @@
     text-decoration: none;
     z-index: 999;
     transform: translateY(calc(-100% - var(--space-8)));
-    transition: transform var(--transition);
+    transition: transform 150ms var(--ease-out);
 
     &:focus {
       transform: translateY(0);
@@ -1294,6 +1308,6 @@
   margin-inline: auto;
 
   @media (prefers-reduced-motion: no-preference) {
-    animation: spin 1s linear infinite;
+    animation: spin 0.65s linear infinite;
   }
 }
