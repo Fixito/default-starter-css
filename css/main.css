@@ -1,138 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import url('./normalize.css') layer(normalize);
+@import './tokens.css' layer(tokens);
 
-@layer normalize, reset, theme, base, compositions, components, utilities;
+@layer normalize, reset, tokens, theme, base, compositions, components, utilities;
 
 @media (prefers-reduced-motion: no-preference) {
   @view-transition {
     navigation: auto;
   }
-}
-
-:root {
-  /* Colors */
-
-  /* Primary */
-  --color-primary-50: oklch(97% 0.014 254.604);
-  --color-primary-100: oklch(93.2% 0.032 255.585);
-  --color-primary-200: oklch(88.2% 0.059 254.128);
-  --color-primary-300: oklch(80.9% 0.105 251.813);
-  --color-primary-400: oklch(70.7% 0.165 254.624);
-  --color-primary-500: oklch(62.3% 0.214 259.815);
-  --color-primary-600: oklch(54.6% 0.245 262.881);
-  --color-primary-700: oklch(48.8% 0.243 264.376);
-  --color-primary-800: oklch(42.4% 0.199 265.638);
-  --color-primary-900: oklch(37.9% 0.146 265.522);
-  --color-primary-950: oklch(28.2% 0.091 267.935);
-
-  /* Neutral */
-  --color-neutral-50: oklch(98.5% 0.002 247.839);
-  --color-neutral-100: oklch(96.7% 0.003 264.542);
-  --color-neutral-200: oklch(92.8% 0.006 264.531);
-  --color-neutral-300: oklch(87.2% 0.01 258.338);
-  --color-neutral-400: oklch(70.7% 0.022 261.325);
-  --color-neutral-500: oklch(55.1% 0.027 264.364);
-  --color-neutral-600: oklch(44.6% 0.03 256.802);
-  --color-neutral-700: oklch(37.3% 0.034 259.733);
-  --color-neutral-800: oklch(27.8% 0.033 256.848);
-  --color-neutral-900: oklch(21% 0.034 264.665);
-  --color-neutral-950: oklch(13% 0.028 261.692);
-
-  /* Green */
-  --color-green-50: oklch(98.2% 0.018 155.826);
-  --color-green-100: oklch(96.2% 0.044 156.743);
-  --color-green-200: oklch(92.5% 0.084 155.995);
-  --color-green-300: oklch(87.1% 0.15 154.449);
-  --color-green-400: oklch(79.2% 0.209 151.711);
-  --color-green-500: oklch(72.3% 0.219 149.579);
-  --color-green-600: oklch(62.7% 0.194 149.214);
-  --color-green-700: oklch(52.7% 0.154 150.069);
-  --color-green-800: oklch(44.8% 0.119 151.328);
-  --color-green-900: oklch(39.3% 0.095 152.535);
-
-  /* Red */
-  --color-red-50: oklch(97.1% 0.013 17.38);
-  --color-red-100: oklch(93.6% 0.032 17.717);
-  --color-red-200: oklch(88.5% 0.062 18.334);
-  --color-red-300: oklch(79.5% 0.126 20.3);
-  --color-red-400: oklch(70.4% 0.191 22.216);
-  --color-red-500: oklch(63.7% 0.237 25.331);
-  --color-red-600: oklch(57.7% 0.245 27.325);
-  --color-red-700: oklch(50.5% 0.213 27.518);
-  --color-red-800: oklch(44.4% 0.177 26.899);
-  --color-red-900: oklch(39.6% 0.141 25.723);
-
-  /* Other colors */
-  --color-black: oklch(14.077% 0.0044 285.776);
-  --color-white: oklch(100% 0 0);
-
-  /* Spacing */
-  --space-0: 0;
-  --space-0_5: 0.125rem;
-  --space-1: 0.25rem;
-  --space-1_5: 0.375rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-3_5: 0.875rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-
-  /* Fonts */
-  --font-sans: 'Inter', system-ui, sans-serif;
-
-  --fs-xs: clamp(0.6944rem, 0.6859rem + 0.0426vw, 0.72rem);
-  --fs-sm: clamp(0.8333rem, 0.8111rem + 0.1111vw, 0.9rem);
-  --fs-base: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
-  --fs-md: clamp(1.2rem, 1.1313rem + 0.3438vw, 1.4063rem);
-  --fs-lg: clamp(1.44rem, 1.3341rem + 0.5297vw, 1.7578rem);
-  --fs-xl: clamp(1.728rem, 1.5716rem + 0.7821vw, 2.1973rem);
-  --fs-xxl: clamp(2.0736rem, 1.8493rem + 1.1216vw, 2.7466rem);
-  --fs-xxxl: clamp(2.4883rem, 2.1734rem + 1.5748vw, 3.4332rem);
-
-  --fw-normal: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-
-  --leading-tight: 1.1;
-  --leading-snug: 1.3333;
-  --leading-normal: 1.5;
-
-  /* Rest of vars */
-  --radius: 0.625rem;
-  --rounded-sm: calc(var(--radius) - 4px);
-  --rounded-md: calc(var(--radius) - 2px);
-  --rounded-lg: var(--radius);
-  --rounded-xl: calc(var(--radius) + 4px);
-  --rounded-full: calc(infinity * 1px);
-
-  --tracking-tight: -0.025em;
-
-  --transition: 150ms ease;
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-
-  --card-width: 42rem;
-  --fixed-width: 37.5rem;
-  --max-width: 80rem;
-
-  /* Shadows */
-  --ring-shadow:
-    0 0 #0000, inset 0 0 0 1px oklch(from var(--color-neutral-500) l c h / 0.2),
-    0 0 0 #0000, 0 0 0 #0000;
-  --ring-shadow-destructive:
-    0 0 #0000, inset 0 0 0 1px oklch(from var(--color-red-500) l c h / 0.2),
-    0 0 0 #0000, 0 0 0 #0000;
-  --ring-shadow-success:
-    0 0 #0000, inset 0 0 0 1px oklch(from var(--color-green-500) l c h / 0.2),
-    0 0 0 #0000, 0 0 0 #0000;
-
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
 @layer theme {
@@ -141,102 +17,60 @@
 
     /* Base */
     --background: light-dark(var(--color-neutral-50), var(--color-neutral-900));
-    --foreground: light-dark(
-      var(--color-neutral-950),
-      oklch(98.511% 0.00011 271.152)
-    );
+    --foreground: light-dark(var(--color-neutral-950), oklch(98.511% 0.00011 271.152));
 
     /* Primary */
     --primary: light-dark(var(--color-primary-600), var(--color-primary-400));
-    --primary-hover: light-dark(
-      var(--color-primary-700),
-      var(--color-primary-300)
-    );
+    --primary-hover: light-dark(var(--color-primary-700), var(--color-primary-300));
     --color-primary-foreground: var(--color-white);
 
     /* Button — primary always uses primary-600 for accessible contrast on both themes */
     --button-primary: var(--color-primary-600);
-    --button-primary-hover: light-dark(
-      var(--color-primary-700),
-      var(--color-primary-500)
-    );
+    --button-primary-hover: light-dark(var(--color-primary-700), var(--color-primary-500));
     --button-primary-foreground: var(--color-primary-foreground);
 
     /* Secondary */
-    --secondary: light-dark(
-      var(--color-neutral-50),
-      oklch(from var(--color-white) l c h / 0.1)
-    );
+    --secondary: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.1));
     --secondary-hover: light-dark(
       var(--color-neutral-100),
       oklch(from var(--color-white) l c h / 0.2)
     );
-    --secondary-foreground: light-dark(
-      var(--color-neutral-800),
-      var(--color-neutral-300)
-    );
+    --secondary-foreground: light-dark(var(--color-neutral-800), var(--color-neutral-300));
 
     /* Soft Button */
-    --soft: light-dark(
-      var(--color-primary-100),
-      oklch(from var(--color-primary-500) l c h / 0.2)
-    );
+    --soft: light-dark(var(--color-primary-100), oklch(from var(--color-primary-500) l c h / 0.2));
     --soft-hover: light-dark(
       var(--color-primary-200),
       oklch(from var(--color-primary-500) l c h / 0.3)
     );
-    --soft-foreground: light-dark(
-      var(--color-primary-700),
-      var(--color-primary-400)
-    );
+    --soft-foreground: light-dark(var(--color-primary-700), var(--color-primary-400));
 
     /* Muted */
     --muted: light-dark(var(--color-neutral-50), var(--color-neutral-800));
-    --muted-foreground: light-dark(
-      var(--color-neutral-600),
-      var(--color-neutral-400)
-    );
+    --muted-foreground: light-dark(var(--color-neutral-600), var(--color-neutral-400));
 
     /* Accent */
-    --accent: light-dark(
-      var(--color-white),
-      oklch(from var(--color-white) l c h / 0.1)
-    );
-    --accent-hover: light-dark(
-      var(--color-neutral-50),
-      oklch(from var(--color-white) l c h / 0.2)
-    );
-    --accent-foreground: light-dark(
-      var(--color-neutral-950),
-      var(--color-white)
-    );
+    --accent: light-dark(var(--color-white), oklch(from var(--color-white) l c h / 0.1));
+    --accent-hover: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.2));
+    --accent-foreground: light-dark(var(--color-neutral-950), var(--color-white));
 
     /* Destructive */
     --destructive: light-dark(var(--color-red-800), var(--color-red-400));
     --destructive-hover: light-dark(var(--color-red-600), var(--color-red-500));
-    --destructive-foreground: light-dark(
-      var(--color-white),
-      var(--color-neutral-950)
-    );
+    --destructive-foreground: light-dark(var(--color-white), var(--color-neutral-950));
 
     /* Interface */
     --alert-destructive: light-dark(
       var(--color-red-50),
       oklch(from var(--color-red-500) l c h / 0.25)
     );
-    --alert-destructive-foreground: light-dark(
-      var(--color-red-800),
-      var(--color-red-200)
-    );
+    --alert-destructive-foreground: light-dark(var(--color-red-800), var(--color-red-200));
     --outline-destructive: var(--alert-destructive);
     --alert-success: light-dark(
       var(--color-green-50),
       oklch(from var(--color-green-500) l c h / 0.1)
     );
-    --alert-success-foreground: light-dark(
-      var(--color-green-800),
-      var(--color-green-200)
-    );
+    --alert-success-foreground: light-dark(var(--color-green-800), var(--color-green-200));
     --outline-success: light-dark(
       var(--color-green-50),
       oklch(from var(--color-green-500) l c h / 0.2)
@@ -246,35 +80,20 @@
       oklch(from var(--color-neutral-500) l c h / 0.1),
       oklch(from var(--color-neutral-700) l c h / 0.5)
     );
-    --badge-foreground: light-dark(
-      var(--color-neutral-600),
-      var(--color-neutral-400)
-    );
+    --badge-foreground: light-dark(var(--color-neutral-600), var(--color-neutral-400));
     --badge-destructive: light-dark(
       var(--color-red-50),
       oklch(from var(--color-red-900) l c h / 0.3)
     );
-    --badge-destructive-foreground: light-dark(
-      var(--color-red-700),
-      var(--color-red-400)
-    );
+    --badge-destructive-foreground: light-dark(var(--color-red-700), var(--color-red-400));
     --badge-success: light-dark(
       var(--color-green-50),
       oklch(from var(--color-green-900) l c h / 0.3)
     );
-    --badge-success-foreground: light-dark(
-      var(--color-green-700),
-      var(--color-green-400)
-    );
+    --badge-success-foreground: light-dark(var(--color-green-700), var(--color-green-400));
 
-    --border: light-dark(
-      var(--color-neutral-200),
-      oklch(from var(--color-white) l c h / 0.1)
-    );
-    --input: light-dark(
-      var(--color-neutral-50),
-      oklch(from var(--color-white) l c h / 0.05)
-    );
+    --border: light-dark(var(--color-neutral-200), oklch(from var(--color-white) l c h / 0.1));
+    --input: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.05));
     --select: light-dark(var(--color-neutral-50), var(--color-neutral-800));
     --select-option-hover: light-dark(
       var(--color-neutral-200),
@@ -283,10 +102,7 @@
     --ring: var(--color-primary-600);
 
     /* Card */
-    --card: light-dark(
-      var(--color-white),
-      oklch(from var(--color-neutral-800) l c h / 0.5)
-    );
+    --card: light-dark(var(--color-white), oklch(from var(--color-neutral-800) l c h / 0.5));
     --card-foreground: light-dark(var(--color-neutral-950), var(--color-white));
     --card-outline: light-dark(var(--card), var(--border));
 
@@ -294,34 +110,19 @@
     --footer: light-dark(var(--color-white), var(--color-neutral-900));
 
     /* Navbar */
-    --navbar: light-dark(
-      var(--color-white),
-      oklch(from var(--color-neutral-800) l c h / 0.5)
-    );
-    --navbar-foreground: light-dark(
-      var(--color-neutral-950),
-      var(--color-neutral-300)
-    );
-    --navbar-primary: light-dark(
-      var(--color-primary-600),
-      var(--color-primary-400)
-    );
+    --navbar: light-dark(var(--color-white), oklch(from var(--color-neutral-800) l c h / 0.5));
+    --navbar-foreground: light-dark(var(--color-neutral-950), var(--color-neutral-300));
+    --navbar-primary: light-dark(var(--color-primary-600), var(--color-primary-400));
     --navbar-accent: light-dark(
       var(--color-neutral-100),
       oklch(from var(--color-neutral-950) l c h / 0.5)
     );
-    --navbar-accent-foreground: light-dark(
-      var(--color-neutral-950),
-      var(--color-white)
-    );
+    --navbar-accent-foreground: light-dark(var(--color-neutral-950), var(--color-white));
     --navbar-accent-hover: light-dark(
       var(--color-neutral-50),
       oklch(from var(--color-white) l c h / 0.05)
     );
-    --navbar-border: light-dark(
-      oklch(from var(--color-black) l c h / 0.1),
-      var(--border)
-    );
+    --navbar-border: light-dark(oklch(from var(--color-black) l c h / 0.1), var(--border));
 
     /* Table */
     --table-row-striped: light-dark(
@@ -343,12 +144,10 @@
   *,
   *::after,
   *::before {
-    margin: 0;
-    padding: 0;
-    /* "border: 0 solid" is intentional: pre-sets the border-style so that adding
-       border-width or border-color alone is enough to show a border (Tailwind pattern). */
     border: 0 solid;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 }
 
