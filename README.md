@@ -14,13 +14,14 @@
 ## 🏗️ Architecture CSS Layers
 
 ```css
-@layer normalize, reset, theme, base, compositions, components, utilities;
+@layer normalize, reset, tokens, theme, base, compositions, components, utilities;
 ```
 
 | Layer          | Description                                             |
 | -------------- | ------------------------------------------------------- |
 | `normalize`    | Normalisation cross-browser                             |
 | `reset`        | Reset minimal (box-sizing, margins)                     |
+| `tokens`       | Valeurs brutes — palette OKLCH, espacements, typographie |
 | `theme`        | Tokens sémantiques — `light-dark()` gère le mode sombre |
 | `base`         | Styles de base (body, headings, links, img, motion)     |
 | `compositions` | Layouts (auto-grid, cluster, page)                      |
@@ -56,7 +57,8 @@ Deux niveaux de tokens coexistent :
 
 ```
 css/
-├── main.css          # Styles principaux (layers, tokens, composants)
+├── main.css          # Styles principaux (layers, composants)
+├── tokens.css        # Valeurs brutes (palette, espacements, typographie)
 └── normalize.css     # Normalisation cross-browser
 js/
 ├── main.js           # Menu mobile + focus trap + dark mode + année courante
@@ -71,7 +73,7 @@ tables.html           # Exemples de tableaux
 
 ### Changer la couleur primaire
 
-1. Modifiez les variables `--color-primary-*` dans `:root` (espace colorimétrique OKLCH)
+1. Modifiez les variables `--color-primary-*` dans `tokens.css` (espace colorimétrique OKLCH)
 2. Les tokens sémantiques dans `@layer theme` s'adaptent automatiquement
 
 ### Ajouter un token thématique
