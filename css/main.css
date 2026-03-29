@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 @import url('./normalize.css') layer(normalize);
 @import './tokens.css' layer(tokens);
 
@@ -24,10 +22,14 @@
     --primary-hover: light-dark(var(--color-primary-700), var(--color-primary-300));
     --color-primary-foreground: var(--color-white);
 
-    /* Button — primary always uses primary-600 for accessible contrast on both themes */
+    /* Button */
     --button-primary: var(--color-primary-600);
     --button-primary-hover: light-dark(var(--color-primary-700), var(--color-primary-500));
     --button-primary-foreground: var(--color-primary-foreground);
+
+    --button-destructive: var(--color-red-600);
+    --button-destructive-hover: light-dark(var(--color-red-700), var(--color-red-500));
+    --button-destructive-foreground: var(--color-white);
 
     /* Secondary */
     --secondary: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.1));
@@ -49,23 +51,27 @@
     --muted: light-dark(var(--color-neutral-50), var(--color-neutral-800));
     --muted-foreground: light-dark(var(--color-neutral-600), var(--color-neutral-400));
 
-    /* Accent */
-    --accent: light-dark(var(--color-white), oklch(from var(--color-white) l c h / 0.1));
-    --accent-hover: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.2));
-    --accent-foreground: light-dark(var(--color-neutral-950), var(--color-white));
-
     /* Destructive */
     --destructive: light-dark(var(--color-red-800), var(--color-red-400));
     --destructive-hover: light-dark(var(--color-red-600), var(--color-red-500));
     --destructive-foreground: light-dark(var(--color-white), var(--color-neutral-950));
 
+    /* Accent */
+    --accent: light-dark(var(--color-white), oklch(from var(--color-white) l c h / 0.1));
+    --accent-hover: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.2));
+    --accent-foreground: light-dark(var(--color-neutral-950), var(--color-white));
+
     /* Interface */
     --alert-destructive: light-dark(
       var(--color-red-50),
-      oklch(from var(--color-red-500) l c h / 0.25)
+      oklch(from var(--color-red-500) l c h / 0.15)
     );
     --alert-destructive-foreground: light-dark(var(--color-red-800), var(--color-red-200));
-    --outline-destructive: var(--alert-destructive);
+    --outline-destructive: light-dark(
+      var(--color-red-50),
+      oklch(from var(--color-red-500) l c h / 0.25)
+    );
+
     --alert-success: light-dark(
       var(--color-green-50),
       oklch(from var(--color-green-500) l c h / 0.1)
@@ -76,21 +82,39 @@
       oklch(from var(--color-green-500) l c h / 0.2)
     );
 
+    --alert-warning: light-dark(
+      var(--color-yellow-50),
+      oklch(from var(--color-yellow-500) l c h / 0.1)
+    );
+    --alert-warning-foreground: light-dark(var(--color-yellow-800), var(--color-yellow-200));
+    --outline-warning: light-dark(
+      var(--color-yellow-50),
+      oklch(from var(--color-yellow-500) l c h / 0.15)
+    );
+
     --badge: light-dark(
       oklch(from var(--color-neutral-500) l c h / 0.1),
       oklch(from var(--color-neutral-700) l c h / 0.5)
     );
     --badge-foreground: light-dark(var(--color-neutral-600), var(--color-neutral-400));
+
     --badge-destructive: light-dark(
       var(--color-red-50),
       oklch(from var(--color-red-900) l c h / 0.3)
     );
     --badge-destructive-foreground: light-dark(var(--color-red-700), var(--color-red-400));
+
     --badge-success: light-dark(
       var(--color-green-50),
       oklch(from var(--color-green-900) l c h / 0.3)
     );
     --badge-success-foreground: light-dark(var(--color-green-700), var(--color-green-400));
+
+    --badge-warning: light-dark(
+      var(--color-yellow-50),
+      oklch(from var(--color-yellow-900) l c h / 0.3)
+    );
+    --badge-warning-foreground: light-dark(var(--color-yellow-800), var(--color-yellow-300));
 
     --border: light-dark(var(--color-neutral-200), oklch(from var(--color-white) l c h / 0.1));
     --input: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.05));
@@ -100,6 +124,31 @@
       oklch(from var(--color-white) l c h / 0.05)
     );
     --ring: var(--color-primary-600);
+
+    --inset-ring-shadow-destructive:
+      0 0 #0000,
+      inset 0 0 0 1px
+        light-dark(
+          oklch(from var(--color-red-600) l c h / 0.1),
+          oklch(from var(--color-red-400) l c h / 0.2)
+        ),
+      0 0 0 #0000, 0 0 0 #0000;
+    --inset-ring-shadow-success:
+      0 0 #0000,
+      inset 0 0 0 1px
+        light-dark(
+          oklch(from var(--color-green-600) l c h / 0.2),
+          oklch(from var(--color-green-500) l c h / 0.2)
+        ),
+      0 0 0 #0000, 0 0 0 #0000;
+    --inset-ring-shadow-warning:
+      0 0 #0000,
+      inset 0 0 0 1px
+        light-dark(
+          oklch(from var(--color-yellow-400) l c h / 0.2),
+          oklch(from var(--color-yellow-500) l c h / 0.2)
+        ),
+      0 0 0 #0000, 0 0 0 #0000;
 
     /* Card */
     --card: light-dark(var(--color-white), oklch(from var(--color-neutral-800) l c h / 0.5));
@@ -230,10 +279,12 @@
     font-weight: var(--fw-medium);
     text-decoration: none;
 
-    &:hover {
-      color: var(--primary-hover);
-      text-decoration: underline;
-      text-underline-offset: 0.25rem;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--primary-hover);
+        text-decoration: underline;
+        text-underline-offset: 0.25rem;
+      }
     }
   }
 
@@ -258,6 +309,13 @@
     outline-offset: -1px;
   }
 
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
   textarea:not([rows]) {
     min-block-size: 10em;
   }
@@ -272,7 +330,6 @@
     height: auto;
   }
 
-  /* .img: opt-in cover behavior — combine with an explicit height */
   .img {
     display: block;
     object-fit: cover;
@@ -364,10 +421,19 @@
     align-items: center;
     padding: var(--space-2);
     position: relative;
+    transition: background-color var(--transition), color var(--transition), transform 100ms var(--ease-out);
 
-    &:hover {
-      background-color: var(--navbar-accent-hover);
-      color: var(--navbar-accent-foreground);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--navbar-accent-hover);
+        color: var(--navbar-accent-foreground);
+      }
+    }
+
+    &:active {
+      transform: scale(0.93);
+      transition-duration: 100ms;
+      transition-timing-function: var(--ease-out);
     }
   }
 
@@ -377,15 +443,24 @@
   }
 
   .mobile-menu-btn[aria-expanded='true'] .icon-hamburger {
-    display: none;
+    opacity: 0;
+    transform: rotate(45deg) scale(0.85);
+  }
+
+  .icon-hamburger,
+  .icon-close {
+    transition: opacity 150ms ease, transform 150ms var(--ease-out);
   }
 
   .icon-close {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.85);
   }
 
   .mobile-menu-btn[aria-expanded='true'] .icon-close {
-    display: block;
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
   }
 
   .nav-content {
@@ -409,6 +484,10 @@
       font-size: var(--fs-md);
       font-weight: var(--fw-semibold);
       text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -483,34 +562,68 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    transition: background-color var(--transition), color var(--transition), transform 100ms var(--ease-out);
 
-    &:hover {
-      background-color: var(--navbar-accent-hover);
-      color: var(--navbar-accent-foreground);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--navbar-accent-hover);
+        color: var(--navbar-accent-foreground);
+      }
     }
 
-    .sun-icon {
-      display: none;
+    &:active {
+      transform: scale(0.90);
+      transition-duration: 100ms;
+      transition-timing-function: var(--ease-out);
     }
+  }
+
+  .moon-icon,
+  .sun-icon {
+    transition: opacity 150ms ease, transform 150ms var(--ease-out);
+  }
+
+  .sun-icon {
+    position: absolute;
+    opacity: 0;
+    transform: rotate(90deg) scale(0.85);
   }
 
   :root[data-theme='dark'] .theme-toggle {
     .moon-icon {
-      display: none;
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.85);
     }
 
     .sun-icon {
-      display: block;
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
     }
   }
 
   /* Mobile menu */
   .mobile-menu {
-    display: none;
+    display: block;
+    max-block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        max-block-size 180ms var(--ease-out),
+        opacity 150ms ease;
+    }
   }
 
   .navbar:has(.mobile-menu-btn[aria-expanded='true']) .mobile-menu {
-    display: block;
+    max-block-size: 500px;
+    opacity: 1;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        max-block-size 250ms var(--ease-out),
+        opacity 200ms ease;
+    }
   }
 
   @media (width >= 40rem) {
@@ -585,9 +698,10 @@
     color: var(--button-primary-foreground);
     background-color: var(--button-primary);
     border-radius: var(--rounded-md);
+    box-shadow: var(--shadow-xs);
     padding: var(--space-1_5) var(--space-3);
     transition: var(--transition);
-    transition-property: background-color, transform;
+    transition-property: background-color, color, transform;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -607,8 +721,21 @@
     box-shadow: var(--ring-shadow);
     color: var(--accent-foreground);
 
-    &:hover {
-      background-color: var(--accent-hover);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--accent-hover);
+      }
+    }
+  }
+
+  button[data-variant='destructive'] {
+    background-color: var(--button-destructive);
+    color: var(--button-destructive-foreground);
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--button-destructive-hover);
+      }
     }
   }
 
@@ -616,8 +743,10 @@
     color: var(--soft-foreground);
     background-color: var(--soft);
 
-    &:hover {
-      background-color: var(--soft-hover);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--soft-hover);
+      }
     }
   }
 
@@ -625,10 +754,8 @@
     inline-size: 100%;
   }
 
-  button:disabled,
-  button[disabled] {
+  button:disabled {
     opacity: 0.5;
-    cursor: not-allowed;
     pointer-events: none;
   }
 
@@ -659,13 +786,19 @@
   .alert-danger {
     background: var(--alert-destructive);
     color: var(--alert-destructive-foreground);
-    outline-color: var(--outline-destructive, var(--alert-destructive));
+    outline-color: var(--outline-destructive);
   }
 
   .alert-success {
     background: var(--alert-success);
     color: var(--alert-success-foreground);
-    outline-color: var(--outline-success, var(--alert-success));
+    outline-color: var(--outline-success);
+  }
+
+  .alert-warning {
+    background: var(--alert-warning);
+    color: var(--alert-warning-foreground);
+    outline-color: var(--outline-warning);
   }
 
   /* Card */
@@ -865,14 +998,20 @@
 
   .badge-danger {
     background-color: var(--badge-destructive);
-    box-shadow: var(--ring-shadow-destructive);
+    box-shadow: var(--inset-ring-shadow-destructive);
     color: var(--badge-destructive-foreground);
   }
 
   .badge-success {
     background-color: var(--badge-success);
-    box-shadow: var(--ring-shadow-success);
+    box-shadow: var(--inset-ring-shadow-success);
     color: var(--badge-success-foreground);
+  }
+
+  .badge-warning {
+    background-color: var(--badge-warning);
+    box-shadow: var(--inset-ring-shadow-warning);
+    color: var(--badge-warning-foreground);
   }
 
   /* Table */
@@ -1007,6 +1146,26 @@
       padding-inline-end: var(--space-3);
     }
   }
+
+  /* Loader */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader {
+    block-size: 5rem;
+    border: 5px solid var(--border);
+    border-block-start-color: var(--color-primary-600);
+    border-radius: 50%;
+    inline-size: 5rem;
+    margin-inline: auto;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: spin 0.65s linear infinite;
+    }
+  }
 }
 
 @layer utilities {
@@ -1088,25 +1247,5 @@
     &:focus {
       transform: translateY(0);
     }
-  }
-}
-
-/* Loader **/
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.loader {
-  block-size: 5rem;
-  border: 5px solid var(--border);
-  border-block-start-color: var(--color-primary-600);
-  border-radius: 50%;
-  inline-size: 5rem;
-  margin-inline: auto;
-
-  @media (prefers-reduced-motion: no-preference) {
-    animation: spin 0.65s linear infinite;
   }
 }

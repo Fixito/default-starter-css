@@ -21,6 +21,7 @@
   </head>
   <body class="page">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navbar-->
     <nav class="navbar" aria-label="Navigation principale">
       <div class="container">
@@ -35,6 +36,7 @@
             >
               <span class="menu-btn-overlay"></span>
               <span class="sr-only">Ouvrir le menu principal</span>
+
               <!-- Icône hamburger -->
               <svg
                 class="icon-hamburger"
@@ -84,15 +86,14 @@
             <!-- Menu de navigation -->
             <div class="nav-menu">
               <ul class="nav-links" role="list">
-                <li><a href="./index.html" class="nav-link">Accueil</a></li>
-                <li><a href="./cards.html" class="nav-link">Cartes</a></li>
                 <li>
-                  <a
-                    href="./tables.html"
-                    aria-current="page"
-                    class="nav-link active"
-                    >Tables</a
-                  >
+                  <a href="./index.html" class="nav-link">Accueil</a>
+                </li>
+                <li>
+                  <a href="./cards.html" class="nav-link">Cartes</a>
+                </li>
+                <li>
+                  <a href="./tables.html" aria-current="page" class="nav-link">Tables</a>
                 </li>
               </ul>
             </div>
@@ -100,11 +101,7 @@
 
           <div class="nav-actions">
             <!-- Bouton toggle dark/light mode -->
-            <button
-              type="button"
-              class="theme-toggle"
-              aria-label="Basculer le thème"
-            >
+            <button type="button" class="theme-toggle" aria-label="Basculer le thème">
               <span class="menu-btn-overlay"></span>
               <!-- Icône lune (mode clair actif) -->
               <svg
@@ -124,6 +121,7 @@
                   d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
                 />
               </svg>
+
               <!-- Icône soleil (mode sombre actif) -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -154,21 +152,12 @@
       </div>
 
       <!-- Menu de navigation mobile -->
-      <div
-        class="mobile-menu"
-        id="mobile-menu"
-        aria-label="Menu de navigation mobile"
-      >
+      <div class="mobile-menu" id="mobile-menu" aria-label="Menu de navigation mobile">
         <ul class="mobile-menu-links" role="list">
           <li><a href="./index.html" class="mobile-menu-link">Accueil</a></li>
           <li><a href="./cards.html" class="mobile-menu-link">Cartes</a></li>
           <li>
-            <a
-              href="./tables.html"
-              aria-current="page"
-              class="mobile-menu-link active"
-              >Tables</a
-            >
+            <a href="./tables.html" aria-current="page" class="mobile-menu-link">Tables</a>
           </li>
         </ul>
       </div>
@@ -179,8 +168,8 @@
           <h1 id="table-title" class="table-title">Utilisateurs</h1>
 
           <p class="table-description">
-            Une liste de tous les utilisateurs de votre compte, comprenant leur
-            nom, leur titre, leur statut et leur rôle.
+            Une liste de tous les utilisateurs de votre compte, comprenant leur nom, leur titre,
+            leur statut et leur rôle.
           </p>
         </div>
 
@@ -204,15 +193,13 @@
                   </th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr>
                   <td>John Doe</td>
                   <td>Développeur Front-end</td>
                   <td>
-                    <span
-                      class="badge badge-success"
-                      role="status"
-                      aria-label="Statut : Actif"
+                    <span class="badge badge-success" role="status" aria-label="Statut : Actif"
                       >Actif</span
                     >
                   </td>
@@ -221,15 +208,13 @@
                     <a href="#" class="table-action-link">Éditer</a>
                   </td>
                 </tr>
+
                 <tr>
                   <td>Jane Doe</td>
                   <td>Designer</td>
                   <td>
-                    <span
-                      class="badge badge-success"
-                      role="status"
-                      aria-label="Statut : Actif"
-                      >Actif</span
+                    <span class="badge badge-warning" role="status" aria-label="Statut : En attente"
+                      >En attente</span
                     >
                   </td>
                   <td>Admin</td>
@@ -237,14 +222,12 @@
                     <a href="#" class="table-action-link">Éditer</a>
                   </td>
                 </tr>
+
                 <tr>
                   <td>Peter Smith</td>
                   <td>Copywriter</td>
                   <td>
-                    <span
-                      class="badge badge-danger"
-                      role="status"
-                      aria-label="Statut : Inactif"
+                    <span class="badge badge-danger" role="status" aria-label="Statut : Inactif"
                       >Inactif</span
                     >
                   </td>
@@ -263,9 +246,7 @@
     <!-- Pied de page -->
     <footer class="footer">
       <div class="footer-container">
-        <p>
-          &copy; <span class="year"></span> Mon Site Web. Tous droits réservés.
-        </p>
+        <p>&copy; <span class="year"></span> Mon Site Web. Tous droits réservés.</p>
       </div>
     </footer>
   </body>

@@ -21,6 +21,7 @@
   </head>
   <body class="page">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navbar-->
     <nav class="navbar" aria-label="Navigation principale">
       <div class="container">
@@ -35,6 +36,7 @@
             >
               <span class="menu-btn-overlay"></span>
               <span class="sr-only">Ouvrir le menu principal</span>
+
               <!-- Icône hamburger -->
               <svg
                 class="icon-hamburger"
@@ -85,14 +87,11 @@
             <div class="nav-menu">
               <ul class="nav-links" role="list">
                 <li>
-                  <a
-                    href="./index.html"
-                    aria-current="page"
-                    class="nav-link active"
-                    >Accueil</a
-                  >
+                  <a href="./index.html" aria-current="page" class="nav-link">Accueil</a>
                 </li>
-                <li><a href="./cards.html" class="nav-link">Cartes</a></li>
+                <li>
+                  <a href="./cards.html" class="nav-link">Cartes</a>
+                </li>
                 <li><a href="./tables.html" class="nav-link">Tables</a></li>
               </ul>
             </div>
@@ -100,12 +99,9 @@
 
           <div class="nav-actions">
             <!-- Bouton toggle dark/light mode -->
-            <button
-              type="button"
-              class="theme-toggle"
-              aria-label="Basculer le thème"
-            >
+            <button type="button" class="theme-toggle" aria-label="Basculer le thème">
               <span class="menu-btn-overlay"></span>
+
               <!-- Icône lune (mode clair actif) -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +120,7 @@
                   d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
                 />
               </svg>
+
               <!-- Icône soleil (mode sombre actif) -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -154,22 +151,17 @@
       </div>
 
       <!-- Menu de navigation mobile -->
-      <div
-        class="mobile-menu"
-        id="mobile-menu"
-        aria-label="Menu de navigation mobile"
-      >
+      <div class="mobile-menu" id="mobile-menu" aria-label="Menu de navigation mobile">
         <ul class="mobile-menu-links" role="list">
           <li>
-            <a
-              href="./index.html"
-              aria-current="page"
-              class="mobile-menu-link active"
-              >Accueil</a
-            >
+            <a href="./index.html" aria-current="page" class="mobile-menu-link">Accueil</a>
           </li>
-          <li><a href="./cards.html" class="mobile-menu-link">Cartes</a></li>
-          <li><a href="./tables.html" class="mobile-menu-link">Tables</a></li>
+          <li>
+            <a href="./cards.html" class="mobile-menu-link">Cartes</a>
+          </li>
+          <li>
+            <a href="./tables.html" class="mobile-menu-link">Tables</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -187,9 +179,9 @@
 
       <!-- Paragraphe -->
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora totam
-        hic maiores ipsam suscipit temporibus corporis, laudantium, ea debitis,
-        nemo quasi doloribus sit ex natus nisi aliquam? Possimus, dolor dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora totam hic maiores ipsam
+        suscipit temporibus corporis, laudantium, ea debitis, nemo quasi doloribus sit ex natus nisi
+        aliquam? Possimus, dolor dolorem.
       </p>
 
       <br />
@@ -217,9 +209,8 @@
       <!-- Boutons -->
       <div class="cluster">
         <button type="button">Bouton par défaut</button>
-        <button type="button" data-variant="secondary">
-          Bouton secondaire
-        </button>
+        <button type="button" data-variant="secondary">Bouton secondaire</button>
+        <button type="button" data-variant="destructive">Bouton destructif</button>
         <button type="button" data-variant="soft">Bouton doux</button>
       </div>
 
@@ -231,7 +222,6 @@
         <div class="alert-content">
           <div class="alert-icon-wrapper">
             <svg
-              class="alert-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -242,6 +232,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               aria-hidden="true"
+              class="alert-icon"
             >
               <circle cx="12" cy="12" r="10" />
               <path d="m15 9-6 6" />
@@ -255,11 +246,10 @@
 
       <br />
 
-      <div role="alert" class="alert alert-success">
+      <div role="alert" class="alert alert-warning">
         <div class="alert-content">
           <div class="alert-icon-wrapper">
             <svg
-              class="alert-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -270,6 +260,35 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               aria-hidden="true"
+              class="alert-icon"
+            >
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </div>
+
+          <span class="alert-text">Alerte avertissement</span>
+        </div>
+      </div>
+
+      <br />
+
+      <div role="alert" class="alert alert-success">
+        <div class="alert-content">
+          <div class="alert-icon-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              class="alert-icon"
             >
               <circle cx="12" cy="12" r="10" />
               <path d="m9 12 2 2 4-4" />
@@ -288,14 +307,22 @@
           <!-- Nom -->
           <div class="form-row">
             <label for="name">Nom</label>
+            <input type="text" name="name" id="name" autocomplete="name" placeholder="Doe" />
+          </div>
+
+          <!-- Prénom -->
+          <div class="form-row">
+            <label for="first-name">Prénom</label>
             <input
               type="text"
-              name="name"
-              id="name"
-              autocomplete="name"
+              name="first-name"
+              id="first-name"
+              autocomplete="given-name"
               placeholder="John"
+              disabled
             />
           </div>
+
           <!-- Email -->
           <div class="form-row">
             <label for="email">Email</label>
@@ -308,41 +335,32 @@
               aria-invalid="true"
             />
             <div aria-live="polite">
-              <p class="form-alert" id="email-error">
-                Veuillez entrer un email valide.
-              </p>
+              <p class="form-alert" id="email-error">Veuillez entrer un email valide.</p>
             </div>
           </div>
+
           <div class="form-row">
             <label for="training">Formation</label>
             <select name="training" id="training">
-              <option value="" disabled selected>
-                -- Sélectionner une formation --
-              </option>
+              <option value="" disabled selected>-- Sélectionner une formation --</option>
               <option value="cda">CDA</option>
               <option value="dwwm">DWWM</option>
               <option value="ia">IA</option>
             </select>
           </div>
+
           <!-- Zone de texte -->
           <div class="form-row">
             <label for="message">Message</label>
             <textarea id="message">Valeur par défaut</textarea>
           </div>
+
           <!-- Vie privée -->
           <div class="form-row">
-            <input
-              type="checkbox"
-              name="privacy"
-              id="privacy"
-              class="fine-print"
-            />
+            <input type="checkbox" name="privacy" id="privacy" class="fine-print" />
             <label for="privacy" class="form-label-privacy">
-              J'accepte que mes données personnelles soient traitées
-              conformément à la
-              <a href="#" target="_blank" rel="noopener noreferrer"
-                >politique de confidentialité</a
-              >
+              J'accepte que mes données personnelles soient traitées conformément à la
+              <a href="#" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>
             </label>
           </div>
 
@@ -375,9 +393,7 @@
     <!-- Pied de page -->
     <footer class="footer">
       <div class="footer-container">
-        <p>
-          &copy; <span class="year"></span> Mon Site Web. Tous droits réservés.
-        </p>
+        <p>&copy; <span class="year"></span> Mon Site Web. Tous droits réservés.</p>
       </div>
     </footer>
   </body>
