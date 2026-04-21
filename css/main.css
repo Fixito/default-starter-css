@@ -11,7 +11,7 @@
 
 @layer theme {
   :root {
-    color-scheme: light;
+    color-scheme: light dark;
 
     /* Base */
     --background: light-dark(var(--color-neutral-50), var(--color-neutral-900));
