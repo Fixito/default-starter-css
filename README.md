@@ -24,9 +24,9 @@
 | `tokens`     | Valeurs brutes — palette OKLCH, espacements, typographie |
 | `theme`      | Tokens sémantiques — `light-dark()` gère le mode sombre  |
 | `base`       | Styles de base (body, headings, links, img, motion)      |
-| `layout`     | Layouts (auto-grid, cluster, page)                       |
+| `layout`     | Layouts (container, auto-grid, cluster, page)            |
 | `components` | Navbar, boutons, formulaires, alertes, badges, table     |
-| `utilities`  | Container, flow, sr-only, skip-link, max-w-\*            |
+| `utilities`  | flow, sr-only, skip-link, max-w-\*, mx-auto, text-center |
 
 ## 🎨 Tokens sémantiques
 
@@ -40,17 +40,18 @@ Variables CSS sémantiques pour couleurs, composants et UI. Chaque token est dé
 Deux niveaux de tokens coexistent :
 
 1. **Tokens globaux** — `--primary`, `--foreground`, `--background`, `--border`, `--muted`…
-2. **Tokens composants** — `--button-primary`, `--navbar-accent`, `--badge-success`…
+2. **Tokens composants** — `--button-secondary`, `--navbar-brand`, `--badge-success`…
 
 ## 📦 Composants inclus
 
-- ✅ **Badges** : default, `badge-success`, `badge-danger`
-- ✅ **Boutons** : default, `secondary`, `soft`, `block`
+- ✅ **Alerts** : `alert-danger`, `alert-warning`, `alert-success`
+- ✅ **Badges** : default, `badge-success`, `badge-warning`, `badge-danger`
+- ✅ **Boutons** : default, `secondary`, `destructive`, `soft`
 - ✅ **Card** : `.card`, `.card-title`, `.card-description`
-- ✅ **Formulaires** : Inputs, select, textarea, validation `aria-invalid`
+- ✅ **Formulaires** : input, select, textarea, `input-group`, validation `aria-invalid`
 - ✅ **Layouts** : Container, auto-grid, cluster, flow
 - ✅ **Loader** : Animation de chargement
-- ✅ **Navbar** : Responsive avec menu mobile accessible (focus trap via `inert`)
+- ✅ **Navbar** : Responsive avec menu mobile accessible (`aria-expanded`, `inert`, fermeture `Escape` + clic extérieur)
 - ✅ **Table** : Tableau stylisé responsive
 
 ## 📁 Structure du projet
@@ -62,7 +63,7 @@ css/
 ├── theme.css         # Tokens sémantiques (light-dark)
 └── normalize.css     # Normalisation cross-browser
 js/
-├── main.js           # Menu mobile + focus trap + dark mode + année courante
+├── main.js           # Menu mobile (inert + Escape + clic extérieur), dark mode, année courante
 └── utils/
     └── dom.js        # Utilitaire DOM (selectElement)
 index.html            # Page de démonstration complète
@@ -90,10 +91,11 @@ Dans `@layer theme :root {}`, déclarez le token avec `light-dark()` — une seu
 Basée sur [Utopia](https://utopia.fyi/type/calculator/?c=320,16,1.2,1280,18,1.25,5,2,&s=0.75) :
 
 ```css
---fs-sm: clamp(0.8333rem, 0.8111rem + 0.1111vw, 0.9rem);
---fs-base: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
---fs-md: clamp(1.2rem, 1.1313rem + 0.3438vw, 1.4063rem);
-/* ... jusqu'à --fs-xxxl */
+--fs-xs: round(nearest, clamp(0.6944rem, 0.6859rem + 0.0426vw, 0.72rem), 0.125rem);
+--fs-sm: round(nearest, clamp(0.8333rem, 0.8111rem + 0.1111vw, 0.9rem), 0.125rem);
+--fs-base: round(nearest, clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem), 0.125rem);
+--fs-md: round(nearest, clamp(1.2rem, 1.1313rem + 0.3438vw, 1.4063rem), 0.125rem);
+/* ... jusqu'à --fs-xxxl avec round(nearest, ..., 0.125rem) */
 ```
 
 ### Créer une nouvelle page
@@ -103,7 +105,7 @@ Copiez la structure de `index.html` — elle contient déjà le skip-link, le sc
 ## ♿ Accessibilité
 
 - **Skip-link** : lien "Aller au contenu principal" visible au focus clavier (premier `Tab`)
-- **Focus trap** : menu mobile utilise `inert` sur `<main>` et `<footer>` pour piéger le focus
+- **Navigation mobile accessible** : menu mobile piloté par `aria-expanded`, fermeture sur `Escape` et clic extérieur, et `inert` sur `<main>`/`<footer>` quand le menu est ouvert
 - **Mouvement réduit** : `@media (prefers-reduced-motion: reduce)` désactive toutes les transitions/animations globalement
 - **ARIA** : `aria-expanded`, `aria-current`, `aria-label`, `aria-invalid`, `aria-errormessage` utilisés systématiquement
 
