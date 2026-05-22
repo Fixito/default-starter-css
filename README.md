@@ -14,7 +14,7 @@
 ## 🏗️ Architecture CSS Layers
 
 ```css
-@layer normalize, reset, tokens, theme, base, compositions, components, utilities;
+@layer normalize, reset, tokens, theme, base, layout, components, utilities;
 ```
 
 | Layer          | Description                                              |
@@ -24,7 +24,7 @@
 | `tokens`       | Valeurs brutes — palette OKLCH, espacements, typographie |
 | `theme`        | Tokens sémantiques — `light-dark()` gère le mode sombre  |
 | `base`         | Styles de base (body, headings, links, img, motion)      |
-| `compositions` | Layouts (auto-grid, cluster, page)                       |
+| `layout`       | Layouts (auto-grid, cluster, page)                       |
 | `components`   | Navbar, boutons, formulaires, alertes, badges, table     |
 | `utilities`    | Container, flow, sr-only, skip-link, max-w-\*            |
 

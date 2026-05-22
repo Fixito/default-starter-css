@@ -882,7 +882,7 @@
   }
 
   .table-description {
-    color: var(--secondary-foreground);
+    color: var(--muted-foreground);
     font-size: var(--fs-sm);
     line-height: var(--leading-snug);
     margin-block-start: var(--space-2);
