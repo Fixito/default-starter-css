@@ -2,10 +2,6 @@
   :root {
     color-scheme: light dark;
 
-    /* ============================================================
-        LEVEL 2 — Semantic tokens (consume L1, never raw palette)
-       ============================================================ */
-
     /* Background / Foreground */
     --background: light-dark(var(--color-neutral-50), var(--color-neutral-900));
     --foreground: light-dark(var(--color-neutral-950), var(--color-white));
@@ -14,14 +10,6 @@
     --primary: light-dark(var(--color-primary-800), var(--color-primary-400));
     --primary-hover: light-dark(var(--color-primary-700), var(--color-primary-300));
     --primary-foreground: var(--color-white);
-
-    /* Secondary */
-    --secondary: light-dark(var(--color-neutral-100), oklch(from var(--color-white) l c h / 0.1));
-    --secondary-hover: light-dark(
-      var(--color-neutral-200),
-      oklch(from var(--color-white) l c h / 0.2)
-    );
-    --secondary-foreground: light-dark(var(--color-neutral-800), var(--color-neutral-300));
 
     /* Destructive */
     --destructive: light-dark(var(--color-red-600), var(--color-red-700));
@@ -53,21 +41,20 @@
     --input: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.05));
     --ring: var(--primary);
 
-    /* ============================================================
-        LEVEL 3 — Component tokens (consume L2, never L1)
-       ============================================================ */
-
     /* Button */
     --button: light-dark(var(--color-primary-600), var(--color-primary-700));
     --button-hover: light-dark(var(--color-primary-700), var(--color-primary-600));
     --button-foreground: var(--primary-foreground);
 
-    --button-secondary: light-dark(var(--color-white), oklch(from var(--color-white) l c h / 0.1));
-    --button-secondary-hover: light-dark(
+    --button-secondary: light-dark(
       var(--color-neutral-50),
-      oklch(from var(--color-white) l c h / 0.2)
+      oklch(from var(--color-white) l c h / 0.1)
     );
-    --button-secondary-foreground: var(--accent-foreground);
+    --button-secondary-hover: light-dark(
+      var(--color-neutral-100),
+      oklch(from var(--color-white) l c h / 0.15)
+    );
+    --button-secondary-foreground: light-dark(var(--color-neutral-800), var(--color-neutral-300));
 
     --button-destructive: var(--destructive);
     --button-destructive-hover: var(--destructive-hover);
@@ -109,7 +96,7 @@
     );
     --alert-destructive-foreground: light-dark(var(--color-red-900), var(--color-red-300));
     --alert-destructive-outline: light-dark(
-      var(--color-red-50),
+      var(--alert-destructive),
       oklch(from var(--color-red-500) l c h / 0.25)
     );
 
@@ -137,13 +124,13 @@
     --navbar: light-dark(var(--color-white), oklch(from var(--color-neutral-800) l c h / 0.5));
     --navbar-foreground: light-dark(var(--color-neutral-950), var(--color-neutral-300));
     --navbar-border: light-dark(oklch(from var(--color-black) l c h / 0.1), var(--border));
-    --navbar-brand: light-dark(var(--primary), var(--primary));
+    --navbar-brand: var(--primary);
     --navbar-item-hover: light-dark(
       var(--color-neutral-100),
       oklch(from var(--color-white) l c h / 0.1)
     );
     --navbar-item-active: light-dark(
-      var(--color-neutral-200),
+      var(--color-neutral-100),
       oklch(from var(--color-neutral-950) l c h / 0.5)
     );
     --navbar-item-foreground-active: light-dark(var(--color-neutral-950), var(--color-white));

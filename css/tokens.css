@@ -1,12 +1,4 @@
 :root {
-  /*
-    ============================================================
-      LEVEL 1 — Config (only file you touch per project)
-    ============================================================
-  */
-
-  /* Colors */
-
   --color-primary-50: oklch(97% 0.014 254.604);
   --color-primary-100: oklch(93.2% 0.032 255.585);
   --color-primary-200: oklch(88.2% 0.059 254.128);
@@ -67,11 +59,9 @@
   --color-yellow-900: oklch(42.1% 0.095 57.708);
   --color-yellow-950: oklch(28.6% 0.066 53.813);
 
-  /* Other colors */
-  --color-black: #000;
-  --color-white: #fff;
+  --color-black: oklch(0% 0 0);
+  --color-white: oklch(100% 0 0);
 
-  /* Spacing */
   --space-0: 0;
   --space-0_5: 0.125rem;
   --space-1: 0.25rem;
@@ -87,7 +77,6 @@
   --space-12: 3rem;
   --space-16: 4rem;
 
-  /* Fonts */
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
@@ -113,7 +102,6 @@
   --leading-snug: 1.375;
   --leading-normal: 1.5;
 
-  /* Rest of vars */
   --radius: 0.5rem;
   --rounded-sm: calc(var(--radius) - 4px);
   --rounded-md: calc(var(--radius) - 2px);
@@ -131,11 +119,6 @@
   --card-width: 42rem;
   --fixed-width: 37.5rem;
   --max-width: 80rem;
-
-  /* Shadows */
-  --ring-shadow:
-    0 0 #0000, inset 0 0 0 1px oklch(from var(--color-neutral-500) l c h / 0.2), 0 0 0 #0000,
-    0 0 0 #0000;
 
   --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
