@@ -17,16 +17,16 @@
 @layer normalize, reset, tokens, theme, base, compositions, components, utilities;
 ```
 
-| Layer          | Description                                             |
-| -------------- | ------------------------------------------------------- |
-| `normalize`    | Normalisation cross-browser                             |
-| `reset`        | Reset minimal (box-sizing, margins)                     |
+| Layer          | Description                                              |
+| -------------- | -------------------------------------------------------- |
+| `normalize`    | Normalisation cross-browser                              |
+| `reset`        | Reset minimal (box-sizing, margins)                      |
 | `tokens`       | Valeurs brutes — palette OKLCH, espacements, typographie |
-| `theme`        | Tokens sémantiques — `light-dark()` gère le mode sombre |
-| `base`         | Styles de base (body, headings, links, img, motion)     |
-| `compositions` | Layouts (auto-grid, cluster, page)                      |
-| `components`   | Navbar, boutons, formulaires, alertes, badges, table    |
-| `utilities`    | Container, flow, sr-only, skip-link, max-w-\*           |
+| `theme`        | Tokens sémantiques — `light-dark()` gère le mode sombre  |
+| `base`         | Styles de base (body, headings, links, img, motion)      |
+| `compositions` | Layouts (auto-grid, cluster, page)                       |
+| `components`   | Navbar, boutons, formulaires, alertes, badges, table     |
+| `utilities`    | Container, flow, sr-only, skip-link, max-w-\*            |
 
 ## 🎨 Tokens sémantiques
 
@@ -108,9 +108,11 @@ Copiez la structure de `index.html` — elle contient déjà le skip-link, le sc
 
 ## 📚 Ressources
 
+- [Preflight](https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css) - Normalisation utilisée par Tailwind
 - [Utopia](https://utopia.fyi/) - Générateur d'échelles fluides
+- [Tailwind CSS](https://tailwindcss.com/docs/theme#default-theme-variable-reference) - Référence des tokens de thème
+- [Shadcn UI](https://ui.shadcn.com/) - Inspirations pour les tokens sémantiques
 - [Tailwind Plus](https://tailwindcss.com/plus?ref=top) - Inspirations pour les composants
-- [Shadcn UI](https://ui.shadcn.com/) - Inspiration pour les tokens
 
 ## 📄 Licence
 
