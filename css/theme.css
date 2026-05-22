@@ -1,0 +1,189 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    /* Background / Foreground */
+    --background: light-dark(var(--color-neutral-50), var(--color-neutral-900));
+    --foreground: light-dark(var(--color-neutral-950), var(--color-white));
+
+    /* Primary */
+    --primary: light-dark(var(--color-primary-800), var(--color-primary-400));
+    --primary-hover: light-dark(var(--color-primary-700), var(--color-primary-300));
+    --primary-foreground: var(--color-white);
+
+    /* Destructive */
+    --destructive: light-dark(var(--color-red-600), var(--color-red-700));
+    --destructive-hover: light-dark(var(--color-red-700), var(--color-red-600));
+    --destructive-foreground: light-dark(var(--color-white), var(--color-white));
+
+    /* Muted */
+    --muted: light-dark(var(--color-neutral-50), var(--color-neutral-800));
+    --muted-foreground: light-dark(var(--color-neutral-600), var(--color-neutral-300));
+
+    /* Accent (soft primary tint) */
+    --accent: light-dark(
+      var(--color-primary-100),
+      oklch(from var(--color-primary-500) l c h / 0.2)
+    );
+    --accent-hover: light-dark(
+      var(--color-primary-200),
+      oklch(from var(--color-primary-500) l c h / 0.3)
+    );
+    --accent-foreground: light-dark(var(--color-primary-700), var(--color-primary-400));
+
+    /* Card */
+    --card: light-dark(var(--color-white), oklch(from var(--color-neutral-800) l c h / 0.5));
+    --card-foreground: light-dark(var(--color-neutral-950), var(--color-white));
+    --card-outline: light-dark(var(--card), var(--border));
+
+    /* Border / Input / Ring */
+    --border: light-dark(var(--color-neutral-200), oklch(from var(--color-white) l c h / 0.1));
+    --input: light-dark(var(--color-neutral-50), oklch(from var(--color-white) l c h / 0.05));
+    --ring: var(--primary);
+
+    /* Button */
+    --button: light-dark(var(--color-primary-600), var(--color-primary-700));
+    --button-hover: light-dark(var(--color-primary-700), var(--color-primary-600));
+    --button-foreground: var(--primary-foreground);
+
+    --button-secondary: light-dark(
+      var(--color-neutral-50),
+      oklch(from var(--color-white) l c h / 0.1)
+    );
+    --button-secondary-hover: light-dark(
+      var(--color-neutral-100),
+      oklch(from var(--color-white) l c h / 0.15)
+    );
+    --button-secondary-foreground: light-dark(var(--color-neutral-800), var(--color-neutral-300));
+
+    --button-destructive: var(--destructive);
+    --button-destructive-hover: var(--destructive-hover);
+    --button-destructive-foreground: var(--destructive-foreground);
+
+    --button-accent: var(--accent);
+    --button-accent-hover: var(--accent-hover);
+    --button-accent-foreground: var(--accent-foreground);
+
+    /* Badge */
+    --badge: light-dark(
+      oklch(from var(--color-neutral-500) l c h / 0.1),
+      oklch(from var(--color-neutral-700) l c h / 0.5)
+    );
+    --badge-foreground: light-dark(var(--color-neutral-600), var(--color-neutral-400));
+
+    --badge-destructive: light-dark(
+      var(--color-red-50),
+      oklch(from var(--color-red-900) l c h / 0.3)
+    );
+    --badge-destructive-foreground: light-dark(var(--color-red-800), var(--color-red-300));
+
+    --badge-success: light-dark(
+      var(--color-green-50),
+      oklch(from var(--color-green-900) l c h / 0.3)
+    );
+    --badge-success-foreground: light-dark(var(--color-green-800), var(--color-green-400));
+
+    --badge-warning: light-dark(
+      var(--color-yellow-50),
+      oklch(from var(--color-yellow-900) l c h / 0.3)
+    );
+    --badge-warning-foreground: light-dark(var(--color-yellow-800), var(--color-yellow-400));
+
+    /* Alert */
+    --alert-destructive: light-dark(
+      var(--color-red-50),
+      oklch(from var(--color-red-500) l c h / 0.15)
+    );
+    --alert-destructive-foreground: light-dark(var(--color-red-900), var(--color-red-300));
+    --alert-destructive-outline: light-dark(
+      var(--alert-destructive),
+      oklch(from var(--color-red-500) l c h / 0.25)
+    );
+
+    --alert-success: light-dark(
+      var(--color-green-50),
+      oklch(from var(--color-green-500) l c h / 0.1)
+    );
+    --alert-success-foreground: light-dark(var(--color-green-900), var(--color-green-300));
+    --alert-success-outline: light-dark(
+      var(--color-green-50),
+      oklch(from var(--color-green-500) l c h / 0.2)
+    );
+
+    --alert-warning: light-dark(
+      var(--color-yellow-50),
+      oklch(from var(--color-yellow-500) l c h / 0.1)
+    );
+    --alert-warning-foreground: light-dark(var(--color-yellow-900), var(--color-yellow-200));
+    --alert-warning-outline: light-dark(
+      var(--color-yellow-50),
+      oklch(from var(--color-yellow-500) l c h / 0.15)
+    );
+
+    /* Navbar */
+    --navbar: light-dark(var(--color-white), oklch(from var(--color-neutral-800) l c h / 0.5));
+    --navbar-foreground: light-dark(var(--color-neutral-950), var(--color-neutral-300));
+    --navbar-border: light-dark(oklch(from var(--color-black) l c h / 0.1), var(--border));
+    --navbar-brand: var(--primary);
+    --navbar-item-hover: light-dark(
+      var(--color-neutral-100),
+      oklch(from var(--color-white) l c h / 0.1)
+    );
+    --navbar-item-active: light-dark(
+      var(--color-neutral-100),
+      oklch(from var(--color-neutral-950) l c h / 0.5)
+    );
+    --navbar-item-foreground-active: light-dark(var(--color-neutral-950), var(--color-white));
+
+    /* Misc */
+    --input-error-border: light-dark(var(--color-red-800), var(--color-red-300));
+    --input-error-foreground: light-dark(var(--color-red-800), var(--color-red-300));
+    --footer: light-dark(var(--color-white), var(--color-neutral-900));
+    --select: light-dark(var(--color-neutral-50), var(--color-neutral-800));
+    --select-option-hover: light-dark(
+      var(--color-neutral-200),
+      oklch(from var(--color-white) l c h / 0.05)
+    );
+    --table-row-striped: light-dark(
+      var(--color-white),
+      oklch(from var(--color-neutral-800) l c h / 0.5)
+    );
+
+    /* Shadows */
+    --ring-shadow: 0 0 #0000, inset 0 0 0 1px var(--border), 0 0 0 #0000, 0 0 0 #0000;
+
+    --inset-ring-shadow-destructive:
+      0 0 #0000,
+      inset 0 0 0 1px
+        light-dark(
+          oklch(from var(--color-red-600) l c h / 0.1),
+          oklch(from var(--color-red-400) l c h / 0.2)
+        ),
+      0 0 0 #0000, 0 0 0 #0000;
+
+    --inset-ring-shadow-success:
+      0 0 #0000,
+      inset 0 0 0 1px
+        light-dark(
+          oklch(from var(--color-green-600) l c h / 0.2),
+          oklch(from var(--color-green-500) l c h / 0.2)
+        ),
+      0 0 0 #0000, 0 0 0 #0000;
+
+    --inset-ring-shadow-warning:
+      0 0 #0000,
+      inset 0 0 0 1px
+        light-dark(
+          oklch(from var(--color-yellow-400) l c h / 0.2),
+          oklch(from var(--color-yellow-500) l c h / 0.2)
+        ),
+      0 0 0 #0000, 0 0 0 #0000;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+  }
+  :root[data-theme='light'] {
+    color-scheme: light;
+  }
+}
