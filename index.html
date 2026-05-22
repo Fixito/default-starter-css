@@ -85,7 +85,7 @@
 
             <!-- Menu de navigation -->
             <div class="nav-menu">
-              <ul class="nav-links" role="list">
+              <ul class="nav-links">
                 <li>
                   <a href="./index.html" aria-current="page" class="nav-link">Accueil</a>
                 </li>
@@ -151,8 +151,8 @@
       </div>
 
       <!-- Menu de navigation mobile -->
-      <div class="mobile-menu" id="mobile-menu" aria-label="Menu de navigation mobile">
-        <ul class="mobile-menu-links" role="list">
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-links">
           <li>
             <a href="./index.html" aria-current="page" class="mobile-menu-link">Accueil</a>
           </li>
@@ -209,9 +209,9 @@
       <!-- Boutons -->
       <div class="cluster">
         <button type="button">Bouton par défaut</button>
-        <button type="button" variant="secondary">Bouton secondaire</button>
-        <button type="button" variant="destructive">Bouton destructif</button>
-        <button type="button" variant="soft">Bouton doux</button>
+        <button type="button" data-variant="secondary">Bouton secondaire</button>
+        <button type="button" data-variant="destructive">Bouton destructif</button>
+        <button type="button" data-variant="soft">Bouton doux</button>
         <button type="button" disabled>Bouton désactivé</button>
       </div>
 
@@ -365,7 +365,7 @@
             </label>
           </div>
 
-          <button type="submit" variant="block">Envoyer</button>
+          <button type="submit" data-variant="block" data-block>Envoyer</button>
         </form>
       </div>
 

@@ -17,16 +17,16 @@
 @layer normalize, reset, tokens, theme, base, layout, components, utilities;
 ```
 
-| Layer          | Description                                              |
-| -------------- | -------------------------------------------------------- |
-| `normalize`    | Normalisation cross-browser                              |
-| `reset`        | Reset minimal (box-sizing, margins)                      |
-| `tokens`       | Valeurs brutes — palette OKLCH, espacements, typographie |
-| `theme`        | Tokens sémantiques — `light-dark()` gère le mode sombre  |
-| `base`         | Styles de base (body, headings, links, img, motion)      |
-| `layout`       | Layouts (auto-grid, cluster, page)                       |
-| `components`   | Navbar, boutons, formulaires, alertes, badges, table     |
-| `utilities`    | Container, flow, sr-only, skip-link, max-w-\*            |
+| Layer        | Description                                              |
+| ------------ | -------------------------------------------------------- |
+| `normalize`  | Normalisation cross-browser                              |
+| `reset`      | Reset minimal (box-sizing, margins)                      |
+| `tokens`     | Valeurs brutes — palette OKLCH, espacements, typographie |
+| `theme`      | Tokens sémantiques — `light-dark()` gère le mode sombre  |
+| `base`       | Styles de base (body, headings, links, img, motion)      |
+| `layout`     | Layouts (auto-grid, cluster, page)                       |
+| `components` | Navbar, boutons, formulaires, alertes, badges, table     |
+| `utilities`  | Container, flow, sr-only, skip-link, max-w-\*            |
 
 ## 🎨 Tokens sémantiques
 
@@ -59,6 +59,7 @@ Deux niveaux de tokens coexistent :
 css/
 ├── main.css          # Styles principaux (layers, composants)
 ├── tokens.css        # Valeurs brutes (palette, espacements, typographie)
+├── theme.css         # Tokens sémantiques (light-dark)
 └── normalize.css     # Normalisation cross-browser
 js/
 ├── main.js           # Menu mobile + focus trap + dark mode + année courante

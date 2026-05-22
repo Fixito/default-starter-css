@@ -569,7 +569,7 @@
       pointer-events: none;
     }
 
-    &[variant~='secondary'] {
+    &[data-variant='secondary'] {
       background-color: var(--button-secondary);
       box-shadow: var(--ring-shadow);
       color: var(--button-secondary-foreground);
@@ -581,7 +581,7 @@
       }
     }
 
-    &[variant~='destructive'] {
+    &[data-variant='destructive'] {
       background-color: var(--button-destructive);
       color: var(--button-destructive-foreground);
 
@@ -592,7 +592,7 @@
       }
     }
 
-    &[variant~='soft'] {
+    &[data-variant='soft'] {
       color: var(--accent-foreground);
       background-color: var(--accent);
 
@@ -603,7 +603,7 @@
       }
     }
 
-    &[variant~='block'] {
+    &[data-block] {
       inline-size: 100%;
     }
   }
@@ -738,7 +738,7 @@
     }
 
     input:focus-visible,
-    button[variant='secondary']:focus-visible {
+    button[data-variant='secondary']:focus-visible {
       outline-width: 2px;
       outline-offset: -2px;
     }
