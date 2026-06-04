@@ -46,7 +46,7 @@ Deux niveaux de tokens coexistent :
 
 - ✅ **Alerts** : `alert-danger`, `alert-warning`, `alert-success`
 - ✅ **Badges** : default, `badge-success`, `badge-warning`, `badge-danger`
-- ✅ **Boutons** : default, `secondary`, `destructive`, `soft`
+- ✅ **Boutons** : default, `secondary`, `destructive`, `soft`, modificateurs `data-block` et `data-shape='pill'`
 - ✅ **Card** : `.card`, `.card-title`, `.card-description`
 - ✅ **Formulaires** : input, select, textarea, `input-group`, validation `aria-invalid`
 - ✅ **Layouts** : Container, auto-grid, cluster, flow
@@ -69,6 +69,7 @@ js/
 index.html            # Page de démonstration complète
 cards.html            # Exemples de cartes
 tables.html           # Exemples de tableaux
+computer.webp         # Image d'exemple utilisée sur la page d'accueil
 ```
 
 ## 🛠️ Personnalisation
@@ -119,4 +120,4 @@ Copiez la structure de `index.html` — elle contient déjà le skip-link, le sc
 
 ## 📄 Licence
 
-MIT License
+MIT
