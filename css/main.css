@@ -142,9 +142,14 @@
 
   input:disabled,
   textarea:disabled,
-  select:disabled {
+  select:disabled,
+  option:disabled {
     opacity: 0.55;
     cursor: not-allowed;
+  }
+
+  option:disabled {
+    pointer-events: none;
   }
 
   textarea:not([rows]) {
@@ -608,6 +613,11 @@
     &[data-block] {
       inline-size: 100%;
     }
+
+    &[data-shape='pill'] {
+      border-radius: var(--rounded-full);
+      box-shadow: var(--ring-shadow);
+    }
   }
 
   /* Alerts */
@@ -727,7 +737,7 @@
     margin-block-start: var(--space-2);
 
     input {
-      background-color: var(--color-white);
+      background-color: light-dark(var(--color-white), oklch(from var(--color-white) l c h / 0.05));
       border-start-end-radius: 0;
       border-end-end-radius: 0;
       flex-grow: 1;
@@ -1055,6 +1065,14 @@
 
   .text-center {
     text-align: center;
+  }
+
+  .font-semibold {
+    font-weight: var(--fw-semibold);
+  }
+
+  .text-muted {
+    color: var(--muted-foreground);
   }
 
   .max-w-sm {
